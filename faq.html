@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs | Golden Grid Solutions</title>
+<meta name="description" content="Common questions about enPact energy optimization technology — how it works, what to expect, and how savings are verified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#243D2C;--leaf:#4A7C59;--sage:#6B9E7A;--mint:#D4E8DC;--mint-bg:#E8F4EE;--gold:#B8892A;--gold-lt:#F5EDD6;--slate:#1C2B3A;--steel:#4A5568;--white:#FFFFFF;--border:#C8DECE;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--slate);background:var(--mint-bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.ggs-logo{display:flex;align-items:center;gap:12px;}.ggs-wordmark{display:flex;flex-direction:column;line-height:1.15;}.ggs-name{font-family:var(--sans);font-weight:600;font-size:16px;color:var(--forest);}.ggs-sub{font-family:var(--sans);font-weight:300;font-size:10px;color:var(--sage);letter-spacing:.12em;text-transform:uppercase;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(232,244,238,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s var(--ease);}
+nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
+.nav-links{display:flex;align-items:center;gap:40px;}.nav-links a{font-size:14px;color:var(--steel);transition:color .2s;}.nav-links a:hover{color:var(--forest);}
+.nav-cta{background:var(--forest)!important;color:var(--white)!important;padding:10px 24px;border-radius:5px;font-size:14px;font-weight:500;transition:background .2s!important;}.nav-cta:hover{background:var(--leaf)!important;}
+
+/* HERO */
+.hero{margin-top:72px;background:var(--forest);padding:80px 8% 72px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;}
+.hero-content{position:relative;z-index:1;max-width:680px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:500;color:rgba(255,255,255,.85);letter-spacing:.07em;text-transform:uppercase;margin-bottom:24px;backdrop-filter:blur(8px);}
+.hero-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.hero-h1{font-family:var(--serif);font-size:clamp(40px,5vw,68px);font-weight:700;line-height:1.06;color:var(--white);letter-spacing:-.025em;margin-bottom:20px;}
+.hero-h1 em{font-style:italic;color:#E8C96A;}
+.hero-lead{font-size:17px;color:rgba(255,255,255,.65);font-weight:300;line-height:1.75;max-width:520px;}
+
+/* CATEGORY TABS */
+.cat-bar{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:100;overflow-x:auto;}
+.cat-inner{display:flex;padding:0 8%;white-space:nowrap;}
+.cat-link{font-size:13px;color:var(--steel);padding:16px 20px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;flex-shrink:0;display:block;cursor:pointer;}
+.cat-link:hover{color:var(--forest);}
+.cat-link.active{color:var(--forest);font-weight:600;border-bottom-color:var(--leaf);}
+
+/* MAIN LAYOUT */
+.faq-layout{display:grid;grid-template-columns:240px 1fr;gap:0;max-width:1200px;margin:0 auto;padding:64px 8%;}
+
+/* SIDEBAR */
+.faq-sidebar{padding-right:48px;position:sticky;top:140px;align-self:start;}
+.sidebar-title{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;}
+.sidebar-links{display:flex;flex-direction:column;gap:4px;}
+.sidebar-link{font-size:13px;color:var(--steel);padding:8px 12px;border-radius:6px;transition:background .15s,color .15s;cursor:pointer;}
+.sidebar-link:hover{background:var(--mint-bg);color:var(--forest);}
+.sidebar-link.active{background:var(--mint);color:var(--forest);font-weight:500;}
+
+/* FAQ SECTIONS */
+.faq-sections{min-width:0;}
+.faq-section{margin-bottom:72px;}
+.faq-section:last-child{margin-bottom:0;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);margin-bottom:14px;}
+.section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--leaf);flex-shrink:0;}
+.section-title{font-family:var(--serif);font-size:clamp(26px,3vw,40px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-.02em;margin-bottom:32px;}
+.section-title em{font-style:italic;color:var(--gold);}
+
+/* ACCORDION */
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden;transition:box-shadow .2s;}
+.faq-item:hover{box-shadow:0 4px 16px rgba(74,124,89,.08);}
+.faq-item.open{box-shadow:0 4px 20px rgba(74,124,89,.12);border-color:var(--leaf);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;gap:16px;}
+.faq-q-text{font-size:15px;font-weight:500;color:var(--forest);line-height:1.45;}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--mint-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .2s;}
+.faq-item.open .faq-icon{background:var(--forest);border-color:var(--forest);transform:rotate(45deg);}
+.faq-icon svg{width:12px;height:12px;}
+.faq-icon svg line{stroke:var(--forest);stroke-width:2;transition:stroke .2s;}
+.faq-item.open .faq-icon svg line{stroke:var(--white);}
+.faq-a{display:none;padding:0 24px 22px;font-size:14px;color:var(--steel);line-height:1.75;font-weight:300;border-top:1px solid var(--border);}
+.faq-a.visible{display:block;}
+.faq-a p+p{margin-top:12px;}
+.faq-a strong{color:var(--forest);font-weight:600;}
+.faq-a .escalate{display:inline-flex;align-items:center;gap:8px;background:var(--gold-lt);border:1px solid rgba(184,137,42,.2);border-radius:5px;padding:8px 14px;font-size:12px;color:var(--steel);margin-top:14px;line-height:1.5;}
+.faq-a .escalate strong{color:var(--gold);font-weight:600;}
+
+/* CTA BAND */
+.cta-band{background:var(--gold-lt);border-top:1px solid rgba(184,137,42,.2);padding:80px 8%;text-align:center;}
+.cta-eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px;}
+.cta-h2{font-family:var(--serif);font-size:clamp(30px,3.5vw,50px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-.022em;margin-bottom:18px;}
+.cta-h2 em{font-style:italic;color:var(--gold);}
+.cta-lead{font-size:16px;color:var(--steel);font-weight:300;max-width:480px;margin:0 auto 40px;line-height:1.75;}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{background:var(--forest);color:var(--white);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;}.btn-dark:hover{background:var(--leaf);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--forest);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;border:1.5px solid rgba(36,61,44,.25);display:inline-flex;align-items:center;gap:8px;transition:border-color .2s,background .2s;}.btn-outline:hover{border-color:var(--forest);background:rgba(36,61,44,.04);}
+.cta-contact{font-size:14px;color:var(--steel);margin-top:20px;}.cta-contact a{color:var(--leaf);font-weight:500;}
+
+/* FOOTER */
+footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:16px;max-width:260px;font-weight:300;}
+.footer-col-title{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:18px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}.footer-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;font-weight:300;}.footer-links a:hover{color:var(--white);}
+.footer-bottom{padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}.footer-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:300;}
+
+@media(max-width:900px){.faq-layout{grid-template-columns:1fr;padding:48px 5%;}.faq-sidebar{display:none;}}
+@media(max-width:700px){.nav-links{display:none;}.footer-top{grid-template-columns:1fr;}.hero{padding:56px 5% 52px;}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="ggs-logo">
+    <svg width="46" height="46" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="#243D2C"/><line x1="0" y1="50" x2="200" y2="50" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="50" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="150" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="#5A8C6A" stroke-width="18" stroke-linejoin="round"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="#243D2C"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+    <div class="ggs-wordmark"><span class="ggs-name">Golden Grid Solutions</span><span class="ggs-sub">enPact Energy Partner</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#sectors">Sectors</a>
+    <a href="../index.html#solutions">Solutions</a>
+    <a href="../index.html#results">Results</a>
+    <a href="faq.html" style="color:var(--forest);font-weight:500;">FAQs</a>
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Frequently Asked Questions</div>
+    <h1 class="hero-h1">Questions we hear<br>most often.<br><em>Answered plainly.</em></h1>
+    <p class="hero-lead">We believe every question deserves a straight answer. If something isn't covered here, book a call and we'll walk through it with you directly.</p>
+  </div>
+</div>
+
+<div class="faq-layout">
+
+  <!-- SIDEBAR -->
+  <div class="faq-sidebar">
+    <div class="sidebar-title">Jump to section</div>
+    <div class="sidebar-links">
+      <div class="sidebar-link active" onclick="scrollTo('how-it-works')">How it works</div>
+      <div class="sidebar-link" onclick="scrollTo('refrigeration')">Refrigeration & Cooling</div>
+      <div class="sidebar-link" onclick="scrollTo('filterpro')">FilterPro</div>
+      <div class="sidebar-link" onclick="scrollTo('chillers')">Chillers</div>
+      <div class="sidebar-link" onclick="scrollTo('savings')">Savings & guarantees</div>
+      <div class="sidebar-link" onclick="scrollTo('installation')">Installation & process</div>
+      <div class="sidebar-link" onclick="scrollTo('monitoring')">Monitoring</div>
+      <div class="sidebar-link" onclick="scrollTo('credibility')">Credibility</div>
+    </div>
+  </div>
+
+  <!-- FAQ CONTENT -->
+  <div class="faq-sections">
+
+    <!-- HOW IT WORKS -->
+    <div class="faq-section" id="how-it-works">
+      <div class="section-eyebrow">The Basics</div>
+      <div class="section-title">How it works</div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What does enPact actually do?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>enPact is a suite of retrofit energy optimization technologies. Each one targets a different source of energy waste — electrical inefficiency, refrigeration overrun, or heat transfer losses in cooling systems. They connect to your existing equipment without replacing or modifying anything, and begin reducing consumption immediately.</p>
+          <p>The three core technologies are: <strong>FilterPro</strong> (electrical optimization across all circuits), <strong>Refrigeration & Cooling</strong> (compressor runtime reduction in DX refrigeration), and <strong>Chillers</strong> (heat transfer improvement in chilled water systems). They're typically deployed in layers, with each addressing a different loss mechanism.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does it change how our equipment operates or affect our staff?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>No. All three technologies are retrofit solutions that work alongside your existing systems — they don't replace equipment, modify control strategies, or change how your staff operate the site. Temperature setpoints, comfort levels, and operational processes are all maintained exactly as they are.</p>
+          <p>FilterPro connects to the incoming power supply in parallel and doesn't carry load. Refrigeration & Cooling improves how efficiently the refrigeration cycle runs, without changing temperatures. Chillers is a drop-in fluid additive — nothing changes mechanically.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Will this work on new equipment as well as older equipment?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Yes to both. New equipment still has inefficiencies in how electrical energy is delivered and how refrigerant cycles operate — enPact addresses those. Older equipment often delivers stronger results because inefficiencies tend to compound over time as systems age.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFRIGERATION -->
+    <div class="faq-section" id="refrigeration">
+      <div class="section-eyebrow">Refrigeration & Cooling</div>
+      <div class="section-title">How the refrigeration<br><em>technology works</em></div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How does enPact Refrigeration & Cooling actually save energy?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>It reduces unnecessary compressor runtime. When the system has already achieved sufficient cooling, enPact avoids running the compressor longer than needed — without changing temperatures or any aspect of system operation. The compressor does the same work, just with fewer wasted cycles.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does the system cause compressors to short-cycle or override OEM logic?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p><strong>No.</strong> Compressor operation always stays within manufacturer operating guidelines. The system is specifically designed to avoid short-cycling. enPact does not replace equipment, modify control strategies, or interfere with OEM safety logic in any way.</p>
+          <p>The technology pauses the compressor at the point of peak cooling efficiency — after the evaporator has reached maximum cooling capacity — and restarts it only when conditions require. This is a controlled, sensor-monitored process, not an override.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What happens when doors are opened frequently or there's a temperature spike?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Cooling is always prioritized. If temperatures rise due to door openings, load changes, or any other condition, the system immediately resumes full normal operation. Energy savings only occur when conditions allow — the technology never compromises temperature maintenance to achieve an energy reduction.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does it work on multi-compressor and pack systems?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Yes. enPact Refrigeration & Cooling is applied at the evaporator or system level and reduces overall compressor load, delivering consistent performance across single or multi-compressor configurations.</p>
+          <div class="escalate"><strong>Complex configurations?</strong> Questions about specific sequencing or staging logic are handled by our engineering team — just let us know.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does it work with ammonia refrigerant systems?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Compatibility with ammonia and other non-standard refrigerants is confirmed during the technical review stage. If you're running an ammonia system, let us know early in the conversation and we'll confirm applicability before progressing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTERPRO -->
+    <div class="faq-section" id="filterpro">
+      <div class="section-eyebrow">Electrical Optimization</div>
+      <div class="section-title">FilterPro<br><em>questions</em></div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What is FilterPro and how does it reduce electricity consumption?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>FilterPro is an electrical optimization device installed in parallel with the incoming power supply. It reduces the invisible electrical losses caused by voltage fluctuations, load switching, and power noise — waste that occurs upstream of every piece of equipment on your site, before the energy even reaches its destination.</p>
+          <p>Because it connects to the incoming supply rather than individual equipment, it improves energy quality across every circuit simultaneously — motors, compressors, refrigeration packs, HVAC, lighting, and general loads — in a single installation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does FilterPro carry electrical load or affect voltage?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p><strong>No.</strong> FilterPro is installed in parallel and does not carry load. It does not reduce voltage or affect equipment operation in any way. Sensitive equipment — including automation systems, PLCs, and refrigeration controls — continues to operate exactly as before.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Is it legal to install? Does it affect utility metering?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Yes, it is legal. FilterPro is installed on the load side of the meter and does not interfere with utility metering or measurement. It complies with applicable electrical standards. The energy savings it delivers are real reductions in consumption — not measurement manipulation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHILLERS -->
+    <div class="faq-section" id="chillers">
+      <div class="section-eyebrow">Chilled Water Systems</div>
+      <div class="section-title">enPact Chillers<br><em>questions</em></div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What is the Maxwell nanofluid and how does it reduce energy?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Maxwell is a patented suspension of sub-micron aluminum oxide particles in your existing chilled water or water-glycol base fluid. When added to a closed-loop hydronic system, it improves thermal conductivity — meaning more heat is transferred per cycle. This reduces the work required from compressors and allows pumps and fans to run at lower power while delivering the same cooling output.</p>
+          <p>The result is up to 15% improvement in heat transfer efficiency, with energy savings that persist for the 10+ year lifespan of the product.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does it require any hardware changes or system shutdown to install?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p><strong>No to both.</strong> Maxwell is introduced via a standard chemical dosing point or service connection during normal system operation. The system continues running throughout. No draining, no shutdown, no hardware modifications — and no impact on occupied spaces or operations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Is it safe? What if it leaks or corrodes the system?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Maxwell is non-corrosive and non-toxic. It has a guaranteed lifespan of 10+ years with no degradation in thermal performance. At end of life it is fully recyclable. It is specifically designed for closed-loop hydronic systems and is not compatible with open cooling towers or systems with evaporative losses — compatibility is confirmed during the technical review.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does it work with glycol systems in cold climates?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Yes — and it's particularly valuable here. Glycol added to HVAC systems for freeze protection reduces thermal energy transfer, a phenomenon known as the "glycol penalty." Maxwell substantially offsets this loss, restoring system efficiency in cold climate installations and making it one of the few products that actively improves glycol system performance rather than just tolerating it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAVINGS -->
+    <div class="faq-section" id="savings">
+      <div class="section-eyebrow">Performance</div>
+      <div class="section-title">Savings &amp;<br><em>guarantees</em></div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How much will we save?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Savings are site-specific and depend on your energy profile, equipment mix, and operating patterns. We establish a verified baseline first, then measure actual performance through monitoring — so the number you receive is real, not estimated.</p>
+          <p>Across verified deployments, whole-site reductions typically range from 9% to 27% depending on sector and technology combination. A desktop assessment using your utility data gives a site-specific projection before any commitment is made.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Are savings guaranteed?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Savings are measured and verified through ongoing monitoring. The specifics of any performance guarantee — including scope, structure, and how it is enforced — are confirmed during the proposal stage and documented in the final agreement with Emissis.</p>
+          <p>Payback period is not guaranteed, as it depends on your energy tariff, operating profile, and scope of deployment. Book a call with us to discuss what the guarantee structure looks like for your specific situation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How are savings measured and verified?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Savings are measured using IPMVP-aligned methodology — the internationally recognized standard for energy measurement and verification. A verified baseline is established before installation. After deployment, consumption is tracked continuously and compared against the baseline using controlled ON/OFF comparison periods, normalization for ambient conditions where relevant, and ongoing monitoring to confirm savings persist over time.</p>
+          <p>Each technology layer is measured independently to ensure results from one don't inflate figures attributed to another.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Do the results shown on this site represent what we should expect?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>The results shown are all verified deployments — real sites, real measurements. They're not projections or modeled estimates. That said, every facility is different: equipment age, operational patterns, load composition, and ambient conditions all influence outcomes. Your site assessment will produce a projection specific to your facility before any commercial commitment is made.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTALLATION -->
+    <div class="faq-section" id="installation">
+      <div class="section-eyebrow">Getting Started</div>
+      <div class="section-title">Installation &amp;<br><em>process</em></div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What does the process look like from first call to installation?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>The process moves in five stages. First, a discovery call where we review your site and energy profile. Second, a desktop assessment using your utility bills and equipment asset list to produce a savings projection and indicative pricing. Third, a physical site survey to verify equipment details and confirm the final proposal. Fourth, installation — the duration and scheduling of which depends on the size of the site and number of equipment being deployed, and is planned to minimize disruption to your operations. Fifth, baseline creation and savings validation through ongoing monitoring.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How long does installation take? Do we need to close or reduce operations?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>FilterPro connects to the main incoming power supply, which requires a power-down of up to two hours. This is scheduled during non-production or non-business hours to minimize impact — your team will agree on the window in advance. Refrigeration & Cooling sensors are clip-on and non-intrusive. Maxwell (Chillers) is introduced via dosing point during normal system operation with no shutdown required.</p>
+          <p>Overall installation duration and scheduling depends on site size and the number of assets being deployed — this is planned in detail during the site survey stage.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Do we need to do a pilot before committing to a full rollout?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Pilots are common for enterprise and multi-site customers who want verified proof at one location before committing to a wider program. They're not required for single-site deployments where the site survey and desktop assessment provide sufficient confidence. We'll recommend the right approach based on your situation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What information do you need from us to get started?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>To produce a desktop assessment we need your utility bills and an equipment asset list. We'll provide a structured information request document that covers everything needed — just let us know you're ready to proceed and we'll send it over.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONITORING -->
+    <div class="faq-section" id="monitoring">
+      <div class="section-eyebrow">Ongoing Performance</div>
+      <div class="section-title">Monitoring &amp;<br><em>visibility</em></div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How is ongoing performance tracked after installation?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>The enPact AI Energy Monitoring platform provides real-time tracking of energy usage, savings, and carbon performance across your site or portfolio. It verifies that savings persist over time, flags anomalies and out-of-hours waste, and generates reporting for ESG disclosure and internal accountability. Monitoring is not optional — it's part of the product and how the performance guarantee is upheld.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does the monitoring system alert us to issues?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Yes. The platform monitors for abnormal conditions and performance drift — flagging issues before they erode savings or indicate a wider equipment problem. You receive visibility into your site's energy performance without needing to manage the monitoring process yourself.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Can we use monitoring data for ESG and sustainability reporting?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Yes. The platform is designed to generate IPMVP-aligned performance reports that can be used for Scope 2 emissions disclosure, ENERGY STAR reporting, ESG frameworks, and internal sustainability targets. The data is verified and auditable — not self-reported estimates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREDIBILITY -->
+    <div class="faq-section" id="credibility">
+      <div class="section-eyebrow">Trust & Credibility</div>
+      <div class="section-title">How do we know<br><em>this works?</em></div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How do we know this isn't just another energy-saving gimmick?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>The results on this site are all verified in operation — not projected, not modeled, not assumed. They're measured using IPMVP-aligned methodology with controlled before-and-after comparison periods. The deployments include a global fast-food chain (17.8% verified whole-site reduction), a 10-site pub and bar estate (9.3% average, 10/10 positive), a frozen food production facility (19.6%, 78% above projected savings), and a major pharmaceutical R&D campus (22% thermal energy recovery improvement).</p>
+          <p>The technology is engineering-led, patent-protected, and backed by a performance guarantee from Emissis. A site assessment with your own utility data — before any commitment — is how you confirm it applies to you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Who manufactures the technology? Who is Emissis?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>The enPact technology suite is developed and backed by Emissis — an engineering-led energy technology company operating across the U.S. and internationally. Golden Grid Solutions, LLC is the Premier Emissis enPact distributor for California. Performance guarantees are issued and upheld by Emissis directly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Does the technology work on buildings without refrigeration?</span>
+          <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="faq-a">
+          <p>Yes. FilterPro (electrical optimization) and enPact Chillers (chilled water systems) are commonly deployed in commercial and industrial buildings that have no refrigeration at all. Refrigeration & Cooling applies specifically to DX refrigerant-based systems — but the other two layers are broadly applicable across building types.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-eyebrow">Still have questions?</div>
+  <h2 class="cta-h2">Talk to us directly.<br><em>No pressure, no pitch.</em></h2>
+  <p class="cta-lead">Book a 30-minute discovery call. We'll answer your questions, review your site profile, and tell you honestly whether the technology is a good fit.</p>
+  <div class="cta-buttons">
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="btn-dark">Book a Free Call →</a>
+    <a href="../index.html#results" class="btn-outline">View Verified Results</a>
+  </div>
+  <p class="cta-contact">📞 <a href="tel:+19517445092">951-744-5092</a> &nbsp;·&nbsp; ✉️ <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a></p>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="ggs-logo">
+        <svg width="40" height="40" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="rgba(255,255,255,0.08)"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" stroke-linejoin="round"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white" opacity="0.85"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white" opacity="0.85"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white" opacity="0.85"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+        <div class="ggs-wordmark"><span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;color:rgba(255,255,255,0.9);">Golden Grid Solutions</span><span style="font-family:'Outfit',sans-serif;font-weight:300;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">enPact Energy Partner</span></div>
+      </a>
+      <div class="footer-brand-desc">Premier distributor for Emissis enPact energy and carbon reduction technologies across the U.S.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Sectors</div>
+      <div class="footer-links">
+        <a href="food-service.html">Food Service &amp; QSR</a>
+        <a href="food-retail.html">Food Retail</a>
+        <a href="cold-storage.html">Cold Storage</a>
+        <a href="hotels.html">Hotels &amp; Built Environment</a>
+        <a href="healthcare.html">Healthcare &amp; Pharma</a>
+        <a href="heavy-industry.html">Heavy Industry</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Solutions</div>
+      <div class="footer-links">
+        <a href="../index.html#solutions">enPact FilterPro</a>
+        <a href="../index.html#solutions">Refrigeration &amp; Cooling</a>
+        <a href="../index.html#solutions">enPact Chillers</a>
+        <a href="../index.html#solutions">AI Energy Monitoring</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank">Book a Call</a>
+        <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a>
+        <a href="tel:+19517445092">951-744-5092</a>
+        <a href="faq.html">FAQs</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Golden Grid Solutions, LLC. Premier Emissis enPact Distributor.</div>
+    <div class="footer-copy">Results shown are verified deployments. Actual savings vary by facility type, system configuration, and operating conditions.</div>
+  </div>
+</footer>
+
+<script>
+function toggle(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').classList.remove('visible');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.classList.add('visible');
+  }
+}
+
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Highlight sidebar on scroll
+const sections = document.querySelectorAll('.faq-section');
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 180) current = s.id;
+  });
+  sidebarLinks.forEach(l => {
+    l.classList.remove('active');
+    if (l.getAttribute('onclick')?.includes(current)) l.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

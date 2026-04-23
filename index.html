@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Golden Grid Solutions — Verified energy savings of 10–40% for commercial and industrial businesses. Premier Emissis enPact distributor. Book a free discovery call.">
+<meta name="description" content="Golden Grid Solutions — Verified energy savings for commercial and industrial businesses. Premier Emissis enPact distributor. Book a free discovery call.">
 <title>Golden Grid Solutions | Verified Energy & Carbon Reduction</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,7 +154,7 @@ section { padding: 96px 8%; }
 /* ── SECTORS ── */
 .sectors { background: var(--mint-bg); }
 .sectors-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 52px; }
-.sector-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+.sector-card { display: block; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; text-decoration: none; color: inherit; cursor: pointer; }
 .sector-card:hover { border-color: var(--leaf); box-shadow: 0 6px 24px rgba(74,124,89,0.1); transform: translateY(-2px); }
 .sc-icon { width: 40px; height: 40px; border-radius: 9px; background: var(--mint); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 14px; }
 .sc-name { font-size: 14px; font-weight: 600; color: var(--forest); margin-bottom: 6px; }
@@ -355,8 +355,8 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   <div class="hero-stats-strip">
     <div class="hero-stat"><div class="hs-num">40<span>%</span></div><div class="hs-label">Max verified energy savings</div></div>
     <div class="hero-stat"><div class="hs-num">&lt;24<span>mo</span></div><div class="hs-label">Typical payback period</div></div>
-    <div class="hero-stat"><div class="hs-num">20<span>+</span></div><div class="hs-label">Years engineering excellence</div></div>
-    <div class="hero-stat"><div class="hs-num">100<span>%</span></div><div class="hs-label">Savings-backed guarantee</div></div>
+    <div class="hero-stat"><div class="hs-num">IPMVP</div><div class="hs-label">Measurement standard applied to all verified results</div></div>
+    <div class="hero-stat"><div class="hs-num">10<span>+</span></div><div class="hs-label">Sectors with verified deployments</div></div>
   </div>
 </section>
 
@@ -387,14 +387,16 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   <h2 class="section-h2">Built for <em>energy-intensive</em><br>commercial environments</h2>
   <p class="section-lead">From single-site businesses to national chains with thousands of locations — enPact technology scales to any environment.</p>
   <div class="sectors-grid">
-    <div class="sector-card"><div class="sc-icon">🍔</div><div class="sc-name">Food Service &amp; QSR</div><div class="sc-text">Restaurants, fast food chains, and cafeterias with continuous refrigeration and kitchen loads.</div></div>
-    <div class="sector-card"><div class="sc-icon">🛒</div><div class="sc-name">Food Retail &amp; Supermarkets</div><div class="sc-text">Grocery stores, convenience retail, and food distribution centers with high refrigeration demand.</div></div>
-    <div class="sector-card"><div class="sc-icon">🏭</div><div class="sc-name">Food Production &amp; Manufacturing</div><div class="sc-text">Factories and processing plants with intensive HVAC, chiller, and motor loads.</div></div>
-    <div class="sector-card"><div class="sc-icon">🏨</div><div class="sc-name">Hospitality &amp; Hotels</div><div class="sc-text">Hotels, resorts, bars, and restaurants with complex multi-zone HVAC and refrigeration environments.</div></div>
-    <div class="sector-card"><div class="sc-icon">🧊</div><div class="sc-name">Cold Storage &amp; Logistics</div><div class="sc-text">Cold chain warehouses and refrigerated logistics requiring precise temperature control at scale.</div></div>
-    <div class="sector-card"><div class="sc-icon">🏗️</div><div class="sc-name">Heavy Industry</div><div class="sc-text">Industrial facilities, oilfield operations, and large commercial buildings with significant electrical demand.</div></div>
-    <div class="sector-card"><div class="sc-icon">🏢</div><div class="sc-name">Multi-Use Buildings</div><div class="sc-text">Mixed-use commercial developments, office complexes, and shared-load buildings across multiple tenants.</div></div>
-    <div class="sector-card"><div class="sc-icon">🏥</div><div class="sc-name">Healthcare &amp; Data Centers</div><div class="sc-text">Critical environments where precision, uptime, and compliance are non-negotiable alongside efficiency.</div></div>
+    <a href="food-service.html" class="sector-card"><div class="sc-icon">🍔</div><div class="sc-name">Food Service &amp; QSR</div><div class="sc-text">Restaurants, fast food chains, and cafeterias with continuous refrigeration and kitchen loads.</div></a>
+    <a href="food-retail.html" class="sector-card"><div class="sc-icon">🛒</div><div class="sc-name">Food Retail &amp; Supermarkets</div><div class="sc-text">Grocery stores, convenience retail, and food distribution centers with high refrigeration demand.</div></a>
+    <a href="food-production.html" class="sector-card"><div class="sc-icon">🏭</div><div class="sc-name">Food Production &amp; Manufacturing</div><div class="sc-text">Factories and processing plants with intensive HVAC, chiller, and motor loads.</div></a>
+    <a href="pubs-bars-restaurants.html" class="sector-card"><div class="sc-icon">🍺</div><div class="sc-name">Pubs, Bars &amp; Restaurants</div><div class="sc-text">High-load venues with continuous bar refrigeration, kitchen equipment, and HVAC demands.</div></a>
+    <a href="hotels.html" class="sector-card"><div class="sc-icon">🏨</div><div class="sc-name">Hotels &amp; Built Environment</div><div class="sc-text">Hotels and resorts with complex multi-zone HVAC, chilled water plants, and 24/7 operations.</div></a>
+    <a href="cold-storage.html" class="sector-card"><div class="sc-icon">🧊</div><div class="sc-name">Cold Storage &amp; Logistics</div><div class="sc-text">Cold chain warehouses and refrigerated logistics requiring precise temperature control at scale.</div></a>
+    <a href="commercial.html" class="sector-card"><div class="sc-icon">🏢</div><div class="sc-name">Commercial Buildings</div><div class="sc-text">Mixed-use and office buildings with centralized chilled water HVAC plants across multiple tenants.</div></a>
+    <a href="data-centers.html" class="sector-card"><div class="sc-icon">🖥️</div><div class="sc-name">Data Centers</div><div class="sc-text">Mission-critical facilities where cooling dominates energy consumption and uptime is non-negotiable.</div></a>
+    <a href="healthcare.html" class="sector-card"><div class="sc-icon">🏥</div><div class="sc-name">Healthcare &amp; Pharma</div><div class="sc-text">Compliance-driven environments requiring precision HVAC, cold storage, and continuous operation.</div></a>
+    <a href="heavy-industry.html" class="sector-card"><div class="sc-icon">⚙️</div><div class="sc-name">Heavy Industry</div><div class="sc-text">Industrial facilities and manufacturing plants with high inductive motor loads and process cooling.</div></a>
   </div>
 </section>
 
@@ -407,14 +409,14 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
       <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Engineering team reviewing energy data" loading="lazy">
       <div class="about-img-badge">
         <div class="aib-num">20+</div>
-        <div class="aib-label">Years of global engineering expertise</div>
+        <div class="aib-label">Sectors with verified enPact deployments</div>
       </div>
     </div>
     <div>
-      <p class="section-lead">Golden Grid Solutions is the Premier distributor for Emissis enPact — a specialist engineering firm with two decades of international energy optimization experience. Being independent means we select the right technology for your site, not the easiest sale.</p>
+      <p class="section-lead">Golden Grid Solutions, LLC is the Premier distributor for Emissis enPact — a specialist engineering firm with two decades of international energy optimization experience. Being independent means we select the right technology for your site, not the easiest sale.</p>
       <div class="about-points">
         <div class="about-point"><div class="ap-num">01</div><div><div class="ap-title">Globally patented technology</div><div class="ap-text">Every enPact solution is patented worldwide and validated through the internationally recognized IPMVP measurement process — not estimates or projections.</div></div></div>
-        <div class="about-point"><div class="ap-num">02</div><div><div class="ap-title">Minimal disruption to your operations</div><div class="ap-text">Certified engineers install in hours. Your team keeps working. No changes to production, no infrastructure overhaul, no downtime.</div></div></div>
+        <div class="about-point"><div class="ap-num">02</div><div><div class="ap-title">Minimal disruption to your operations</div><div class="ap-text">Installation is overseen by Emissis engineers and completed by licensed technicians, scheduled to minimize operational impact. No infrastructure overhaul, no changes to how your team works.</div></div></div>
         <div class="about-point"><div class="ap-num">03</div><div><div class="ap-title">Savings guarantee — in writing</div><div class="ap-text">If measured performance falls short of projections, Emissis covers the difference. You take on zero financial risk from day one.</div></div></div>
       </div>
     </div>
@@ -438,7 +440,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
     </a>
     <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="sol-item">
       <div class="sol-num">02</div>
-      <div><div class="sol-name">enPact FilterPro — Electrical Optimization</div><div class="sol-desc">Advanced power conditioning using spintronics and Carbon Nanotube (CNT) technology. Reduces electrical waste across motors, compressors, HVAC, and lighting — site-wide, with no hardware changes required.</div><div class="sol-tags"><span class="sol-tag">6–18% savings</span><span class="sol-tag">All sectors</span><span class="sol-tag">2-hour install</span><span class="sol-tag">20-year lifespan</span></div></div>
+      <div><div class="sol-name">enPact FilterPro — Electrical Optimization</div><div class="sol-desc">Advanced power conditioning using spintronics and Carbon Nanotube (CNT) technology. Reduces electrical waste across motors, compressors, HVAC, and lighting — site-wide, with no hardware changes required.</div><div class="sol-tags"><span class="sol-tag">6–18% savings</span><span class="sol-tag">All sectors</span><span class="sol-tag">Scheduled install</span><span class="sol-tag">20-year lifespan</span></div></div>
       <div class="sol-arrow">→</div>
     </a>
     <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="sol-item">
@@ -521,11 +523,11 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
       <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Professional energy consultation team" loading="lazy">
     </div>
     <div>
-      <p class="section-lead" style="margin-bottom:32px;">Emissis backs every project with a formal savings guarantee. If measured results fall short, they cover the difference. No other energy technology company in the market offers this.</p>
+      <p class="section-lead" style="margin-bottom:32px;">Emissis backs every project with a performance guarantee, verified through ongoing monitoring. Savings are measured — not estimated — and the guarantee is documented in the final agreement.</p>
       <div class="guarantee-points">
         <div class="gp"><div class="gp-icon">✓</div><div><div class="gp-title">IPMVP-verified savings — not estimates</div><div class="gp-text">Every project uses the globally accepted IPMVP measurement protocol with ON/OFF comparison periods and independent data validation.</div></div></div>
-        <div class="gp"><div class="gp-icon">✓</div><div><div class="gp-title">Minimal disruption to your operations</div><div class="gp-text">Certified engineers complete installation in hours. Your team keeps working throughout — no downtime, no production impact.</div></div></div>
-        <div class="gp"><div class="gp-icon">✓</div><div><div class="gp-title">Formal savings guarantee in writing</div><div class="gp-text">If savings fall short of projections, Emissis covers the gap. You take on zero financial risk from day one.</div></div></div>
+        <div class="gp"><div class="gp-icon">✓</div><div><div class="gp-title">Minimal disruption to your operations</div><div class="gp-text">Installation is overseen by Emissis engineers and completed by licensed technicians, scheduled outside operational hours where required to minimize disruption.</div></div></div>
+        <div class="gp"><div class="gp-icon">✓</div><div><div class="gp-title">Formal savings guarantee in writing</div><div class="gp-text">Savings are measured using IPMVP-aligned methodology and backed by a formal performance guarantee from Emissis. Specifics are confirmed at the proposal stage.</div></div></div>
         <div class="gp"><div class="gp-icon">✓</div><div><div class="gp-title">Scalable from one site to thousands</div><div class="gp-text">Proven across 17+ Sysco sites, national hotel chains, restaurant estates, and QSR chains. The model works at any scale.</div></div></div>
       </div>
     </div>
@@ -574,7 +576,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
           <span style="font-family:var(--sans);font-weight:300;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">enPact Energy Partner</span>
         </div>
       </a>
-      <div class="footer-brand-desc">Premier distributor for Emissis enPact energy and carbon reduction technologies. Serving industrial and commercial environments across the U.S.</div>
+      <div class="footer-brand-desc">Premier Emissis enPact distributor headquartered in California. Verified energy and carbon reduction for commercial and industrial facilities.</div>
     </div>
     <div>
       <div class="footer-col-title">Solutions</div>

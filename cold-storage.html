@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Storage & Logistics Energy Savings | Golden Grid Solutions</title>
+<meta name="description" content="Verified 26.5% refrigeration energy reduction at a major food distribution center. 112,432 kWh saved annually. 11-month payback. Book a free assessment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#243D2C;--leaf:#4A7C59;--sage:#6B9E7A;--mint:#D4E8DC;--mint-bg:#E8F4EE;--mint-md:#C2DCCB;--gold:#B8892A;--gold-lt:#F5EDD6;--slate:#1C2B3A;--steel:#4A5568;--white:#FFFFFF;--border:#C8DECE;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--slate);background:var(--mint-bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.ggs-logo{display:flex;align-items:center;gap:12px;}
+.ggs-wordmark{display:flex;flex-direction:column;line-height:1.15;}
+.ggs-name{font-family:var(--sans);font-weight:600;font-size:16px;color:var(--forest);letter-spacing:-0.01em;}
+.ggs-sub{font-family:var(--sans);font-weight:300;font-size:10px;color:var(--sage);letter-spacing:.12em;text-transform:uppercase;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(232,244,238,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s var(--ease);}
+nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
+.nav-links{display:flex;align-items:center;gap:40px;}
+.nav-links a{font-size:14px;color:var(--steel);transition:color .2s;}
+.nav-links a:hover{color:var(--forest);}
+.nav-cta{background:var(--forest)!important;color:var(--white)!important;padding:10px 24px;border-radius:5px;font-size:14px;font-weight:500;transition:background .2s!important;}
+.nav-cta:hover{background:var(--leaf)!important;}
+.sector-subnav{margin-top:72px;background:var(--white);border-bottom:1px solid var(--border);overflow-x:auto;}
+.sector-subnav-inner{display:flex;padding:0 8%;white-space:nowrap;}
+.ssnl{font-size:13px;color:var(--steel);padding:15px 18px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;flex-shrink:0;display:block;}
+.ssnl:hover{color:var(--forest);}
+.ssnl.active{color:var(--forest);font-weight:600;border-bottom-color:var(--leaf);}
+.hero{min-height:62vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 50%;}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(26,48,32,.9) 0%,rgba(26,48,32,.7) 60%,rgba(26,48,32,.78) 100%);}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;}
+.hero-content{position:relative;z-index:1;padding:60px 8% 64px;width:100%;}
+.hero-breadcrumb{font-size:12px;color:rgba(255,255,255,.48);margin-bottom:18px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.48);transition:color .2s;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,.85);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:500;color:rgba(255,255,255,.88);letter-spacing:.07em;text-transform:uppercase;margin-bottom:22px;backdrop-filter:blur(8px);}
+.hero-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.hero-h1{font-family:var(--serif);font-size:clamp(42px,6vw,76px);font-weight:700;line-height:1.04;color:var(--white);letter-spacing:-.025em;margin-bottom:22px;max-width:700px;text-shadow:0 2px 20px rgba(0,0,0,.3);}
+.hero-h1 em{font-style:italic;color:#E8C96A;}
+.hero-lead{font-size:18px;color:rgba(255,255,255,.76);font-weight:300;max-width:560px;line-height:1.75;text-shadow:0 1px 8px rgba(0,0,0,.2);}
+.stat-strip{background:rgba(26,48,32,.78);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px);display:flex;justify-content:center;}
+.stat-item{padding:28px 52px;border-right:1px solid rgba(255,255,255,.1);text-align:center;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--white);line-height:1;letter-spacing:-.02em;}
+.stat-num span{color:#E8C96A;}
+.stat-label{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;text-transform:uppercase;letter-spacing:.04em;}
+section{padding:96px 8%;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px;}
+.section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--leaf);flex-shrink:0;}
+.section-h2{font-family:var(--serif);font-size:clamp(32px,3.8vw,54px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-.022em;}
+.section-h2 em{font-style:italic;color:var(--gold);}
+.section-lead{font-size:17px;color:var(--steel);font-weight:300;line-height:1.75;max-width:520px;margin-top:18px;}
+.problem{background:var(--white);}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px;}
+.problem-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--mint);}
+.problem-img img{width:100%;height:100%;object-fit:cover;}
+.problem-points{display:flex;flex-direction:column;gap:26px;margin-top:16px;}
+.pp{display:flex;gap:18px;align-items:flex-start;}
+.pp-icon{width:42px;height:42px;border-radius:9px;background:var(--mint-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pp-title{font-size:15px;font-weight:600;color:var(--forest);margin-bottom:5px;}
+.pp-text{font-size:14px;color:var(--steel);line-height:1.65;font-weight:300;}
+.solution{background:var(--mint-bg);}
+.solution-intro{max-width:620px;margin-bottom:52px;}
+.layer-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+.layer-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.layer-card:hover{box-shadow:0 6px 24px rgba(74,124,89,.1);transform:translateY(-2px);}
+.layer-card.primary{border-color:var(--leaf);border-width:2px;}
+.layer-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:18px;}
+.lb-primary{background:var(--forest);color:var(--white);}
+.lb-secondary{background:var(--mint);color:var(--leaf);}
+.lb-tertiary{background:#EFF6FF;color:#185FA5;border:1px solid #93C5FD;}
+.layer-name{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--forest);margin-bottom:12px;line-height:1.2;}
+.layer-desc{font-size:13px;color:var(--steel);line-height:1.7;font-weight:300;margin-bottom:20px;}
+.layer-saving{padding-top:18px;border-top:1px solid var(--border);display:flex;align-items:baseline;gap:8px;}
+.ls-num{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--forest);line-height:1;}
+.ls-label{font-size:13px;color:var(--steel);}
+.synergy-note{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--leaf);border-radius:0 10px 10px 0;padding:20px 24px;font-size:14px;color:var(--steel);line-height:1.7;}
+.synergy-note strong{color:var(--forest);}
+.case-study-section{background:var(--forest);}
+.case-study-section .section-eyebrow{color:var(--mint);}
+.case-study-section .section-eyebrow::before{background:var(--mint);}
+.case-study-section .section-h2{color:var(--white);}
+.case-study-section .section-h2 em{color:var(--gold);}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:52px;}
+.cs-numbers{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.csn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;transition:background .2s;}
+.csn:hover{background:rgba(255,255,255,.08);}
+.csn.gold{background:var(--gold-lt);border-color:rgba(184,137,42,.28);}
+.csn-num{font-family:var(--serif);font-size:52px;font-weight:700;color:var(--mint);line-height:1;letter-spacing:-.03em;}
+.csn.gold .csn-num{color:var(--gold);}
+.csn-label{font-size:12px;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.4;}
+.csn.gold .csn-label{color:var(--steel);}
+.cs-breakdown{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:18px 20px;margin-top:18px;}
+.cb-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:12px;}
+.cb-row{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.cb-row:last-child{margin-bottom:0;}
+.cb-tag{font-size:11px;color:rgba(255,255,255,.5);width:100px;flex-shrink:0;}
+.cb-track{flex:1;height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;}
+.cb-fill{height:100%;border-radius:4px;background:var(--leaf);}
+.cb-val{font-family:var(--serif);font-size:14px;font-weight:600;color:#E8C96A;width:60px;text-align:right;flex-shrink:0;}
+.ipmvp-note{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:8px 16px;border-radius:4px;font-size:12px;color:rgba(255,255,255,.6);margin-top:18px;}
+.ipmvp-note strong{color:var(--mint);font-weight:600;}
+.cs-client{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;}
+.cs-quote{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--white);line-height:1.5;margin-bottom:20px;font-style:italic;}
+.cs-body{font-size:14px;color:rgba(255,255,255,.62);line-height:1.75;font-weight:300;}
+.cs-body strong{color:var(--mint);font-weight:500;}
+.cs-body p+p{margin-top:14px;}
+.sysco-strip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px 28px;margin-top:24px;}
+.sysco-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:14px;}
+.sysco-nums{display:flex;gap:36px;flex-wrap:wrap;}
+.sn-val{font-family:var(--serif);font-size:30px;font-weight:700;color:#E8C96A;line-height:1;}
+.sn-label{font-size:11px;color:rgba(255,255,255,.42);margin-top:4px;}
+.also-proven{background:var(--mint-bg);}
+.ap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;}
+.ap-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.ap-card:hover{border-color:var(--leaf);box-shadow:0 6px 24px rgba(74,124,89,.1);transform:translateY(-2px);}
+.ap-sector{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+.ap-num{font-family:var(--serif);font-size:52px;font-weight:700;color:var(--forest);line-height:1;letter-spacing:-.03em;}
+.ap-unit{font-size:12px;color:var(--steel);margin-top:4px;}
+.ap-divider{border:none;border-top:1px solid var(--border);margin:20px 0;}
+.ap-detail{font-size:13px;color:var(--steel);line-height:1.65;font-weight:300;}
+.cta-band{background:var(--gold-lt);border-top:1px solid rgba(184,137,42,.2);padding:88px 8%;text-align:center;}
+.cta-band .section-eyebrow{justify-content:center;}
+.cta-band .section-eyebrow::before{display:none;}
+.cta-band .section-h2{text-align:center;}
+.cta-lead{font-size:17px;color:var(--steel);font-weight:300;max-width:520px;margin:18px auto 48px;line-height:1.75;}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{background:var(--forest);color:var(--white);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;}
+.btn-dark:hover{background:var(--leaf);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--forest);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;border:1.5px solid rgba(36,61,44,.25);display:inline-flex;align-items:center;gap:8px;transition:border-color .2s,background .2s;}
+.btn-outline:hover{border-color:var(--forest);background:rgba(36,61,44,.04);}
+.cta-contact{font-size:14px;color:var(--steel);margin-top:24px;}
+.cta-contact a{color:var(--leaf);font-weight:500;}
+footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:16px;max-width:260px;font-weight:300;}
+.footer-col-title{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:18px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;font-weight:300;}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:300;}
+@media(max-width:1024px){.problem-grid,.cs-grid{grid-template-columns:1fr;gap:40px;}.layer-cards,.ap-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;gap:32px;}.stat-item{padding:24px 32px;}}
+@media(max-width:700px){section{padding:64px 5%;}.hero-content{padding:44px 5% 52px;}.stat-strip{flex-wrap:wrap;}.stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:20px 24px;flex:1 1 45%;}.stat-item:last-child{border-bottom:none;}.cs-numbers{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="ggs-logo">
+    <svg width="46" height="46" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="#243D2C"/><line x1="0" y1="50" x2="200" y2="50" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="50" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="150" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="#5A8C6A" stroke-width="18" stroke-linejoin="round"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="#243D2C"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+    <div class="ggs-wordmark"><span class="ggs-name">Golden Grid Solutions</span><span class="ggs-sub">enPact Energy Partner</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#sectors">Sectors</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#solutions">Solutions</a>
+    <a href="../index.html#results">Results</a>
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<div class="sector-subnav">
+  <div class="sector-subnav-inner">
+    <a href="food-service.html"          class="ssnl">Food Service &amp; QSR</a>
+    <a href="food-retail.html"           class="ssnl">Food Retail</a>
+    <a href="food-production.html"       class="ssnl">Food Production</a>
+    <a href="pubs-bars-restaurants.html" class="ssnl">Pubs, Bars &amp; Restaurants</a>
+    <a href="hotels.html"                class="ssnl">Hotels &amp; Built Environment</a>
+    <a href="cold-storage.html"          class="ssnl active">Cold Storage</a>
+    <a href="commercial.html"            class="ssnl">Commercial Buildings</a>
+    <a href="data-centers.html"          class="ssnl">Data Centers</a>
+    <a href="healthcare.html"            class="ssnl">Healthcare &amp; Pharma</a>
+    <a href="heavy-industry.html"        class="ssnl">Heavy Industry</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=85" alt="Cold storage warehouse interior">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="../index.html#sectors">Sectors</a> &nbsp;/&nbsp; Cold Storage &amp; Logistics</div>
+    <div class="hero-eyebrow">Cold Storage &amp; Logistics</div>
+    <h1 class="hero-h1">Refrigeration never stops.<br>The waste<br><em>can.</em></h1>
+    <p class="hero-lead">Cold storage facilities run the highest continuous refrigeration loads in any sector. We reduce that energy consumption by 25–35% — without raising temperatures, modifying systems, or disrupting warehouse operations.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-item"><div class="stat-num">26.5<span>%</span></div><div class="stat-label">Refrigeration energy reduction · distribution center</div></div>
+  <div class="stat-item"><div class="stat-num">112,432</div><div class="stat-label">kWh saved annually</div></div>
+  <div class="stat-item"><div class="stat-num">66,335<span>kg</span></div><div class="stat-label">CO₂ reduced annually</div></div>
+  <div class="stat-item"><div class="stat-num">11<span>mo</span></div><div class="stat-label">Payback period</div></div>
+</div>
+
+<section class="problem">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">The Problem</div>
+      <h2 class="section-h2">The highest refrigeration loads<br><em>in any sector.</em></h2>
+      <p class="section-lead">Cold storage and logistics facilities run heavy freezer rooms and chilled bays around the clock — 365 days a year. Compressors account for 80–90% of refrigeration energy, and most run harder than they need to on every single cycle.</p>
+      <div class="problem-points">
+        <div class="pp">
+          <div class="pp-icon">🧊</div>
+          <div>
+            <div class="pp-title">Freezer rooms consume enormous power continuously</div>
+            <div class="pp-text">Large distribution centers run freezer rooms drawing 68 kW or more per unit — operating 24 hours a day, every day of the year. Even a modest improvement in compressor efficiency delivers hundreds of thousands of kWh in annual savings across a single facility.</div>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-icon">📈</div>
+          <div>
+            <div class="pp-title">Seasonal variation makes energy unpredictable</div>
+            <div class="pp-text">Refrigeration loads spike by 25% or more in warmer months as ambient temperatures rise. This seasonal swing makes energy budgeting difficult and drives compressors to their limits during peak summer periods — the highest-cost time of year.</div>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-icon">⚡</div>
+          <div>
+            <div class="pp-title">Dock equipment and motors add to the electrical load</div>
+            <div class="pp-text">Beyond refrigeration, cold storage sites run dock levelers, conveyor systems, forklifts, lighting, and loading equipment — all generating electrical noise that wastes energy upstream. Optimizing refrigeration alone leaves significant savings unrealized.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-img">
+      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80" alt="Cold storage warehouse operations" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="solution">
+  <div class="solution-intro">
+    <div class="section-eyebrow">The Solution</div>
+    <h2 class="section-h2">Layer the savings.<br><em>Stack the results.</em></h2>
+    <p class="section-lead">Cold storage is where the layered approach delivers its highest documented whole-site outcomes — 25–35% — because refrigeration dominates consumption and responds dramatically to Layer 2 optimization.</p>
+  </div>
+  <div class="layer-cards">
+    <div class="layer-card primary">
+      <div class="layer-badge lb-primary">Layer 1 — Electrical · Always first</div>
+      <div class="layer-name">enPact FilterPro</div>
+      <div class="layer-desc">Reduces electrical waste across every circuit in the facility — dock equipment, conveyor motors, lighting, HVAC, and refrigeration packs. Connects to incoming supply in parallel. No operational disruption. Installation requires a brief scheduled power-down, arranged outside operating hours to minimize disruption. Results measurable within days.</div>
+      <div class="layer-saving"><div class="ls-num">6–18%</div><div class="ls-label">whole-site electrical reduction</div></div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-badge lb-secondary">Layer 2a — Thermal · DX refrigeration</div>
+      <div class="layer-name">enPact Refrigeration<br>& Cooling</div>
+      <div class="layer-desc">Targets freezer rooms, chilled bays, and cold-store units directly. AI-driven compressor control reduces runtime by detecting when optimal cooling is achieved — maintaining precise setpoint temperatures while cutting energy draw on the highest-load systems in the facility.</div>
+      <div class="layer-saving"><div class="ls-num">20–40%</div><div class="ls-label">refrigeration energy reduction</div></div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-badge lb-secondary">Layer 2b — Thermal · Hydronic systems</div>
+      <div class="layer-name">enPact Chillers<br>(Maxwell Nanofluid)</div>
+      <div class="layer-desc">For facilities with closed-loop chilled water or glycol systems — common in larger distribution centers. Maxwell nanofluid improves heat transfer by up to 15%, reducing compressor and pump workload without any hardware changes or system downtime.</div>
+      <div class="layer-saving"><div class="ls-num">10–15%</div><div class="ls-label">closed-loop system reduction</div></div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-badge lb-tertiary">Layer 3 — Monitoring</div>
+      <div class="layer-name">enPact AI Energy<br>Monitoring</div>
+      <div class="layer-desc">Tracks energy performance across freezer rooms, cold bays, and dock systems in real time. Flags seasonal load spikes before they escalate, verifies savings persist through summer peaks, and generates IPMVP-aligned reports for ESG disclosure and operational accountability.</div>
+      <div class="layer-saving"><div class="ls-num">Ongoing</div><div class="ls-label">performance verification &amp; ESG reporting</div></div>
+    </div>
+  </div>
+  <div class="synergy-note">
+    <strong>Why cold storage delivers the highest layered outcomes:</strong> Refrigeration accounts for the vast majority of electricity in cold storage — often 80–90% of total site consumption. When enPact Refrigeration & Cooling reduces compressor runtime by 20–40% on systems of that scale, the downstream effect on whole-site consumption is proportionally larger than in any other sector. Stacked with FilterPro on all remaining electrical loads, the combined whole-site outcome range is 25–35%.
+  </div>
+</section>
+
+<section class="case-study-section">
+  <div class="section-eyebrow">Verified Result</div>
+  <h2 class="section-h2">Global food distribution center.<br><em>Verified across winter and summer.</em></h2>
+  <div class="cs-grid">
+    <div>
+      <div class="cs-numbers">
+        <div class="csn gold">
+          <div class="csn-num">26.5%</div>
+          <div class="csn-label">Refrigeration energy reduction</div>
+        </div>
+        <div class="csn">
+          <div class="csn-num">112,432</div>
+          <div class="csn-label">kWh saved annually · full-year adjusted</div>
+        </div>
+        <div class="csn">
+          <div class="csn-num">11mo</div>
+          <div class="csn-label">Expected payback period</div>
+        </div>
+        <div class="csn">
+          <div class="csn-num">66,335</div>
+          <div class="csn-label">kg CO₂ reduced per year</div>
+        </div>
+      </div>
+
+      <div class="ipmvp-note"><strong>IPMVP Verified</strong> — 34-day ON/OFF pilot · seasonal adjustment applied · R&amp;C only</div>
+    </div>
+
+    <div>
+      <div class="cs-client">Global Food Distribution Center · Large Refrigerated Warehouse</div>
+      <div class="cs-quote">"With refrigeration representing the majority of total electrical usage, even small efficiency gains make a material financial impact — and the results far exceeded expectations."</div>
+      <div class="cs-body">
+        <p>A major food distribution center operating five chilled cold rooms and three high-load freezer systems deployed enPact Refrigeration & Cooling across all eight units. Freezers were operating at 68.5 kW each — making refrigeration by far the dominant energy load on site. The technology uses AI-driven optimization to reduce compressor runtime using superheat-based control, while maintaining exact setpoint temperatures throughout.</p>
+        <p>The pilot ran across 34 days in winter, capturing <strong>26.5% refrigeration energy reduction</strong> and more than 219 kWh saved per day across the freezer rooms alone. Because refrigeration loads increase 25% in warmer months, full-year savings were adjusted upward: <strong>112,432 kWh annually</strong>, with a projected 11-month payback.</p>
+        <p>Applied across the operator's 340-site portfolio, the verified per-site result projects to <strong>34.4 million kWh saved annually</strong> — one of the highest-impact opportunities documented in the refrigeration category.</p>
+      </div>
+
+      <div class="sysco-strip">
+        <div class="sysco-label">Supporting result — Sysco food distribution · 17+ sites globally</div>
+        <div class="sysco-nums">
+          <div><div class="sn-val">20–25%</div><div class="sn-label">Monthly electricity cost reduction</div></div>
+          <div><div class="sn-val">17+</div><div class="sn-label">Sites deployed globally</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="also-proven">
+  <div class="section-eyebrow">The Scale Opportunity</div>
+  <h2 class="section-h2">What verified results mean<br><em>across a large portfolio.</em></h2>
+  <p class="section-lead">The distribution center case study included a 340-site projection. The numbers confirm that consistent per-site results translate linearly at portfolio scale.</p>
+  <div class="ap-grid">
+    <div class="ap-card">
+      <div class="ap-sector">340-site projection · food distribution</div>
+      <div class="ap-num">34.4M</div>
+      <div class="ap-unit">kWh saved annually across the portfolio</div>
+      <hr class="ap-divider">
+      <div class="ap-detail">Based on the verified 26.5% per-site refrigeration reduction. At 340 sites, the projected annual savings reach 34.4 million kWh, with an estate-wide payback of 12 months. Described in the source documentation as one of the highest-impact opportunities in the refrigeration category.</div>
+    </div>
+    <div class="ap-card">
+      <div class="ap-sector">Sysco global deployment · 17+ sites</div>
+      <div class="ap-num">25%</div>
+      <div class="ap-unit">Monthly electricity cost reduction achieved</div>
+      <hr class="ap-divider">
+      <div class="ap-detail">Emissis technology deployed across 17+ Sysco food distribution sites globally, achieving 20–25% monthly electricity cost reductions. Demonstrates consistent performance across a major international food logistics operator at meaningful scale — with plans for further global expansion.</div>
+    </div>
+    <div class="ap-card">
+      <div class="ap-sector">Why cold storage leads all sectors</div>
+      <div class="ap-num">25–35%</div>
+      <div class="ap-unit">Documented whole-site layered outcome range</div>
+      <hr class="ap-divider">
+      <div class="ap-detail">Cold storage delivers the highest documented layered outcome range of any sector because refrigeration accounts for 80–90% of total site electricity. A 26% reduction on refrigeration translates directly into a material whole-site improvement. Stacked with FilterPro on all remaining electrical loads, the compound savings are unmatched.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="section-eyebrow">Get Started</div>
+  <h2 class="section-h2">See what your facility<br><em>could save this year.</em></h2>
+  <p class="cta-lead">Book a free 30-minute discovery call. We'll review your facility energy profile, identify the right enPact solution, and provide a projected savings figure — at no cost and no obligation.</p>
+  <div class="cta-buttons">
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="btn-dark">Book a Free Assessment →</a>
+    <a href="../index.html#results" class="btn-outline">View All Results</a>
+  </div>
+  <p class="cta-contact">📞 <a href="tel:+19517445092">951-744-5092</a> &nbsp;·&nbsp; ✉️ <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a></p>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="ggs-logo">
+        <svg width="40" height="40" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="rgba(255,255,255,0.08)"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" stroke-linejoin="round"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white" opacity="0.85"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white" opacity="0.85"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white" opacity="0.85"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+        <div class="ggs-wordmark"><span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;color:rgba(255,255,255,0.9);">Golden Grid Solutions</span><span style="font-family:'Outfit',sans-serif;font-weight:300;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">enPact Energy Partner</span></div>
+      </a>
+      <div class="footer-brand-desc">Premier distributor for Emissis enPact energy and carbon reduction technologies across the U.S.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Sectors</div>
+      <div class="footer-links">
+        <a href="food-service.html">Food Service &amp; QSR</a>
+        <a href="food-retail.html">Food Retail</a>
+        <a href="food-production.html">Food Production</a>
+        <a href="pubs-bars-restaurants.html">Pubs, Bars &amp; Restaurants</a>
+        <a href="hotels.html">Hotels &amp; Built Environment</a>
+        <a href="cold-storage.html">Cold Storage</a>
+        <a href="commercial.html">Commercial Buildings</a>
+        <a href="data-centers.html">Data Centers</a>
+        <a href="healthcare.html">Healthcare &amp; Pharma</a>
+        <a href="heavy-industry.html">Heavy Industry</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Solutions</div>
+      <div class="footer-links">
+        <a href="../index.html#solutions">enPact FilterPro</a>
+        <a href="../index.html#solutions">Refrigeration &amp; Cooling</a>
+        <a href="../index.html#solutions">enPact Chillers</a>
+        <a href="../index.html#solutions">AI Energy Monitoring</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank">Book a Call</a>
+        <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a>
+        <a href="tel:+19517445092">951-744-5092</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Golden Grid Solutions, LLC. Premier Emissis enPact Distributor.</div>
+    <div class="footer-copy">All savings figures verified via IPMVP protocol.</div>
+    <div class="footer-copy">Results shown are verified deployments. Actual savings vary by facility type, system configuration, and operating conditions.</div>
+  </div>
+</footer>
+
+<script>window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)});</script>
+</body>
+</html>

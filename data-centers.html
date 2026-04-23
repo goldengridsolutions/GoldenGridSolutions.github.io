@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Center Energy Savings | Golden Grid Solutions</title>
+<meta name="description" content="Reduce data center cooling energy by 10–15% with enPact Chillers. No hardware changes, no downtime, no impact on uptime. Book a free assessment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#243D2C;--leaf:#4A7C59;--sage:#6B9E7A;--mint:#D4E8DC;--mint-bg:#E8F4EE;--mint-md:#C2DCCB;--gold:#B8892A;--gold-lt:#F5EDD6;--slate:#1C2B3A;--steel:#4A5568;--white:#FFFFFF;--border:#C8DECE;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--slate);background:var(--mint-bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.ggs-logo{display:flex;align-items:center;gap:12px;}
+.ggs-wordmark{display:flex;flex-direction:column;line-height:1.15;}
+.ggs-name{font-family:var(--sans);font-weight:600;font-size:16px;color:var(--forest);letter-spacing:-0.01em;}
+.ggs-sub{font-family:var(--sans);font-weight:300;font-size:10px;color:var(--sage);letter-spacing:.12em;text-transform:uppercase;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(232,244,238,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s var(--ease);}
+nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
+.nav-links{display:flex;align-items:center;gap:40px;}
+.nav-links a{font-size:14px;color:var(--steel);transition:color .2s;}
+.nav-links a:hover{color:var(--forest);}
+.nav-cta{background:var(--forest)!important;color:var(--white)!important;padding:10px 24px;border-radius:5px;font-size:14px;font-weight:500;transition:background .2s!important;}
+.nav-cta:hover{background:var(--leaf)!important;}
+.sector-subnav{margin-top:72px;background:var(--white);border-bottom:1px solid var(--border);overflow-x:auto;}
+.sector-subnav-inner{display:flex;padding:0 8%;white-space:nowrap;}
+.ssnl{font-size:13px;color:var(--steel);padding:15px 18px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;flex-shrink:0;display:block;}
+.ssnl:hover{color:var(--forest);}
+.ssnl.active{color:var(--forest);font-weight:600;border-bottom-color:var(--leaf);}
+.hero{min-height:62vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 50%;}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(26,48,32,.92) 0%,rgba(26,48,32,.72) 60%,rgba(26,48,32,.82) 100%);}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;}
+.hero-content{position:relative;z-index:1;padding:60px 8% 64px;width:100%;}
+.hero-breadcrumb{font-size:12px;color:rgba(255,255,255,.48);margin-bottom:18px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.48);transition:color .2s;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,.85);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:500;color:rgba(255,255,255,.88);letter-spacing:.07em;text-transform:uppercase;margin-bottom:22px;backdrop-filter:blur(8px);}
+.hero-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.hero-h1{font-family:var(--serif);font-size:clamp(42px,6vw,76px);font-weight:700;line-height:1.04;color:var(--white);letter-spacing:-.025em;margin-bottom:22px;max-width:700px;text-shadow:0 2px 20px rgba(0,0,0,.3);}
+.hero-h1 em{font-style:italic;color:#E8C96A;}
+.hero-lead{font-size:18px;color:rgba(255,255,255,.76);font-weight:300;max-width:560px;line-height:1.75;text-shadow:0 1px 8px rgba(0,0,0,.2);}
+.stat-strip{background:rgba(26,48,32,.78);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px);display:flex;justify-content:center;}
+.stat-item{padding:28px 52px;border-right:1px solid rgba(255,255,255,.1);text-align:center;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--white);line-height:1;letter-spacing:-.02em;}
+.stat-num span{color:#E8C96A;}
+.stat-label{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;text-transform:uppercase;letter-spacing:.04em;}
+section{padding:96px 8%;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px;}
+.section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--leaf);flex-shrink:0;}
+.section-h2{font-family:var(--serif);font-size:clamp(32px,3.8vw,54px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-.022em;}
+.section-h2 em{font-style:italic;color:var(--gold);}
+.section-lead{font-size:17px;color:var(--steel);font-weight:300;line-height:1.75;max-width:520px;margin-top:18px;}
+.problem{background:var(--white);}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px;}
+.problem-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--mint);}
+.problem-img img{width:100%;height:100%;object-fit:cover;}
+.problem-points{display:flex;flex-direction:column;gap:26px;margin-top:16px;}
+.pp{display:flex;gap:18px;align-items:flex-start;}
+.pp-icon{width:42px;height:42px;border-radius:9px;background:var(--mint-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pp-title{font-size:15px;font-weight:600;color:var(--forest);margin-bottom:5px;}
+.pp-text{font-size:14px;color:var(--steel);line-height:1.65;font-weight:300;}
+.solution{background:var(--mint-bg);}
+.solution-intro{max-width:620px;margin-bottom:52px;}
+.layer-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+.layer-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.layer-card:hover{box-shadow:0 6px 24px rgba(74,124,89,.1);transform:translateY(-2px);}
+.layer-card.primary{border-color:var(--leaf);border-width:2px;}
+.layer-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:18px;}
+.lb-primary{background:var(--forest);color:var(--white);}
+.lb-secondary{background:var(--mint);color:var(--leaf);}
+.lb-tertiary{background:#EFF6FF;color:#185FA5;border:1px solid #93C5FD;}
+.layer-name{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--forest);margin-bottom:12px;line-height:1.2;}
+.layer-desc{font-size:13px;color:var(--steel);line-height:1.7;font-weight:300;margin-bottom:20px;}
+.layer-saving{padding-top:18px;border-top:1px solid var(--border);display:flex;align-items:baseline;gap:8px;}
+.ls-num{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--forest);line-height:1;}
+.ls-label{font-size:13px;color:var(--steel);}
+.synergy-note{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--leaf);border-radius:0 10px 10px 0;padding:20px 24px;font-size:14px;color:var(--steel);line-height:1.7;}
+.synergy-note strong{color:var(--forest);}
+
+/* HOW IT WORKS — dark section replaces case study */
+.how-it-works{background:var(--forest);}
+.how-it-works .section-eyebrow{color:var(--mint);}
+.how-it-works .section-eyebrow::before{background:var(--mint);}
+.how-it-works .section-h2{color:var(--white);}
+.how-it-works .section-h2 em{color:var(--gold);}
+.hiw-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:52px;}
+.hiw-steps{display:flex;flex-direction:column;gap:0;}
+.hiw-step{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.hiw-step:last-child{border-bottom:none;}
+.hiw-num{font-family:var(--serif);font-size:42px;font-weight:700;color:rgba(255,255,255,.12);line-height:1;flex-shrink:0;width:48px;text-align:right;}
+.hiw-title{font-size:14px;font-weight:600;color:var(--mint);margin-bottom:6px;}
+.hiw-text{font-size:13px;color:rgba(255,255,255,.58);line-height:1.7;font-weight:300;}
+.hiw-right{display:flex;flex-direction:column;gap:16px;}
+.hiw-stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px 26px;}
+.hiw-stat-card.gold{background:var(--gold-lt);border-color:rgba(184,137,42,.28);}
+.hiw-big{font-family:var(--serif);font-size:52px;font-weight:700;color:var(--mint);line-height:1;letter-spacing:-.03em;}
+.hiw-stat-card.gold .hiw-big{color:var(--gold);}
+.hiw-label{font-size:12px;color:rgba(255,255,255,.48);margin-top:6px;line-height:1.4;}
+.hiw-stat-card.gold .hiw-label{color:var(--steel);}
+.no-cs-note{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:18px 22px;margin-top:16px;font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;font-style:italic;}
+.no-cs-note strong{color:rgba(255,255,255,.65);font-style:normal;}
+
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;}
+.why-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.why-card:hover{border-color:var(--leaf);box-shadow:0 6px 24px rgba(74,124,89,.1);transform:translateY(-2px);}
+.why-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+.why-num{font-family:var(--serif);font-size:48px;font-weight:700;color:var(--forest);line-height:1;letter-spacing:-.03em;}
+.why-unit{font-size:12px;color:var(--steel);margin-top:4px;}
+.why-divider{border:none;border-top:1px solid var(--border);margin:20px 0;}
+.why-detail{font-size:13px;color:var(--steel);line-height:1.65;font-weight:300;}
+
+.cta-band{background:var(--gold-lt);border-top:1px solid rgba(184,137,42,.2);padding:88px 8%;text-align:center;}
+.cta-band .section-eyebrow{justify-content:center;}
+.cta-band .section-eyebrow::before{display:none;}
+.cta-band .section-h2{text-align:center;}
+.cta-lead{font-size:17px;color:var(--steel);font-weight:300;max-width:520px;margin:18px auto 48px;line-height:1.75;}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{background:var(--forest);color:var(--white);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;}
+.btn-dark:hover{background:var(--leaf);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--forest);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;border:1.5px solid rgba(36,61,44,.25);display:inline-flex;align-items:center;gap:8px;transition:border-color .2s,background .2s;}
+.btn-outline:hover{border-color:var(--forest);background:rgba(36,61,44,.04);}
+.cta-contact{font-size:14px;color:var(--steel);margin-top:24px;}
+.cta-contact a{color:var(--leaf);font-weight:500;}
+footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:16px;max-width:260px;font-weight:300;}
+.footer-col-title{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:18px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;font-weight:300;}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:300;}
+@media(max-width:1024px){.problem-grid,.hiw-grid{grid-template-columns:1fr;gap:40px;}.layer-cards,.why-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;gap:32px;}.stat-item{padding:24px 32px;}}
+@media(max-width:700px){section{padding:64px 5%;}.hero-content{padding:44px 5% 52px;}.stat-strip{flex-wrap:wrap;}.stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:20px 24px;flex:1 1 45%;}.stat-item:last-child{border-bottom:none;}.nav-links{display:none;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="ggs-logo">
+    <svg width="46" height="46" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="#243D2C"/><line x1="0" y1="50" x2="200" y2="50" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="50" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="150" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="#5A8C6A" stroke-width="18" stroke-linejoin="round"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="#243D2C"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+    <div class="ggs-wordmark"><span class="ggs-name">Golden Grid Solutions</span><span class="ggs-sub">enPact Energy Partner</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#sectors">Sectors</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#solutions">Solutions</a>
+    <a href="../index.html#results">Results</a>
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<div class="sector-subnav">
+  <div class="sector-subnav-inner">
+    <a href="food-service.html"          class="ssnl">Food Service &amp; QSR</a>
+    <a href="food-retail.html"           class="ssnl">Food Retail</a>
+    <a href="food-production.html"       class="ssnl">Food Production</a>
+    <a href="pubs-bars-restaurants.html" class="ssnl">Pubs, Bars &amp; Restaurants</a>
+    <a href="hotels.html"                class="ssnl">Hotels &amp; Built Environment</a>
+    <a href="cold-storage.html"          class="ssnl">Cold Storage</a>
+    <a href="commercial.html"            class="ssnl">Commercial Buildings</a>
+    <a href="data-centers.html"          class="ssnl active">Data Centers</a>
+    <a href="healthcare.html"            class="ssnl">Healthcare &amp; Pharma</a>
+    <a href="heavy-industry.html"        class="ssnl">Heavy Industry</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=85" alt="Data center server rows">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="../index.html#sectors">Sectors</a> &nbsp;/&nbsp; Data Centers</div>
+    <div class="hero-eyebrow">Data Centers &amp; Mission-Critical Facilities</div>
+    <h1 class="hero-h1">Cooling consumes half<br>your power budget.<br><em>We reduce that load.</em></h1>
+    <p class="hero-lead">Cooling is the single largest energy consumer in most data centers — accounting for 30–50% of total facility electricity. We reduce that load by 10–15% with a drop-in additive that requires no downtime, no hardware changes, and no impact on uptime.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-item"><div class="stat-num">12.5–15<span>%</span></div><div class="stat-label">Heat transfer improvement · chiller systems</div></div>
+  <div class="stat-item"><div class="stat-num">1–2<span>yr</span></div><div class="stat-label">Typical payback period</div></div>
+  <div class="stat-item"><div class="stat-num">10<span>+yr</span></div><div class="stat-label">Product lifespan · no maintenance required</div></div>
+  <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Hours of downtime required</div></div>
+</div>
+
+<section class="problem">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">The Problem</div>
+      <h2 class="section-h2">Cooling efficiency is the<br><em>PUE problem you can fix.</em></h2>
+      <p class="section-lead">Data center operators invest heavily in compute efficiency — but cooling plant performance is often overlooked. Chiller systems using standard water or glycol fluid operate below their thermal potential, consuming more energy than necessary on every cycle.</p>
+      <div class="problem-points">
+        <div class="pp">
+          <div class="pp-icon">🖥️</div>
+          <div>
+            <div class="pp-title">Cooling dominates total facility energy consumption</div>
+            <div class="pp-text">Cooling accounts for 30–50% of total data center electricity use. In warmer climates where free cooling is unavailable year-round, mechanical chiller systems run at full load continuously — making cooling plant efficiency one of the highest-leverage energy optimization targets available.</div>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-icon">⚠️</div>
+          <div>
+            <div class="pp-title">Zero tolerance for downtime rules out most solutions</div>
+            <div class="pp-text">Data centers operate at 99.999% uptime commitments. Any solution requiring system shutdown, refrigerant work, or hardware replacement is operationally off-limits. Most chiller efficiency upgrades fail this test before the conversation gets started.</div>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-icon">📊</div>
+          <div>
+            <div class="pp-title">PUE targets and Scope 2 reporting require verifiable action</div>
+            <div class="pp-text">Hyperscale operators, colocation providers, and enterprise data centers face growing pressure from customers, regulators, and investors on PUE performance and carbon intensity. Verified, measurable cooling efficiency improvements directly strengthen both metrics without capital equipment replacement.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-img">
+      <img src="https://images.unsplash.com/photo-1592664858163-fd4de3ac2a63?w=800&q=80" alt="Data center cooling infrastructure" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="solution">
+  <div class="solution-intro">
+    <div class="section-eyebrow">The Solution</div>
+    <h2 class="section-h2">Drop-in. Online. Immediate.<br><em>No downtime required.</em></h2>
+    <p class="section-lead">enPact Chillers (Maxwell nanofluid) is introduced directly into the existing chilled water system during normal operation — improving heat transfer efficiency across the entire cooling plant with no hardware changes and no system shutdown.</p>
+  </div>
+  <div class="layer-cards">
+    <div class="layer-card primary">
+      <div class="layer-badge lb-primary">Layer 1 — Electrical · Always first</div>
+      <div class="layer-name">enPact FilterPro</div>
+      <div class="layer-desc">Reduces electrical waste across non-cooling loads — UPS systems, PDUs, lighting, and general facility circuits. Connects to incoming supply in parallel. No impact on critical power paths. Two-hour installation, measurable results from day one.</div>
+      <div class="layer-saving"><div class="ls-num">6–18%</div><div class="ls-label">non-cooling electrical reduction</div></div>
+    </div>
+    <div class="layer-card primary">
+      <div class="layer-badge lb-primary">Layer 2 — Thermal · Primary for this sector</div>
+      <div class="layer-name">enPact Chillers<br>(Maxwell Nanofluid)</div>
+      <div class="layer-desc">Introduced directly into the chilled water loop during normal operation — no shutdown required. Improves heat transfer in the chiller evaporator by 12.5–15%, reducing compressor lift and allowing pumps and fans to run at lower power. Compatible with all air-cooled and water-cooled chillers, AHUs, and energy recovery systems. Non-corrosive, non-toxic, 10+ year lifespan.</div>
+      <div class="layer-saving"><div class="ls-num">10–15%</div><div class="ls-label">cooling plant energy reduction</div></div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-badge lb-secondary">Layer 2b — Thermal · DX precision cooling</div>
+      <div class="layer-name">enPact Refrigeration<br>& Cooling</div>
+      <div class="layer-desc">For facilities using DX refrigerant-based precision cooling units — the standalone cooling systems that serve individual server rooms, edge deployments, and smaller data center environments. Optimizes compressor runtime using superheat-based control, reducing energy draw while maintaining exact temperatures and humidity levels throughout.</div>
+      <div class="layer-saving"><div class="ls-num">20–40%</div><div class="ls-label">precision cooling unit energy reduction</div></div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-badge lb-tertiary">Layer 3 — Monitoring</div>
+      <div class="layer-name">enPact AI Energy<br>Monitoring</div>
+      <div class="layer-desc">Real-time PUE tracking, cooling efficiency analytics, and Scope 2 carbon reporting. Provides the verified, auditable performance data that data center operators need for customer reporting, regulatory disclosure, and internal sustainability commitments — without adding operational overhead.</div>
+      <div class="layer-saving"><div class="ls-num">Ongoing</div><div class="ls-label">PUE monitoring &amp; Scope 2 reporting</div></div>
+    </div>
+  </div>
+  <div class="synergy-note">
+    <strong>Two thermal layer options — often both applicable:</strong> Layer 2a (Chillers/Maxwell) targets the centralized chilled water plant that serves the facility. Layer 2b (Refrigeration & Cooling) targets standalone precision cooling units — the room-level systems that use refrigerant directly to cool server environments. Many data centers run both types simultaneously, making both layers applicable and their savings additive. Neither requires downtime. Neither modifies existing equipment.
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-h2">What changes inside<br><em>the chilled water loop.</em></h2>
+  <div class="hiw-grid">
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <div>
+          <div class="hiw-title">Introduction into the existing loop</div>
+          <div class="hiw-text">Maxwell nanofluid is introduced via a standard chemical dosing point or service connection during normal system operation. No shutdown. No draining. The system continues operating throughout.</div>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <div>
+          <div class="hiw-title">Improved heat transfer at the evaporator</div>
+          <div class="hiw-text">Sub-micron aluminum oxide particles in suspension increase the thermal conductivity of the base fluid. More heat is transferred per cycle — reducing the "lift" required from compressors to achieve the same cooling output.</div>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <div>
+          <div class="hiw-title">Pumps and fans run at lower power</div>
+          <div class="hiw-text">Higher heat transfer efficiency in the AHU coils allows chilled water setpoints to be raised and fluid flow rates to be reduced — meaning pumps and supply fans consume less energy while delivering the same cooling performance to server rooms.</div>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">4</div>
+        <div>
+          <div class="hiw-title">PUE improves. Results are immediately measurable.</div>
+          <div class="hiw-text">Cooling energy reduction is measurable from the point of full circulation. The improvement persists for 10+ years with no maintenance requirements and no degradation in thermal performance over time.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-right">
+      <div class="hiw-stat-card gold">
+        <div class="hiw-big">12.5–15%</div>
+        <div class="hiw-label">Heat transfer improvement in chiller evaporator · documented performance range</div>
+      </div>
+      <div class="hiw-stat-card">
+        <div class="hiw-big">1–2yr</div>
+        <div class="hiw-label">Typical payback in commercial and industrial HVAC applications · at standard electricity tariffs</div>
+      </div>
+      <div class="hiw-stat-card">
+        <div class="hiw-big">0</div>
+        <div class="hiw-label">Hardware changes required · drop-in additive only · no mechanical modifications</div>
+      </div>
+      <div class="no-cs-note">
+        <strong>Note on case studies:</strong> We are actively seeking data center deployment partners for U.S. case studies. The technology is documented and deployed in commercial HVAC applications — if you're interested in being an early verified deployment, contact us to discuss a structured pilot program.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--mint-bg);padding:96px 8%;">
+  <div class="section-eyebrow">Why This Sector</div>
+  <h2 class="section-h2">Three reasons data centers<br><em>are a natural fit.</em></h2>
+  <p class="section-lead">The technology requirements of mission-critical facilities align precisely with what enPact Chillers was designed to deliver.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-label">Cooling dominance · data centers</div>
+      <div class="why-num">30–50%</div>
+      <div class="why-unit">Of total facility electricity used for cooling</div>
+      <hr class="why-divider">
+      <div class="why-detail">Cooling is consistently the largest energy category in data centers. A 10–15% reduction on a load that represents 30–50% of total facility electricity is one of the highest-leverage efficiency interventions available — more impactful than optimizing compute, lighting, or general loads.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-label">Free cooling limitation · warm climates</div>
+      <div class="why-num">Year-round</div>
+      <div class="why-unit">Mechanical cooling required in warmer climates</div>
+      <hr class="why-divider">
+      <div class="why-detail">Free cooling (using outside air) is unavailable for significant portions of the year in warm U.S. climates. Facilities in California, Texas, Arizona, and the Southeast run mechanical chiller systems year-round — making sustained chiller efficiency improvement more valuable than in cooler northern climates.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-label">Zero downtime requirement</div>
+      <div class="why-num">Online</div>
+      <div class="why-unit">Installation during normal system operation</div>
+      <hr class="why-divider">
+      <div class="why-detail">Maxwell is introduced via dosing point during normal operation — the chilled water system continues running throughout. No maintenance window required. No SLA risk. No coordination with tenant or customer uptime commitments. This is the only category of cooling efficiency improvement that data centers can actually deploy without a planned outage.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="section-eyebrow">Get Started</div>
+  <h2 class="section-h2">Discuss a pilot program<br><em>for your facility.</em></h2>
+  <p class="cta-lead">We're actively seeking data center deployment partners for U.S. case studies. Book a discovery call to discuss a structured pilot — verified results, full measurement protocol, no commitment required.</p>
+  <div class="cta-buttons">
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="btn-dark">Book a Discovery Call →</a>
+    <a href="../index.html#results" class="btn-outline">View All Results</a>
+  </div>
+  <p class="cta-contact">📞 <a href="tel:+19517445092">951-744-5092</a> &nbsp;·&nbsp; ✉️ <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a></p>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="ggs-logo">
+        <svg width="40" height="40" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="rgba(255,255,255,0.08)"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" stroke-linejoin="round"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white" opacity="0.85"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white" opacity="0.85"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white" opacity="0.85"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+        <div class="ggs-wordmark"><span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;color:rgba(255,255,255,0.9);">Golden Grid Solutions</span><span style="font-family:'Outfit',sans-serif;font-weight:300;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">enPact Energy Partner</span></div>
+      </a>
+      <div class="footer-brand-desc">Premier distributor for Emissis enPact energy and carbon reduction technologies across the U.S.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Sectors</div>
+      <div class="footer-links">
+        <a href="food-service.html">Food Service &amp; QSR</a>
+        <a href="food-retail.html">Food Retail</a>
+        <a href="food-production.html">Food Production</a>
+        <a href="pubs-bars-restaurants.html">Pubs, Bars &amp; Restaurants</a>
+        <a href="hotels.html">Hotels &amp; Built Environment</a>
+        <a href="cold-storage.html">Cold Storage</a>
+        <a href="commercial.html">Commercial Buildings</a>
+        <a href="data-centers.html">Data Centers</a>
+        <a href="healthcare.html">Healthcare &amp; Pharma</a>
+        <a href="heavy-industry.html">Heavy Industry</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Solutions</div>
+      <div class="footer-links">
+        <a href="../index.html#solutions">enPact FilterPro</a>
+        <a href="../index.html#solutions">Refrigeration &amp; Cooling</a>
+        <a href="../index.html#solutions">enPact Chillers</a>
+        <a href="../index.html#solutions">AI Energy Monitoring</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank">Book a Call</a>
+        <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a>
+        <a href="tel:+19517445092">951-744-5092</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Golden Grid Solutions, LLC. Premier Emissis enPact Distributor.</div>
+    <div class="footer-copy">Technology performance ranges sourced from Emissis product documentation.</div>
+    <div class="footer-copy">Results shown are verified deployments. Actual savings vary by facility type, system configuration, and operating conditions.</div>
+  </div>
+</footer>
+
+<script>window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)});</script>
+</body>
+</html>

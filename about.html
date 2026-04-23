@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Golden Grid Solutions</title>
+<meta name="description" content="Golden Grid Solutions is the Premier Emissis enPact distributor headquartered in California. Verified energy reduction technology for commercial and industrial facilities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#243D2C;--leaf:#4A7C59;--sage:#6B9E7A;--mint:#D4E8DC;--mint-bg:#E8F4EE;--gold:#B8892A;--gold-lt:#F5EDD6;--slate:#1C2B3A;--steel:#4A5568;--white:#FFFFFF;--border:#C8DECE;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--slate);background:var(--mint-bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+.ggs-logo{display:flex;align-items:center;gap:12px;}.ggs-wordmark{display:flex;flex-direction:column;line-height:1.15;}.ggs-name{font-family:var(--sans);font-weight:600;font-size:16px;color:var(--forest);}.ggs-sub{font-family:var(--sans);font-weight:300;font-size:10px;color:var(--sage);letter-spacing:.12em;text-transform:uppercase;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(232,244,238,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s var(--ease);}
+nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
+.nav-links{display:flex;align-items:center;gap:40px;}.nav-links a{font-size:14px;color:var(--steel);transition:color .2s;}.nav-links a:hover{color:var(--forest);}
+.nav-cta{background:var(--forest)!important;color:var(--white)!important;padding:10px 24px;border-radius:5px;font-size:14px;font-weight:500;transition:background .2s!important;}.nav-cta:hover{background:var(--leaf)!important;}
+
+/* HERO */
+.hero{margin-top:72px;background:var(--forest);padding:88px 8% 80px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:500;color:rgba(255,255,255,.85);letter-spacing:.07em;text-transform:uppercase;margin-bottom:24px;backdrop-filter:blur(8px);}
+.hero-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.hero-h1{font-family:var(--serif);font-size:clamp(38px,5vw,64px);font-weight:700;line-height:1.06;color:var(--white);letter-spacing:-.025em;margin-bottom:22px;}
+.hero-h1 em{font-style:italic;color:#E8C96A;}
+.hero-lead{font-size:17px;color:rgba(255,255,255,.65);font-weight:300;line-height:1.8;}
+.hero-signals{display:flex;flex-direction:column;gap:16px;}
+.signal{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px 26px;transition:background .2s;}
+.signal:hover{background:rgba(255,255,255,.09);}
+.signal-num{font-family:var(--serif);font-size:44px;font-weight:700;color:#E8C96A;line-height:1;letter-spacing:-.02em;}
+.signal-label{font-size:13px;color:rgba(255,255,255,.55);margin-top:5px;line-height:1.45;}
+
+/* WHAT WE DO */
+.what{background:var(--white);padding:96px 8%;}
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:52px;}
+.what-body{font-size:16px;color:var(--steel);font-weight:300;line-height:1.8;}
+.what-body p+p{margin-top:18px;}
+.what-body strong{color:var(--forest);font-weight:600;}
+.pillars{display:flex;flex-direction:column;gap:16px;}
+.pillar{background:var(--mint-bg);border:1px solid var(--border);border-radius:12px;padding:24px 26px;border-left:4px solid var(--leaf);}
+.pillar-title{font-size:14px;font-weight:600;color:var(--forest);margin-bottom:6px;}
+.pillar-text{font-size:13px;color:var(--steel);line-height:1.65;font-weight:300;}
+
+/* PARTNERSHIP */
+.partnership{background:var(--mint-bg);padding:96px 8%;}
+.partner-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:48px;margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.partner-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+.partner-name{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--forest);line-height:1.1;margin-bottom:18px;}
+.partner-name em{font-style:italic;color:var(--gold);}
+.partner-body{font-size:14px;color:var(--steel);line-height:1.75;font-weight:300;}
+.partner-body p+p{margin-top:14px;}
+.partner-body strong{color:var(--forest);font-weight:600;}
+.partner-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ps{background:var(--mint-bg);border:1px solid var(--border);border-radius:10px;padding:20px 22px;}
+.ps-num{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--forest);line-height:1;letter-spacing:-.02em;}
+.ps-num span{color:var(--gold);}
+.ps-label{font-size:12px;color:var(--steel);margin-top:5px;line-height:1.4;}
+
+/* HOW WE WORK */
+.how{background:var(--forest);padding:96px 8%;}
+.how .section-eyebrow{color:var(--mint);}.how .section-eyebrow::before{background:var(--mint);}
+.how .section-h2{color:var(--white);}.how .section-h2 em{color:var(--gold);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:52px;}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;transition:background .2s;}
+.step:hover{background:rgba(255,255,255,.08);}
+.step-num{font-family:var(--serif);font-size:48px;font-weight:700;color:rgba(255,255,255,.12);line-height:1;margin-bottom:16px;}
+.step-title{font-size:14px;font-weight:600;color:var(--mint);margin-bottom:8px;}
+.step-text{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;}
+
+/* CONTACT */
+.contact{background:var(--gold-lt);border-top:1px solid rgba(184,137,42,.2);padding:96px 8%;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:52px;}
+.contact-body{font-size:16px;color:var(--steel);font-weight:300;line-height:1.8;}
+.contact-body p+p{margin-top:16px;}
+.contact-details{display:flex;flex-direction:column;gap:14px;}
+.cd{display:flex;align-items:center;gap:16px;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 22px;transition:border-color .2s,box-shadow .2s;}
+.cd:hover{border-color:var(--leaf);box-shadow:0 4px 16px rgba(74,124,89,.1);}
+.cd-icon{font-size:20px;flex-shrink:0;}
+.cd-label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--sage);margin-bottom:3px;}
+.cd-val{font-size:15px;font-weight:500;color:var(--forest);}
+.btn-dark{background:var(--forest);color:var(--white);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;margin-top:28px;}.btn-dark:hover{background:var(--leaf);transform:translateY(-2px);}
+
+section{padding:96px 8%;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px;}.section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--leaf);flex-shrink:0;}
+.section-h2{font-family:var(--serif);font-size:clamp(32px,3.8vw,54px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-.022em;}.section-h2 em{font-style:italic;color:var(--gold);}
+
+footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:16px;max-width:260px;font-weight:300;}
+.footer-col-title{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:18px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}.footer-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;font-weight:300;}.footer-links a:hover{color:var(--white);}
+.footer-bottom{padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}.footer-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:300;}
+
+@media(max-width:1024px){.hero-inner,.what-grid,.partner-card,.contact-grid{grid-template-columns:1fr;gap:40px;}.steps{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr 1fr;gap:32px;}.partner-stats{grid-template-columns:1fr 1fr;}}
+@media(max-width:700px){.hero{padding:56px 5% 52px;}.what,.partnership,.how,.contact{padding:64px 5%;}.steps{grid-template-columns:1fr;}.nav-links{display:none;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="ggs-logo">
+    <svg width="46" height="46" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="#243D2C"/><line x1="0" y1="50" x2="200" y2="50" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="50" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="150" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="#5A8C6A" stroke-width="18" stroke-linejoin="round"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="#243D2C"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+    <div class="ggs-wordmark"><span class="ggs-name">Golden Grid Solutions</span><span class="ggs-sub">enPact Energy Partner</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#sectors">Sectors</a>
+    <a href="about.html" style="color:var(--forest);font-weight:500;">About</a>
+    <a href="../index.html#solutions">Solutions</a>
+    <a href="../index.html#results">Results</a>
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">About Golden Grid Solutions</div>
+      <h1 class="hero-h1">Verified energy reduction.<br><em>No guesswork.<br>No estimates.</em></h1>
+      <p class="hero-lead">Golden Grid Solutions, LLC is the Premier Emissis enPact distributor for California. We bring patented energy optimization technology to commercial and industrial facilities — with every result measured, verified, and backed by a performance guarantee.</p>
+    </div>
+    <div class="hero-signals">
+      <div class="signal">
+        <div class="signal-num">10+</div>
+        <div class="signal-label">Sectors served · from food service and cold storage to healthcare and heavy industry</div>
+      </div>
+      <div class="signal">
+        <div class="signal-num">9–27%</div>
+        <div class="signal-label">Verified whole-site energy reductions across documented deployments</div>
+      </div>
+      <div class="signal">
+        <div class="signal-num">IPMVP</div>
+        <div class="signal-label">Internationally recognized measurement & verification standard applied to all results</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="what">
+  <div class="section-eyebrow">What We Do</div>
+  <h2 class="section-h2">We reduce energy consumption.<br><em>Then we prove it.</em></h2>
+  <div class="what-grid">
+    <div class="what-body">
+      <p>Most energy efficiency solutions rely on projections. We don't. Every enPact deployment begins with a verified baseline and ends with continuous monitoring that confirms savings are real, persistent, and exactly what was promised.</p>
+      <p>We work with energy-intensive commercial and industrial facilities — food production, cold storage, hospitality, healthcare, manufacturing, and more — where the energy bill is large enough that a 10–25% reduction makes a material difference to the bottom line.</p>
+      <p>Our role is to identify where the opportunity sits in your facility, match the right technology to the right load, manage the deployment, and ensure you have the verified performance data you need for internal reporting and ESG disclosure.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-title">Verified results — not projections</div>
+        <div class="pillar-text">Every result on this site comes from a real deployment, measured using IPMVP-aligned methodology with controlled before-and-after comparison periods. No modeled estimates. No assumed baselines.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Performance-backed by Emissis</div>
+        <div class="pillar-text">Energy savings are backed by a performance guarantee issued by Emissis. The technology either delivers or Emissis stands behind it. That accountability starts before installation and continues through ongoing monitoring.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Retrofit — no equipment replacement</div>
+        <div class="pillar-text">All three enPact technologies connect to existing systems. No capital equipment replacement, no production downtime beyond scheduled maintenance windows, no changes to how your team operates the site.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">ESG-ready reporting included</div>
+        <div class="pillar-text">The enPact monitoring platform generates auditable Scope 2 emissions and energy reduction data — ready for ESG frameworks, investor disclosure, and internal sustainability reporting.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERSHIP -->
+<div class="partnership">
+  <div class="section-eyebrow">Our Technology Partner</div>
+  <h2 class="section-h2">Licensed distributor for<br><em>Emissis enPact.</em></h2>
+  <div class="partner-card">
+    <div>
+      <div class="partner-label">Technology partner</div>
+      <div class="partner-name">Emissis<br><em>enPact Solutions</em></div>
+      <div class="partner-body">
+        <p>Emissis is an engineering-led energy technology company that develops and backs the enPact suite of patented energy optimization technologies. Their products are deployed across enterprise environments globally — from global fast-food chains and pharmaceutical R&D campuses to food distribution networks and manufacturing facilities.</p>
+        <p><strong>Golden Grid Solutions, LLC is the Premier Emissis enPact distributor.</strong> We handle site assessment, deployment coordination, and client relationships in our market. Performance guarantees are issued and upheld by Emissis directly — we don't issue our own guarantees or make claims outside the Emissis-approved framework.</p>
+        <p>This structure matters: it means every claim on this site is traceable to a verified Emissis deployment, and every guarantee is backed by the technology manufacturer — not a third-party reseller.</p>
+      </div>
+    </div>
+    <div>
+      <div class="partner-stats">
+        <div class="ps">
+          <div class="ps-num">3</div>
+          <div class="ps-label">Patented technologies in the enPact suite</div>
+        </div>
+        <div class="ps">
+          <div class="ps-num">10<span>+</span></div>
+          <div class="ps-label">Sectors with verified deployments</div>
+        </div>
+        <div class="ps">
+          <div class="ps-num">IPMVP</div>
+          <div class="ps-label">Measurement standard applied to all results</div>
+        </div>
+        <div class="ps">
+          <div class="ps-num">✓</div>
+          <div class="ps-label">Performance guarantee issued by Emissis on every deployment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW WE WORK -->
+<div class="how">
+  <div class="section-eyebrow">How We Work</div>
+  <h2 class="section-h2 " style="color:var(--white);">From first call to<br><em>verified savings.</em></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Discovery call</div>
+      <div class="step-text">We review your site, energy profile, and sector. You'll know within 30 minutes whether the technology is likely to be a strong fit — and we'll tell you honestly if it isn't.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Desktop assessment</div>
+      <div class="step-text">Using your utility bills and equipment asset list, we produce a savings projection and indicative pricing. No site visit required at this stage.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Site survey & proposal</div>
+      <div class="step-text">A physical survey confirms equipment details and produces a final proposal with guaranteed savings. This is the document you use to make the decision.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">Installation & validation</div>
+      <div class="step-text">Deployment is scheduled to minimize operational impact. A verified baseline is established, savings are measured from day one, and ongoing monitoring confirms results persist.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact">
+  <div class="section-eyebrow">Get In Touch</div>
+  <h2 class="section-h2">Ready to see what<br><em>your facility could save?</em></h2>
+  <div class="contact-grid">
+    <div class="contact-body">
+      <p>The best starting point is a 30-minute discovery call. There's no pitch and no obligation — we'll review your site profile, answer your questions, and tell you honestly whether enPact is the right fit.</p>
+      <p>If you'd prefer to start with an email or have a specific question before booking, reach out directly. We typically respond within one business day.</p>
+      <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="btn-dark">Book a Free 30-Minute Call →</a>
+    </div>
+    <div class="contact-details">
+      <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="cd">
+        <div class="cd-icon">📅</div>
+        <div><div class="cd-label">Book online</div><div class="cd-val">calendly.com/albert-goldengsolutions</div></div>
+      </a>
+      <a href="tel:+19517445092" class="cd">
+        <div class="cd-icon">📞</div>
+        <div><div class="cd-label">Phone</div><div class="cd-val">951-744-5092</div></div>
+      </a>
+      <a href="mailto:info@GoldenGSolutions.com" class="cd">
+        <div class="cd-icon">✉️</div>
+        <div><div class="cd-label">Email</div><div class="cd-val">info@GoldenGSolutions.com</div></div>
+      </a>
+      <a href="https://goldenggsolutions.com" class="cd">
+        <div class="cd-icon">🌐</div>
+        <div><div class="cd-label">Website</div><div class="cd-val">GoldenGSolutions.com</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="ggs-logo">
+        <svg width="40" height="40" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="rgba(255,255,255,0.08)"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" stroke-linejoin="round"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white" opacity="0.85"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white" opacity="0.85"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white" opacity="0.85"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+        <div class="ggs-wordmark"><span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;color:rgba(255,255,255,0.9);">Golden Grid Solutions</span><span style="font-family:'Outfit',sans-serif;font-weight:300;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">enPact Energy Partner</span></div>
+      </a>
+      <div class="footer-brand-desc">Premier Emissis enPact distributor headquartered in California. Verified energy and carbon reduction for commercial and industrial facilities.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Sectors</div>
+      <div class="footer-links">
+        <a href="food-service.html">Food Service &amp; QSR</a>
+        <a href="cold-storage.html">Cold Storage</a>
+        <a href="hotels.html">Hotels &amp; Built Environment</a>
+        <a href="healthcare.html">Healthcare &amp; Pharma</a>
+        <a href="heavy-industry.html">Heavy Industry</a>
+        <a href="../index.html#sectors">All Sectors →</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQs</a>
+        <a href="../index.html#results">Verified Results</a>
+        <a href="../index.html#solutions">Our Solutions</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank">Book a Call</a>
+        <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a>
+        <a href="tel:+19517445092">951-744-5092</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Golden Grid Solutions, LLC. Premier Emissis enPact Distributor.</div>
+    <div class="footer-copy">All savings figures verified via IPMVP protocol.</div>
+  </div>
+</footer>
+
+<script>window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)});</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Buildings Energy Savings | Golden Grid Solutions</title>
+<meta name="description" content="Verified 15% system energy savings and 16.9% chiller efficiency improvement in commercial buildings. FilterPro + Chillers layered approach. Book a free assessment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#243D2C;--leaf:#4A7C59;--sage:#6B9E7A;--mint:#D4E8DC;--mint-bg:#E8F4EE;--mint-md:#C2DCCB;--gold:#B8892A;--gold-lt:#F5EDD6;--slate:#1C2B3A;--steel:#4A5568;--white:#FFFFFF;--border:#C8DECE;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',sans-serif;--ease:cubic-bezier(0.4,0,0.2,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--slate);background:var(--mint-bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.ggs-logo{display:flex;align-items:center;gap:12px;}
+.ggs-wordmark{display:flex;flex-direction:column;line-height:1.15;}
+.ggs-name{font-family:var(--sans);font-weight:600;font-size:16px;color:var(--forest);letter-spacing:-0.01em;}
+.ggs-sub{font-family:var(--sans);font-weight:300;font-size:10px;color:var(--sage);letter-spacing:.12em;text-transform:uppercase;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(232,244,238,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s var(--ease);}
+nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
+.nav-links{display:flex;align-items:center;gap:40px;}
+.nav-links a{font-size:14px;color:var(--steel);transition:color .2s;}
+.nav-links a:hover{color:var(--forest);}
+.nav-cta{background:var(--forest)!important;color:var(--white)!important;padding:10px 24px;border-radius:5px;font-size:14px;font-weight:500;transition:background .2s!important;}
+.nav-cta:hover{background:var(--leaf)!important;}
+.sector-subnav{margin-top:72px;background:var(--white);border-bottom:1px solid var(--border);overflow-x:auto;}
+.sector-subnav-inner{display:flex;padding:0 8%;white-space:nowrap;}
+.ssnl{font-size:13px;color:var(--steel);padding:15px 18px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;flex-shrink:0;display:block;}
+.ssnl:hover{color:var(--forest);}
+.ssnl.active{color:var(--forest);font-weight:600;border-bottom-color:var(--leaf);}
+.hero{min-height:62vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(26,48,32,.88) 0%,rgba(26,48,32,.68) 60%,rgba(26,48,32,.76) 100%);}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;}
+.hero-content{position:relative;z-index:1;padding:60px 8% 64px;width:100%;}
+.hero-breadcrumb{font-size:12px;color:rgba(255,255,255,.48);margin-bottom:18px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.48);transition:color .2s;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,.85);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:500;color:rgba(255,255,255,.88);letter-spacing:.07em;text-transform:uppercase;margin-bottom:22px;backdrop-filter:blur(8px);}
+.hero-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.hero-h1{font-family:var(--serif);font-size:clamp(42px,6vw,76px);font-weight:700;line-height:1.04;color:var(--white);letter-spacing:-.025em;margin-bottom:22px;max-width:700px;text-shadow:0 2px 20px rgba(0,0,0,.3);}
+.hero-h1 em{font-style:italic;color:#E8C96A;}
+.hero-lead{font-size:18px;color:rgba(255,255,255,.76);font-weight:300;max-width:560px;line-height:1.75;text-shadow:0 1px 8px rgba(0,0,0,.2);}
+.stat-strip{background:rgba(26,48,32,.78);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px);display:flex;justify-content:center;}
+.stat-item{padding:28px 52px;border-right:1px solid rgba(255,255,255,.1);text-align:center;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--white);line-height:1;letter-spacing:-.02em;}
+.stat-num span{color:#E8C96A;}
+.stat-label{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;text-transform:uppercase;letter-spacing:.04em;}
+section{padding:96px 8%;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px;}
+.section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--leaf);flex-shrink:0;}
+.section-h2{font-family:var(--serif);font-size:clamp(32px,3.8vw,54px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-.022em;}
+.section-h2 em{font-style:italic;color:var(--gold);}
+.section-lead{font-size:17px;color:var(--steel);font-weight:300;line-height:1.75;max-width:520px;margin-top:18px;}
+.problem{background:var(--white);}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px;}
+.problem-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--mint);}
+.problem-img img{width:100%;height:100%;object-fit:cover;}
+.problem-points{display:flex;flex-direction:column;gap:26px;margin-top:16px;}
+.pp{display:flex;gap:18px;align-items:flex-start;}
+.pp-icon{width:42px;height:42px;border-radius:9px;background:var(--mint-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pp-title{font-size:15px;font-weight:600;color:var(--forest);margin-bottom:5px;}
+.pp-text{font-size:14px;color:var(--steel);line-height:1.65;font-weight:300;}
+.solution{background:var(--mint-bg);}
+.solution-intro{max-width:620px;margin-bottom:52px;}
+.layer-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+.layer-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.layer-card:hover{box-shadow:0 6px 24px rgba(74,124,89,.1);transform:translateY(-2px);}
+.layer-card.primary{border-color:var(--leaf);border-width:2px;}
+.layer-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:18px;}
+.lb-primary{background:var(--forest);color:var(--white);}
+.lb-secondary{background:var(--mint);color:var(--leaf);}
+.lb-tertiary{background:#EFF6FF;color:#185FA5;border:1px solid #93C5FD;}
+.layer-name{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--forest);margin-bottom:12px;line-height:1.2;}
+.layer-desc{font-size:13px;color:var(--steel);line-height:1.7;font-weight:300;margin-bottom:20px;}
+.layer-saving{padding-top:18px;border-top:1px solid var(--border);display:flex;align-items:baseline;gap:8px;}
+.ls-num{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--forest);line-height:1;}
+.ls-label{font-size:13px;color:var(--steel);}
+.synergy-note{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--leaf);border-radius:0 10px 10px 0;padding:20px 24px;font-size:14px;color:var(--steel);line-height:1.7;}
+.synergy-note strong{color:var(--forest);}
+.case-study-section{background:var(--forest);}
+.case-study-section .section-eyebrow{color:var(--mint);}
+.case-study-section .section-eyebrow::before{background:var(--mint);}
+.case-study-section .section-h2{color:var(--white);}
+.case-study-section .section-h2 em{color:var(--gold);}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:52px;}
+.cs-numbers{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.csn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;transition:background .2s;}
+.csn:hover{background:rgba(255,255,255,.08);}
+.csn.gold{background:var(--gold-lt);border-color:rgba(184,137,42,.28);}
+.csn-num{font-family:var(--serif);font-size:52px;font-weight:700;color:var(--mint);line-height:1;letter-spacing:-.03em;}
+.csn.gold .csn-num{color:var(--gold);}
+.csn-label{font-size:12px;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.4;}
+.csn.gold .csn-label{color:var(--steel);}
+.ipmvp-note{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:8px 16px;border-radius:4px;font-size:12px;color:rgba(255,255,255,.6);margin-top:20px;}
+.ipmvp-note strong{color:var(--mint);font-weight:600;}
+.cs-client{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;}
+.cs-quote{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--white);line-height:1.5;margin-bottom:20px;font-style:italic;}
+.cs-body{font-size:14px;color:rgba(255,255,255,.62);line-height:1.75;font-weight:300;}
+.cs-body strong{color:var(--mint);font-weight:500;}
+.cs-body p+p{margin-top:14px;}
+.support-strip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px 28px;margin-top:24px;}
+.support-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:14px;}
+.support-nums{display:flex;gap:32px;flex-wrap:wrap;}
+.sn-val{font-family:var(--serif);font-size:30px;font-weight:700;color:#E8C96A;line-height:1;}
+.sn-label{font-size:11px;color:rgba(255,255,255,.42);margin-top:4px;}
+.also-proven{background:var(--mint-bg);}
+.ap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;}
+.ap-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:32px;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.ap-card:hover{border-color:var(--leaf);box-shadow:0 6px 24px rgba(74,124,89,.1);transform:translateY(-2px);}
+.ap-sector{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+.ap-num{font-family:var(--serif);font-size:52px;font-weight:700;color:var(--forest);line-height:1;letter-spacing:-.03em;}
+.ap-unit{font-size:12px;color:var(--steel);margin-top:4px;}
+.ap-divider{border:none;border-top:1px solid var(--border);margin:20px 0;}
+.ap-detail{font-size:13px;color:var(--steel);line-height:1.65;font-weight:300;}
+.cta-band{background:var(--gold-lt);border-top:1px solid rgba(184,137,42,.2);padding:88px 8%;text-align:center;}
+.cta-band .section-eyebrow{justify-content:center;}
+.cta-band .section-eyebrow::before{display:none;}
+.cta-band .section-h2{text-align:center;}
+.cta-lead{font-size:17px;color:var(--steel);font-weight:300;max-width:520px;margin:18px auto 48px;line-height:1.75;}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{background:var(--forest);color:var(--white);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;}
+.btn-dark:hover{background:var(--leaf);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--forest);padding:16px 36px;border-radius:5px;font-size:15px;font-weight:500;border:1.5px solid rgba(36,61,44,.25);display:inline-flex;align-items:center;gap:8px;transition:border-color .2s,background .2s;}
+.btn-outline:hover{border-color:var(--forest);background:rgba(36,61,44,.04);}
+.cta-contact{font-size:14px;color:var(--steel);margin-top:24px;}
+.cta-contact a{color:var(--leaf);font-weight:500;}
+footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:16px;max-width:260px;font-weight:300;}
+.footer-col-title{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:18px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s;font-weight:300;}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:300;}
+@media(max-width:1024px){.problem-grid,.cs-grid{grid-template-columns:1fr;gap:40px;}.layer-cards,.ap-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;gap:32px;}.stat-item{padding:24px 32px;}}
+@media(max-width:700px){section{padding:64px 5%;}.hero-content{padding:44px 5% 52px;}.stat-strip{flex-wrap:wrap;}.stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:20px 24px;flex:1 1 45%;}.stat-item:last-child{border-bottom:none;}.cs-numbers{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="ggs-logo">
+    <svg width="46" height="46" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="#243D2C"/><line x1="0" y1="50" x2="200" y2="50" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="0" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="50" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><line x1="150" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="#5A8C6A" stroke-width="18" stroke-linejoin="round"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="#243D2C"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+    <div class="ggs-wordmark"><span class="ggs-name">Golden Grid Solutions</span><span class="ggs-sub">enPact Energy Partner</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#sectors">Sectors</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#solutions">Solutions</a>
+    <a href="../index.html#results">Results</a>
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<div class="sector-subnav">
+  <div class="sector-subnav-inner">
+    <a href="food-service.html"          class="ssnl">Food Service &amp; QSR</a>
+    <a href="food-retail.html"           class="ssnl">Food Retail</a>
+    <a href="food-production.html"       class="ssnl">Food Production</a>
+    <a href="pubs-bars-restaurants.html" class="ssnl">Pubs, Bars &amp; Restaurants</a>
+    <a href="hotels.html"                class="ssnl">Hotels &amp; Built Environment</a>
+    <a href="cold-storage.html"          class="ssnl">Cold Storage</a>
+    <a href="commercial.html"            class="ssnl active">Commercial Buildings</a>
+    <a href="data-centers.html"          class="ssnl">Data Centers</a>
+    <a href="healthcare.html"            class="ssnl">Healthcare &amp; Pharma</a>
+    <a href="heavy-industry.html"        class="ssnl">Heavy Industry</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=85" alt="Commercial office building exterior">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="../index.html#sectors">Sectors</a> &nbsp;/&nbsp; Commercial Buildings</div>
+    <div class="hero-eyebrow">Multi-Use &amp; Commercial Buildings</div>
+    <h1 class="hero-h1">Your HVAC plant is working<br>harder than it needs to.<br><em>We change that.</em></h1>
+    <p class="hero-lead">Commercial buildings above 50,000 sq ft run centralized chilled water HVAC systems that account for the majority of electricity consumption. We improve that performance by 15–25% — with no infrastructure changes and no tenant disruption.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-item"><div class="stat-num">16.9<span>%</span></div><div class="stat-label">Chiller efficiency improvement</div></div>
+  <div class="stat-item"><div class="stat-num">15<span>%</span></div><div class="stat-label">Overall system energy savings</div></div>
+  <div class="stat-item"><div class="stat-num">2.2<span>yr</span></div><div class="stat-label">Payback period</div></div>
+  <div class="stat-item"><div class="stat-num">46<span>%</span></div><div class="stat-label">Annual ROI over 10 years</div></div>
+</div>
+
+<section class="problem">
+  <div class="problem-grid">
+    <div>
+      <div class="section-eyebrow">The Problem</div>
+      <h2 class="section-h2">HVAC dominates consumption.<br><em>Most of it is waste.</em></h2>
+      <p class="section-lead">In commercial buildings, centralized chilled water HVAC plants run continuously to serve offices, common areas, and tenant spaces. The majority of that energy is lost to thermal inefficiency before it reaches the occupied space.</p>
+      <div class="problem-points">
+        <div class="pp">
+          <div class="pp-icon">🌡️</div>
+          <div>
+            <div class="pp-title">Chiller plants run far below peak efficiency</div>
+            <div class="pp-text">Most commercial chiller systems use conventional water or water-glycol fluid that was specified decades ago. Heat transfer performance degrades over time, forcing compressors to work harder — consuming more energy to deliver the same cooling output year after year.</div>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-icon">🏢</div>
+          <div>
+            <div class="pp-title">No downtime window for equipment upgrades</div>
+            <div class="pp-text">Replacing or overhauling a chiller plant means shutting down HVAC across occupied tenant spaces — commercially and contractually untenable for most building owners. Any solution that requires system downtime or equipment modification simply isn't viable.</div>
+          </div>
+        </div>
+        <div class="pp">
+          <div class="pp-icon">📊</div>
+          <div>
+            <div class="pp-title">ESG reporting requirements are accelerating</div>
+            <div class="pp-text">REIT investors, institutional landlords, and major corporate tenants increasingly require verified Scope 2 emissions data and ENERGY STAR performance. Auditable, third-party-verified energy reduction is moving from a differentiator to a lease requirement in Class A markets.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-img">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Commercial office interior and HVAC systems" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="solution">
+  <div class="solution-intro">
+    <div class="section-eyebrow">The Solution</div>
+    <h2 class="section-h2">Drop-in. No downtime.<br><em>Measurable from day one.</em></h2>
+    <p class="section-lead">For commercial buildings, Chillers leads — because chilled water HVAC is the dominant load. FilterPro compounds the savings on all remaining electrical systems. Both deploy without infrastructure changes or tenant impact.</p>
+  </div>
+  <div class="layer-cards">
+    <div class="layer-card primary">
+      <div class="layer-badge lb-primary">Layer 1 — Electrical · Always first</div>
+      <div class="layer-name">enPact FilterPro</div>
+      <div class="layer-desc">Reduces electrical waste across every circuit in the building simultaneously — HVAC motors, elevators, lighting, tenant fit-out loads, and common area systems. Connects to incoming supply in parallel. No tenant disruption. Installation requires a brief scheduled power-down, arranged outside operating hours to minimize disruption. Results measurable within days.</div>
+      <div class="layer-saving"><div class="ls-num">6–18%</div><div class="ls-label">whole-building electrical reduction</div></div>
+    </div>
+    <div class="layer-card primary">
+      <div class="layer-badge lb-primary">Layer 2 — Thermal · Primary for this sector</div>
+      <div class="layer-name">enPact Chillers<br>(Maxwell Nanofluid)</div>
+      <div class="layer-desc">Added directly to the existing chilled water system fluid — improving heat transfer efficiency by up to 15% across the entire HVAC plant. Compatible with air-cooled and water-cooled chillers, heat pumps, AHUs, fan coil units, and energy recovery loops. No hardware changes, no system shutdown, no tenant impact. 10+ year product life.</div>
+      <div class="layer-saving"><div class="ls-num">10–15%</div><div class="ls-label">chilled water system energy reduction</div></div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-badge lb-secondary">Layer 2b — Thermal · Where applicable</div>
+      <div class="layer-name">enPact Refrigeration<br>& Cooling</div>
+      <div class="layer-desc">For buildings with DX split systems, packaged AC units, or server room cooling. Optimizes compressor runtime while maintaining exact temperature setpoints — applicable in mixed-use buildings where DX systems serve specific zones alongside the main chilled water plant.</div>
+      <div class="layer-saving"><div class="ls-num">20–40%</div><div class="ls-label">DX system energy reduction</div></div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-badge lb-tertiary">Layer 3 — Monitoring</div>
+      <div class="layer-name">enPact AI Energy<br>Monitoring</div>
+      <div class="layer-desc">Real-time energy and carbon performance tracking across the entire building. Generates ENERGY STAR-aligned reporting, ESG disclosure data, and tenant-level consumption visibility. Powered by the Univers platform — deployed across 5,000+ sites globally, managing over $300M in annual energy spend.</div>
+      <div class="layer-saving"><div class="ls-num">Ongoing</div><div class="ls-label">performance verification &amp; ESG reporting</div></div>
+    </div>
+  </div>
+  <div class="synergy-note">
+    <strong>Why Chillers leads in this sector:</strong> Commercial buildings above 50,000 sq ft universally use centralized chilled water HVAC — making the chiller plant the single largest energy consumer in the building. Improving heat transfer efficiency across that plant delivers savings across every floor, every system, every tenant simultaneously. FilterPro then captures all remaining electrical waste on top — with the two layers targeting completely different loss mechanisms.
+  </div>
+</section>
+
+<section class="case-study-section">
+  <div class="section-eyebrow">Verified Result</div>
+  <h2 class="section-h2">Mixed-use commercial building.<br><em>15% system savings. 46% annual ROI.</em></h2>
+  <div class="cs-grid">
+    <div>
+      <div class="cs-numbers">
+        <div class="csn gold">
+          <div class="csn-num">16.9%</div>
+          <div class="csn-label">Chiller efficiency improvement</div>
+        </div>
+        <div class="csn">
+          <div class="csn-num">15%</div>
+          <div class="csn-label">Overall system energy savings</div>
+        </div>
+        <div class="csn">
+          <div class="csn-num">2.2yr</div>
+          <div class="csn-label">Payback period</div>
+        </div>
+        <div class="csn">
+          <div class="csn-num">46%</div>
+          <div class="csn-label">Annual ROI over 10 years</div>
+        </div>
+      </div>
+      <div class="ipmvp-note"><strong>Verified</strong> — Before/after measurement · Maxwell nanofluid · Air-cooled chiller system</div>
+    </div>
+
+    <div>
+      <div class="cs-client">Mixed-Use Commercial Building · Three-Story · 24/7 Operation</div>
+      <div class="cs-quote">"Maxwell improved the chiller's Coefficient of Performance and energy efficiency — directly correlating to a measurable reduction in energy consumption."</div>
+      <div class="cs-body">
+        <p>A 12,000 sq ft mixed-use, three-story commercial building cooled by two 60-ton air-cooled chillers operating 24/7 deployed Maxwell nanofluid across its chilled water system. The additive was introduced directly into the existing fluid loop — no hardware changes, no system shutdown, no disruption to occupants.</p>
+        <p>The result: <strong>16.9% improvement in chiller energy efficiency</strong> and <strong>15% overall system energy savings</strong> — achieved by improving heat transfer at the evaporator, allowing thermostats to reach setpoints more quickly and compressors to run at lower load. Payback was achieved in 2.2 years, with an annual ROI of 46% over a 10-year period.</p>
+        <p>The building operator subsequently evaluated Maxwell across the wider property portfolio. The technology has since been included in a major energy company's <strong>Proven Technology Database</strong> — one of the most rigorous third-party validation processes in the commercial real estate sector.</p>
+      </div>
+
+      <div class="support-strip">
+        <div class="support-label">Supporting result — National Hotel Chain · FilterPro only</div>
+        <div class="support-nums">
+          <div><div class="sn-val">11.2%</div><div class="sn-label">All electrical loads · single building</div></div>
+          <div><div class="sn-val">6.4mo</div><div class="sn-label">Payback period</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="also-proven">
+  <div class="section-eyebrow">The Portfolio Opportunity</div>
+  <h2 class="section-h2">What consistent per-building results<br><em>mean at portfolio scale.</em></h2>
+  <p class="section-lead">The commercial building case study led to a portfolio-wide evaluation. The numbers confirm that verified per-site results translate linearly across a multi-building estate.</p>
+  <div class="ap-grid">
+    <div class="ap-card">
+      <div class="ap-sector">Portfolio evaluation · Large property estate</div>
+      <div class="ap-num">$4.64M</div>
+      <div class="ap-unit">Projected annual energy savings · portfolio rollout</div>
+      <hr class="ap-divider">
+      <div class="ap-detail">Following the verified pilot result, engineers evaluated Maxwell across a large non-industrial chiller portfolio totaling 63,000 tons of cooling capacity. The projected annual energy savings reached $4.64M — with an installation cost of $10.2M and estimated CO₂ savings of 25,000 tons annually. Now in active rollout.</div>
+    </div>
+    <div class="ap-card">
+      <div class="ap-sector">Independent validation · Proven Technology Database</div>
+      <div class="ap-num">✓</div>
+      <div class="ap-unit">Included in third-party Proven Technology Database</div>
+      <hr class="ap-divider">
+      <div class="ap-detail">Following the pilot, Maxwell was formally included in a major energy company's Proven Technology Database — one of the most rigorous third-party technology validation processes in the sector. This is a commercial signal that independent engineering review confirmed the results are real and repeatable.</div>
+    </div>
+    <div class="ap-card">
+      <div class="ap-sector">Why commercial buildings lead on Chillers ROI</div>
+      <div class="ap-num">15–25%</div>
+      <div class="ap-unit">Documented whole-site layered outcome range</div>
+      <hr class="ap-divider">
+      <div class="ap-detail">Commercial buildings above 50,000 sq ft universally use centralized chilled water HVAC — making them the ideal deployment environment for Chillers. The technology is a drop-in additive with a 10+ year lifespan, no maintenance requirements, and payback typically achieved within 1–3 years. The ROI profile is among the strongest of any building technology category.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="section-eyebrow">Get Started</div>
+  <h2 class="section-h2">See what your building<br><em>could save this year.</em></h2>
+  <p class="cta-lead">Book a free 30-minute discovery call. We'll review your building's HVAC configuration and energy profile, and provide a projected savings figure — at no cost and no obligation.</p>
+  <div class="cta-buttons">
+    <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank" class="btn-dark">Book a Free Assessment →</a>
+    <a href="../index.html#results" class="btn-outline">View All Results</a>
+  </div>
+  <p class="cta-contact">📞 <a href="tel:+19517445092">951-744-5092</a> &nbsp;·&nbsp; ✉️ <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a></p>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="ggs-logo">
+        <svg width="40" height="40" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="38" fill="rgba(255,255,255,0.08)"/><polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" stroke-linejoin="round"/><rect x="68" y="46" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="68" y="46" width="16" height="74" rx="8" fill="white" opacity="0.85"/><rect x="68" y="104" width="58" height="16" rx="8" fill="white" opacity="0.85"/><rect x="96" y="80" width="30" height="16" rx="8" fill="white" opacity="0.85"/><rect x="110" y="46" width="16" height="34" rx="8" fill="white" opacity="0.85"/><circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/></svg>
+        <div class="ggs-wordmark"><span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;color:rgba(255,255,255,0.9);">Golden Grid Solutions</span><span style="font-family:'Outfit',sans-serif;font-weight:300;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">enPact Energy Partner</span></div>
+      </a>
+      <div class="footer-brand-desc">Premier distributor for Emissis enPact energy and carbon reduction technologies across the U.S.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Sectors</div>
+      <div class="footer-links">
+        <a href="food-service.html">Food Service &amp; QSR</a>
+        <a href="food-retail.html">Food Retail</a>
+        <a href="food-production.html">Food Production</a>
+        <a href="pubs-bars-restaurants.html">Pubs, Bars &amp; Restaurants</a>
+        <a href="hotels.html">Hotels &amp; Built Environment</a>
+        <a href="cold-storage.html">Cold Storage</a>
+        <a href="commercial.html">Commercial Buildings</a>
+        <a href="data-centers.html">Data Centers</a>
+        <a href="healthcare.html">Healthcare &amp; Pharma</a>
+        <a href="heavy-industry.html">Heavy Industry</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Solutions</div>
+      <div class="footer-links">
+        <a href="../index.html#solutions">enPact FilterPro</a>
+        <a href="../index.html#solutions">Refrigeration &amp; Cooling</a>
+        <a href="../index.html#solutions">enPact Chillers</a>
+        <a href="../index.html#solutions">AI Energy Monitoring</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-links">
+        <a href="https://calendly.com/albert-goldengsolutions/30min" target="_blank">Book a Call</a>
+        <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a>
+        <a href="tel:+19517445092">951-744-5092</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Golden Grid Solutions, LLC. Premier Emissis enPact Distributor.</div>
+    <div class="footer-copy">All savings figures verified via IPMVP protocol.</div>
+    <div class="footer-copy">Results shown are verified deployments. Actual savings vary by facility type, system configuration, and operating conditions.</div>
+  </div>
+</footer>
+
+<script>window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)});</script>
+</body>
+</html>
