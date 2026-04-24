@@ -290,35 +290,34 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   .footer-top { grid-template-columns: 1fr; }
   .trusted-inner { gap: 14px; }
 }
+
+@media (max-width: 700px) {
+  .nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(232,244,238,0.98);
+    backdrop-filter: blur(14px);
+    padding: 20px 6%;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+    z-index: 199;
+    box-shadow: 0 8px 24px rgba(36,61,44,0.1);
+  }
+  .nav-mobile-toggle.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-mobile-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-mobile-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="#" class="ggs-logo">
-    <svg width="46" height="46" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="200" height="200" rx="38" fill="#243D2C"/>
-      <line x1="0"   y1="50"  x2="200" y2="50"  stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
-      <line x1="0"   y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
-      <line x1="0"   y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
-      <line x1="50"  y1="0"   x2="50"  y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
-      <line x1="100" y1="0"   x2="100" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
-      <line x1="150" y1="0"   x2="150" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
-      <polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="#5A8C6A" stroke-width="18" stroke-linejoin="round"/>
-      <polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="#243D2C"/>
-      <rect x="68"  y="46" width="58" height="16" rx="8" fill="white"/>
-      <rect x="68"  y="46" width="16" height="74" rx="8" fill="white"/>
-      <rect x="68"  y="104" width="58" height="16" rx="8" fill="white"/>
-      <rect x="96"  y="80"  width="30" height="16" rx="8" fill="white"/>
-      <rect x="110" y="46" width="16" height="34" rx="8" fill="white"/>
-      <circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/>
-    </svg>
-    <div class="ggs-wordmark">
-      <span class="ggs-name">Golden Grid Solutions</span>
-      <span class="ggs-sub">enPact Energy Partner</span>
-    </div>
-  </a>
+  <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="52" style="display:block;"></a>
   <div class="nav-links">
     <a href="#sectors">Sectors</a>
     <a href="#about">About</a>
@@ -548,7 +547,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   <p class="cta-contact">
     📞 <a href="tel:+19517445092">951-744-5092</a> &nbsp;·&nbsp;
     ✉️ <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a> &nbsp;·&nbsp;
-    📍 Serving businesses nationwide
+    📍 Headquartered in Southern California
   </p>
 </section>
 
@@ -556,28 +555,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 <footer>
   <div class="footer-top">
     <div>
-      <a href="#" class="ggs-logo">
-        <svg width="40" height="40" viewBox="0 0 200 200" fill="none">
-          <rect width="200" height="200" rx="38" fill="rgba(255,255,255,0.08)"/>
-          <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <line x1="0" y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <line x1="0" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <line x1="50" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <line x1="150" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <polygon points="72,30 128,30 158,82 128,134 72,134 42,82" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" stroke-linejoin="round"/>
-          <rect x="68" y="46" width="58" height="16" rx="8" fill="white" opacity="0.85"/>
-          <rect x="68" y="46" width="16" height="74" rx="8" fill="white" opacity="0.85"/>
-          <rect x="68" y="104" width="58" height="16" rx="8" fill="white" opacity="0.85"/>
-          <rect x="96" y="80"  width="30" height="16" rx="8" fill="white" opacity="0.85"/>
-          <rect x="110" y="46" width="16" height="34" rx="8" fill="white" opacity="0.85"/>
-          <circle cx="155" cy="34" r="14" fill="none" stroke="#B8892A" stroke-width="7"/>
-        </svg>
-        <div class="ggs-wordmark">
-          <span style="font-family:var(--sans);font-weight:600;font-size:15px;color:rgba(255,255,255,0.9);">Golden Grid Solutions</span>
-          <span style="font-family:var(--sans);font-weight:300;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">enPact Energy Partner</span>
-        </div>
-      </a>
+      <div style="display:inline-block;background:#E8F4EE;border-radius:5px;padding:1px;"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="44" style="display:block;"></div>
       <div class="footer-brand-desc">Premier Emissis enPact distributor headquartered in California. Verified energy and carbon reduction for commercial and industrial facilities.</div>
     </div>
     <div>
