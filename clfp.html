@@ -133,6 +133,28 @@ section{padding:96px 8%;}
 .gate-form-wrap{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:0 8px 32px rgba(36,61,44,.06);}
 .gate-form-wrap iframe{min-height:420px;width:100%;display:block;}
 
+/* Phase 2 — ammonia chiller verified result */
+.phase2{background:var(--mint-bg);}
+.phase2-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start;margin-top:52px;}
+.phase2-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.p2-tile{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:30px 28px;transition:border-color .2s,box-shadow .2s;}
+.p2-tile:hover{border-color:var(--leaf);box-shadow:0 6px 24px rgba(74,124,89,.08);}
+.p2-tile.gold{background:var(--gold-lt);border-color:rgba(184,137,42,.32);}
+.p2-num{font-family:var(--serif);font-size:54px;font-weight:700;color:var(--forest);line-height:1;letter-spacing:-.03em;}
+.p2-tile.gold .p2-num{color:var(--gold);}
+.p2-num .p2-unit{font-size:22px;color:var(--gold);font-weight:600;margin-left:2px;letter-spacing:0;}
+.p2-tile.gold .p2-num .p2-unit{color:var(--forest);}
+.p2-label{font-size:12px;color:var(--steel);margin-top:8px;line-height:1.5;font-weight:500;}
+.p2-body{font-size:15px;color:var(--steel);line-height:1.75;font-weight:300;}
+.p2-body p+p{margin-top:12px;}
+.p2-body strong{color:var(--forest);font-weight:500;}
+.p2-meta{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+.p2-quote{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--forest);line-height:1.45;margin:0 0 18px;font-style:italic;}
+.p2-validation{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--border);padding:8px 16px;border-radius:4px;font-size:12px;color:var(--steel);margin-top:18px;}
+.p2-validation strong{color:var(--leaf);font-weight:600;}
+@media(max-width:1024px){.phase2-grid{grid-template-columns:1fr;gap:40px;}.phase2-stats{grid-template-columns:1fr 1fr;}}
+@media(max-width:700px){.phase2-stats{grid-template-columns:1fr;}}
+
 /* Ag hero (Also Fits section) */
 .ag-hero{min-height:46vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
 .ag-hero-bg{position:absolute;inset:0;}
@@ -367,6 +389,46 @@ footer{background:var(--forest);color:var(--white);padding:48px 8% 32px;}
   </div>
 </section>
 
+<section class="phase2">
+  <div class="section-eyebrow">Verified Result · Phase 2</div>
+  <h2 class="section-h2">Ammonia chiller refrigeration.<br><em>An independent second pilot.</em></h2>
+  <p class="section-lead">A second verified result — Phase 2 weather-adjusted measurement on a large-format refrigerated retail site running ammonia-based chillers.</p>
+
+  <div class="phase2-grid">
+    <div>
+      <div class="phase2-stats">
+        <div class="p2-tile gold">
+          <div class="p2-num">8.97<span class="p2-unit">%</span></div>
+          <div class="p2-label">Validated refrigeration energy reduction</div>
+        </div>
+        <div class="p2-tile">
+          <div class="p2-num">9,942</div>
+          <div class="p2-label">kWh saved across 12 operational days</div>
+        </div>
+        <div class="p2-tile">
+          <div class="p2-num">$30,240<span class="p2-unit">CAD</span></div>
+          <div class="p2-label">Projected annual savings per site</div>
+        </div>
+        <div class="p2-tile">
+          <div class="p2-num">6.03<span class="p2-unit">mo</span></div>
+          <div class="p2-label">Projected payback</div>
+        </div>
+      </div>
+      <div class="p2-validation"><strong>Weather-adjusted</strong> · 12 operational days · whole-site refrigeration</div>
+    </div>
+
+    <div>
+      <div class="p2-meta">Global wholesale retailer · Canada · Phase 2</div>
+      <p class="p2-quote">"Phase 2 confirmed that energy reductions were maintained under normal operating conditions while refrigeration performance remained unaffected."</p>
+      <div class="p2-body">
+        <p>Following an initial successful pilot, the operator expanded Phase 2 testing of enPact FilterPro to validate refrigeration energy savings under live operating conditions on an ammonia-based chiller system.</p>
+        <p>The objective was to confirm long-term performance, quantify operational savings, and demonstrate the commercial viability of deploying FilterPro across large-format retail environments with significant refrigeration demand. Using weather-adjusted analysis and live consumption monitoring, the project measured energy performance during full FilterPro operation and compared it against the validated site baseline.</p>
+        <p>The result — <strong>8.97% whole-site refrigeration energy reduction</strong> with savings achieved consistently across the 12-day operational trial — exceeded the original business case projection and supported a 6-month payback at one site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="ag-hero">
   <div class="ag-hero-bg">
     <img src="https://images.unsplash.com/photo-1561602535-7f155201c950?q=80&w=2670&auto=format&fit=crop" alt="Aerial view of California farmland">
@@ -408,13 +470,13 @@ footer{background:var(--forest);color:var(--white);padding:48px 8% 32px;}
   <div class="gate-wrap">
     <div class="gate-left">
       <div class="section-eyebrow">Download</div>
-      <h2>FilterPro for farming —<br><em>full brochure.</em></h2>
-      <p class="gate-lead">The complete enPact FilterPro brochure for farming and oilfield operations — covering pivot irrigation, the Spintronics technology, the savings methodology, and how installation works. Formatted for a facility operator or ag engineer to evaluate.</p>
+      <h2>Phase 2 verified case study —<br><em>ammonia chiller refrigeration.</em></h2>
+      <p class="gate-lead">The complete weather-adjusted Phase 2 case study on a large-format wholesale retailer running ammonia-based chillers. 8.97% validated refrigeration energy reduction, 9,942 kWh saved, CAD $30,240 projected annual savings per site, 6.03-month payback. Formatted to be evaluated in 5 minutes.</p>
       <div class="gate-pdf-preview">
         <div class="gate-pdf-ico">PDF</div>
         <div class="gate-pdf-meta">
-          <div class="gate-pdf-name">enPact FilterPro — Powering Efficiency in Farming &amp; Oilfield Operations</div>
-          <div class="gate-pdf-sub">~18 MB · 8-page full brochure</div>
+          <div class="gate-pdf-name">Phase 2 Verified Case Study — Ammonia Chiller Refrigeration (Canada)</div>
+          <div class="gate-pdf-sub">~31 KB · 1-page case study</div>
         </div>
       </div>
     </div>
