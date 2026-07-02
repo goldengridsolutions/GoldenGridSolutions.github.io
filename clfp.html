@@ -493,22 +493,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
 </body>
 </html>
-on → GA4 conversion event
-  window.addEventListener('message', function(e){
-    if (typeof e.data !== 'string') return;
-    var msg;
-    try { msg = JSON.parse(e.data); } catch (err) { return; }
-    if (!msg || !msg.event) return;
-    if (msg.event === 'Tally.FormSubmitted') {
-      if (typeof gtag === 'function') {
-        gtag('event', 'clfp_case_study_request', {
-          'event_category': 'lead',
-          'event_label': 'clfp_case_studies_all',
-          'form_id': (msg.payload && msg.payload.formId) || 'J9BEOd'
-        });
-      }
-    }
-  });
 </script>
 
 </body>
