@@ -78,6 +78,49 @@ img{max-width:100%;display:block;}
 .diagram-svg{width:100%;height:auto;max-height:280px;display:block;}
 .diagram-caption{font-size:14px;color:var(--steel);font-weight:300;text-align:center;margin-top:20px;font-style:italic;}
 
+/* Side-by-side layout (text left, visual right) */
+.side-by-side{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:12px;}
+.side-by-side.text-right{grid-template-columns:1fr 1fr;}
+.side-by-side.text-right .side-text{order:2;}
+.side-by-side.text-right .side-visual{order:1;}
+.side-visual{position:relative;}
+.side-visual img,.side-visual svg{width:100%;height:auto;display:block;border-radius:12px;}
+.side-visual.no-frame img,.side-visual.no-frame svg{border-radius:0;}
+.learn.forest .side-visual img{filter:brightness(1.02);}
+@media (max-width:900px){
+  .side-by-side{grid-template-columns:1fr;gap:36px;}
+  .side-by-side.text-right .side-text{order:1;}
+  .side-by-side.text-right .side-visual{order:2;}
+}
+
+/* Placeholder callout for visuals-to-come */
+.viz-placeholder{background:repeating-linear-gradient(45deg,var(--mint-bg),var(--mint-bg) 12px,var(--mint) 12px,var(--mint) 24px);border:2px dashed var(--sage);border-radius:12px;padding:56px 28px;text-align:center;color:var(--forest);font-family:var(--sans);}
+.viz-placeholder-icon{font-size:32px;margin-bottom:12px;opacity:.55;}
+.viz-placeholder-title{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--forest);margin-bottom:6px;}
+.viz-placeholder-body{font-size:13px;color:var(--steel);font-weight:400;line-height:1.5;max-width:280px;margin:0 auto;}
+.learn.forest .viz-placeholder{background:repeating-linear-gradient(45deg,rgba(255,255,255,.05),rgba(255,255,255,.05) 12px,rgba(255,255,255,.08) 12px,rgba(255,255,255,.08) 24px);border-color:rgba(255,255,255,.35);}
+.learn.forest .viz-placeholder-title{color:var(--white);}
+.learn.forest .viz-placeholder-body{color:rgba(255,255,255,.7);}
+
+/* Efficiency comparison chart (generated visual for Section 6) */
+.eff-chart{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:32px 28px 22px;}
+.eff-chart-title{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.68);font-weight:600;text-align:center;margin-bottom:22px;}
+.eff-bars{display:flex;justify-content:space-around;align-items:flex-end;height:220px;gap:36px;padding:0 12px;position:relative;}
+.eff-bars::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(255,255,255,.2);}
+.eff-bar{display:flex;flex-direction:column;justify-content:flex-end;width:80px;position:relative;}
+.eff-bar-loss{background:linear-gradient(180deg,#8B6B45 0%,#6B4E2D 100%);border-radius:6px 6px 0 0;position:relative;}
+.eff-bar-loss.tiny{background:linear-gradient(180deg,#E8C96A 0%,#B8892A 100%);}
+.eff-bar-delivered{background:linear-gradient(180deg,#4A7C59 0%,#243D2C 100%);position:relative;}
+.eff-bar-loss[data-loss]::after{content:attr(data-loss);position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.85);white-space:nowrap;font-weight:500;}
+.eff-bar-label{margin-top:14px;text-align:center;font-size:12px;color:rgba(255,255,255,.85);font-weight:500;line-height:1.35;letter-spacing:.02em;}
+.eff-bar-sub{font-size:10.5px;color:rgba(255,255,255,.55);margin-top:2px;font-weight:400;}
+.eff-legend{display:flex;justify-content:center;gap:22px;margin-top:20px;font-size:11px;color:rgba(255,255,255,.7);}
+.eff-legend-item{display:flex;align-items:center;gap:7px;}
+.eff-legend-swatch{width:14px;height:14px;border-radius:3px;}
+.eff-legend-swatch.delivered{background:linear-gradient(180deg,#4A7C59 0%,#243D2C 100%);}
+.eff-legend-swatch.loss{background:linear-gradient(180deg,#8B6B45 0%,#6B4E2D 100%);}
+.eff-caption{font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin-top:14px;font-style:italic;}
+
 /* Scroll-reveal animations */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(0.22,0.61,0.36,1),transform .8s cubic-bezier(0.22,0.61,0.36,1);}
 .reveal.in-view{opacity:1;transform:translateY(0);}
@@ -344,10 +387,12 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <!-- LEARN 1: WHAT IT IS -->
 <section class="learn alt reveal">
   <div class="container">
+  <div class="side-by-side">
+    <div class="side-text">
     <div class="section-eyebrow">What it is</div>
     <h2 class="section-h2">It's a device. <em>Installed in hours.</em></h2>
     <p class="learn-body">A physical piece of equipment. Not software. Not a service subscription. Not a consulting engagement. You buy it, install it, own it.</p>
-    <div class="learn-icons reveal-stagger">
+    <div class="learn-icons reveal-stagger" style="margin-top:32px;">
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
         <div><div class="learn-icon-label">Physical device</div><div class="learn-icon-sub">Capital purchase, on your balance sheet</div></div>
@@ -361,17 +406,26 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         <div><div class="learn-icon-label">Inline with your power</div><div class="learn-icon-sub">Between utility feed and your equipment</div></div>
       </div>
     </div>
+    </div><!-- /.side-text -->
+    <div class="side-visual no-frame">
+      <img src="filterpro-device.png" alt="enPact FilterPro device — physical hardware installed at your main electrical panel">
+    </div>
+  </div><!-- /.side-by-side -->
   </div>
 </section>
 
 <!-- LEARN 2: WHERE IT SITS (with integration diagram) -->
 <section class="learn reveal">
   <div class="container">
+  <div class="side-by-side text-right">
+    <div class="side-text">
     <div class="section-eyebrow">Where it sits</div>
     <h2 class="section-h2">Between your power and your <em>equipment.</em></h2>
     <p class="learn-body">The device sits inline at the main panel. Your utility power flows through it <strong>before</strong> reaching your refrigeration, chillers, motors, and pumps. Nothing on your refrigerant or controls side is touched.</p>
-    <div class="diagram-wrap">
-      <img src="filterpro-diagram.png" alt="enPact FilterPro integration diagram: utility power flows through main electrical panel with in-line FilterPro device, then out to HVAC, chiller, and compressor/motor loads" class="diagram-img">
+    <p class="learn-body" style="margin-top:14px;font-style:italic;font-size:15px;">Your equipment sees cleaner power — but doesn't know anything changed.</p>
+    </div>
+    <div class="side-visual">
+      <img src="filterpro-diagram.png" alt="enPact FilterPro integration diagram: utility power flows through main electrical panel with in-line FilterPro device, then out to HVAC, chiller, and compressor/motor loads" class="diagram-img" style="border-radius:12px;background:var(--white);padding:16px;border:1px solid var(--border);">
       <!-- SVG fallback below is unused (kept as backup, will not render because img above works) -->
       <svg class="diagram-svg" style="display:none;" viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
         <!-- Utility power (left) -->
@@ -413,30 +467,68 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
           </marker>
         </defs>
       </svg>
-      <div class="diagram-caption">Your equipment sees cleaner power — but doesn't know anything changed.</div>
     </div>
+  </div><!-- /.side-by-side -->
   </div>
 </section>
 
 <!-- LEARN 3: WHY IT WORKS -->
 <section class="learn forest reveal">
   <div class="container">
+  <div class="side-by-side">
+    <div class="side-text">
     <div class="section-eyebrow">Why it works</div>
     <h2 class="section-h2">Proprietary technology. <em>Real reductions.</em></h2>
     <p class="learn-body">Standard electrical-efficiency devices waste some of the energy they're supposed to save. This one uses a <strong>proprietary electron-spin technology</strong> that reduces electrical waste at the device level itself.</p>
     <p class="learn-body" style="margin-top:14px;">Result: more of the kWh reduction stays on your meter, not lost in the equipment doing the optimizing.</p>
+    </div>
+    <div class="side-visual no-frame">
+      <!-- Efficiency comparison chart — illustrative concept, not measured values -->
+      <div class="eff-chart">
+        <div class="eff-chart-title">Where the kWh reduction goes</div>
+        <div class="eff-bars">
+          <div class="eff-bar" style="height:100%;">
+            <div class="eff-bar-loss" data-loss="~18%" style="height:36px;"></div>
+            <div class="eff-bar-delivered" style="height:164px;"></div>
+            <div class="eff-bar-label">Standard efficiency device<div class="eff-bar-sub">capacitor / passive filter</div></div>
+          </div>
+          <div class="eff-bar" style="height:100%;">
+            <div class="eff-bar-loss tiny" data-loss="&lt;3%" style="height:8px;"></div>
+            <div class="eff-bar-delivered" style="height:192px;"></div>
+            <div class="eff-bar-label">enPact FilterPro<div class="eff-bar-sub">electron-spin technology</div></div>
+          </div>
+        </div>
+        <div class="eff-legend">
+          <div class="eff-legend-item"><span class="eff-legend-swatch delivered"></span>Delivered to your meter</div>
+          <div class="eff-legend-item"><span class="eff-legend-swatch loss"></span>Lost inside the device</div>
+        </div>
+        <div class="eff-caption">Illustrative — actual efficiency varies by installation configuration</div>
+      </div>
+    </div>
+  </div><!-- /.side-by-side -->
   </div>
 </section>
 
 <!-- WHY IT MATTERS -->
 <section class="matters reveal">
   <div class="container">
+  <div class="side-by-side text-right">
+    <div class="side-text">
     <div class="section-eyebrow">Why it matters</div>
     <h2 class="section-h2">Capital equipment. <em>Not another operating line item.</em></h2>
     <div class="matters-body">
       <p>Refrigeration is 40–60% of a food processing plant's electric bill. Every point off refrigeration compresses <strong>directly into gross margin</strong> — and the savings survive whether CAISO rates swing up or down.</p>
     </div>
-    <div class="matters-grid reveal-stagger">
+    </div>
+    <div class="side-visual">
+      <div class="viz-placeholder">
+        <div class="viz-placeholder-icon">🏭</div>
+        <div class="viz-placeholder-title">Food processing facility photo</div>
+        <div class="viz-placeholder-body">Replace with: interior shot of a canning or processing floor (evaporators, condensers, or a shift-worker with product line). Swap this &lt;div&gt; block for &lt;img src="matters-facility.png"&gt; when ready.</div>
+      </div>
+    </div>
+  </div><!-- /.side-by-side -->
+    <div class="matters-grid reveal-stagger" style="margin-top:56px;">
       <div class="matters-card">
         <div class="matters-card-title">Capital, not operating expense</div>
         <div class="matters-card-body">You buy the device. You depreciate it. Your accounting team classifies it correctly the first time. No SaaS fee that eats into the savings. No ongoing consulting relationship required.</div>
@@ -456,9 +548,20 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <!-- APPLIES TO -->
 <section class="applies reveal">
   <div class="container">
+  <div class="side-by-side">
+    <div class="side-text">
     <div class="section-eyebrow">Built for CLFP-member operations</div>
     <h2 class="section-h2">Whether you run <em>canneries, olive presses, dairy plants, dehydrators, or freezer lines</em> — the underlying problem is the same.</h2>
     <p class="section-lead">Compressors running longer than they need to. Heat exchange working harder than it has to. Electrical losses upstream of the compressor. The technology addresses all three regardless of refrigerant.</p>
+    </div>
+    <div class="side-visual">
+      <div class="viz-placeholder">
+        <div class="viz-placeholder-icon">🌡</div>
+        <div class="viz-placeholder-title">System-type imagery</div>
+        <div class="viz-placeholder-body">Replace with: a 3-image collage — ammonia plant + DX cold storage + industrial motor room. Or a single wide shot of a CLFP-member facility.</div>
+      </div>
+    </div>
+  </div><!-- /.side-by-side -->
     <div class="applies-grid reveal-stagger">
       <div class="applies-card">
         <div class="applies-tag">Ammonia (NH3)</div>
@@ -749,10 +852,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 </footer>
 
 <script>
-  // Nav scroll shadow
   window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)});
-
-  // Scroll reveal — fade + slide sections into view as user scrolls
   (function(){
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in-view'));
@@ -768,8 +868,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
   })();
-
-  // Tab switching
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const tab = btn.dataset.tab;
@@ -779,6 +877,8 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       });
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById('tab-' + tab).classList.add('active');
       if (typeof gtag === 'function') {
         gtag('event', 'clfp_tab_view', { 'event_category':'engagement', 'event_label': tab });
       }
