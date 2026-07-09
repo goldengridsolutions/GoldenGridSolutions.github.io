@@ -40,7 +40,9 @@ img{max-width:100%;display:block;}
 .nav-left{display:flex;align-items:center;gap:24px;}
 .co-brand{display:flex;align-items:center;gap:12px;padding-left:24px;border-left:1px solid var(--border);}
 .co-brand-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-weight:700;line-height:1.2;max-width:80px;}
-.co-brand img{height:88px;width:auto;display:block;}
+.co-brand a{display:block;line-height:0;transition:opacity .18s;}
+.co-brand a:hover{opacity:.8;}
+.co-brand img{height:88px;width:auto;display:block;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;}
 
 /* HERO — icon callout row */
 .hero-h1-sub{font-family:var(--sans);font-size:15px;color:rgba(255,255,255,.72);font-weight:400;letter-spacing:.02em;margin-top:14px;text-shadow:0 1px 6px rgba(0,0,0,.3);}
@@ -280,7 +282,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="84" style="display:block;"></a>
     <div class="co-brand">
       <div class="co-brand-label">Powered by</div>
-      <img src="emissis-enpact-logo.png" alt="emissis enPact Solutions">
+      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.png" alt="emissis enPact Solutions" width="105" height="88"></a>
     </div>
   </div>
   <div class="nav-links">
@@ -777,8 +779,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       });
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
-      btn.setAttribute('aria-selected','true');
-      document.getElementById('tab-' + tab).classList.add('active');
       if (typeof gtag === 'function') {
         gtag('event', 'clfp_tab_view', { 'event_category':'engagement', 'event_label': tab });
       }
