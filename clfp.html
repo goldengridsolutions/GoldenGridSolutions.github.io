@@ -36,6 +36,45 @@ a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;}
 .ggs-logo{display:flex;align-items:center;gap:12px;}
 
+/* NAV — Emissis co-brand badge */
+.nav-left{display:flex;align-items:center;gap:20px;}
+.co-brand{display:flex;align-items:center;gap:8px;padding-left:20px;border-left:1px solid var(--border);}
+.co-brand-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:600;line-height:1.2;max-width:70px;}
+.co-brand img{height:44px;width:auto;display:block;}
+
+/* HERO — icon callout row */
+.hero-h1-sub{font-family:var(--sans);font-size:15px;color:rgba(255,255,255,.72);font-weight:400;letter-spacing:.02em;margin-top:14px;text-shadow:0 1px 6px rgba(0,0,0,.3);}
+.hero-icons{display:flex;gap:24px;margin-top:34px;flex-wrap:wrap;}
+.hero-icon{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:13px;font-weight:400;letter-spacing:.02em;}
+.hero-icon-svg{width:28px;height:28px;flex-shrink:0;color:#E8C96A;}
+
+/* Simple learning sections — one-thing-per-scroll */
+.learn{padding:88px 8%;}
+.learn.alt{background:var(--white);}
+.learn.forest{background:var(--forest);color:var(--white);}
+.learn.forest .section-h2{color:var(--white);}
+.learn.forest .section-h2 em{color:#E8C96A;}
+.learn.forest .section-eyebrow{color:#E8C96A;}
+.learn.forest .section-eyebrow::before{background:#E8C96A;}
+.learn.forest .learn-body{color:rgba(255,255,255,.82);}
+.learn-body{font-size:19px;color:var(--steel);font-weight:300;line-height:1.65;max-width:780px;margin-top:24px;}
+.learn-body strong{color:var(--forest);font-weight:500;}
+.learn.forest .learn-body strong{color:var(--white);font-weight:500;}
+.learn-icons{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;}
+.learn-icon-item{display:flex;align-items:flex-start;gap:14px;flex:1 1 240px;max-width:340px;}
+.learn-icon-svg{width:38px;height:38px;flex-shrink:0;color:var(--gold);}
+.learn.forest .learn-icon-svg{color:#E8C96A;}
+.learn-icon-label{font-size:15px;color:var(--forest);font-weight:500;line-height:1.4;}
+.learn.forest .learn-icon-label{color:var(--white);}
+.learn-icon-sub{font-size:13px;color:var(--steel);font-weight:300;line-height:1.5;margin-top:3px;}
+.learn.forest .learn-icon-sub{color:rgba(255,255,255,.68);}
+
+/* Integration diagram wrapper */
+.diagram-wrap{margin-top:44px;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 32px;max-width:1100px;}
+.learn.alt .diagram-wrap{background:var(--mint-bg);}
+.diagram-svg{width:100%;height:auto;max-height:280px;display:block;}
+.diagram-caption{font-size:14px;color:var(--steel);font-weight:300;text-align:center;margin-top:20px;font-style:italic;}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(232,244,238,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6%;height:120px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s var(--ease);}
 nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
@@ -171,13 +210,21 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
 /* RESPONSIVE */
 @media (max-width:900px){
-  section{padding:72px 6%;}
+  section, .learn{padding:72px 6%;}
   nav{padding:0 4%;height:88px;}
   .hero{margin-top:88px;}
   .ggs-logo img{height:60px!important;}
+  .co-brand{display:none;}
   .nav-links{gap:12px;}
   .nav-links a:not(.nav-cta){display:none;}
   .nav-cta{padding:10px 18px;font-size:13px;}
+  .hero-h1{font-size:clamp(28px,7vw,42px);}
+  .hero-icons{gap:12px;margin-top:26px;}
+  .hero-icon{font-size:12px;}
+  .hero-icon-svg{width:22px;height:22px;}
+  .learn-body{font-size:16px;}
+  .learn-icons{gap:16px;margin-top:28px;}
+  .diagram-svg{max-height:none;}
   .stat-item{flex:1 1 45%;padding:28px 12px;}
   .stat-num{font-size:44px;}
   .stat-num .unit{font-size:24px;}
@@ -213,7 +260,13 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <body>
 
 <nav id="mainNav">
-  <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="108" style="display:block;"></a>
+  <div class="nav-left">
+    <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="108" style="display:block;"></a>
+    <div class="co-brand">
+      <div class="co-brand-label">Powered by</div>
+      <img src="emissis-enpact-logo.png" alt="emissis enPact Solutions">
+    </div>
+  </div>
   <div class="nav-links">
     <a href="index.html#sectors">Sectors</a>
     <a href="cold-storage.html">Cold Storage</a>
@@ -230,12 +283,18 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <div class="hero-bg-grid"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Made for California Food Producers · CLFP Members Welcome</div>
-    <h1 class="hero-h1">Cut refrigeration energy <em>up to 41.5%</em>. Verified. Non-disruptive.</h1>
-    <p class="hero-lead">Patented capital equipment that cuts refrigeration energy — <strong>verified in independent trials across ammonia and DX systems.</strong> Turn operating expense into ROI. No refrigerant change, no setpoint change, no controls modification.</p>
+    <div class="hero-eyebrow">For California Food Producers · Powered by emissis enPact</div>
+    <h1 class="hero-h1">Patented electrical-optimization capital equipment.<br><em>Up to 41.5% verified refrigeration reduction.</em></h1>
+    <p class="hero-h1-sub">No refrigerant change. No controls change. No downtime.</p>
     <div class="hero-cta-row">
       <a href="#gate" class="btn-gold">Read the Case Studies →</a>
       <a href="book.html" class="btn-ghost">Book a 30-min Call</a>
+    </div>
+    <div class="hero-icons">
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>Installs in hours</div>
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>No system change</div>
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>No new training</div>
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>Lower kWh on the meter</div>
     </div>
   </div>
 </div>
@@ -264,15 +323,99 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
   </div>
 </div>
 
+<!-- LEARN 1: WHAT IT IS -->
+<section class="learn alt">
+  <div class="container">
+    <div class="section-eyebrow">What it is</div>
+    <h2 class="section-h2">It's a device. <em>Installed in hours.</em></h2>
+    <p class="learn-body">A physical piece of equipment. Not software. Not a service subscription. Not a consulting engagement. You buy it, install it, own it.</p>
+    <div class="learn-icons">
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <div><div class="learn-icon-label">Physical device</div><div class="learn-icon-sub">Capital purchase, on your balance sheet</div></div>
+      </div>
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div><div class="learn-icon-label">Main electrical panel</div><div class="learn-icon-sub">Installed at your service entrance</div></div>
+      </div>
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <div><div class="learn-icon-label">Inline with your power</div><div class="learn-icon-sub">Between utility feed and your equipment</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN 2: WHERE IT SITS (with integration diagram) -->
+<section class="learn">
+  <div class="container">
+    <div class="section-eyebrow">Where it sits</div>
+    <h2 class="section-h2">Between your power and your <em>equipment.</em></h2>
+    <p class="learn-body">The device sits inline at the main panel. Your utility power flows through it <strong>before</strong> reaching your refrigeration, chillers, motors, and pumps. Nothing on your refrigerant or controls side is touched.</p>
+    <div class="diagram-wrap">
+      <!-- INTEGRATION DIAGRAM — swap for filterpro-diagram.png when Albert uploads it -->
+      <svg class="diagram-svg" viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
+        <!-- Utility power (left) -->
+        <g transform="translate(60,90)">
+          <rect x="0" y="0" width="130" height="80" rx="6" fill="#E8F4EE" stroke="#C8DECE" stroke-width="1.5"/>
+          <text x="65" y="35" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="600" fill="#243D2C">UTILITY</text>
+          <text x="65" y="52" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="600" fill="#243D2C">POWER</text>
+          <path d="M 40 68 Q 50 62 55 68 T 70 68 T 85 68" stroke="#4A7C59" stroke-width="2" fill="none"/>
+        </g>
+        <!-- Arrow 1 -->
+        <path d="M 195 130 L 240 130" stroke="#4A7C59" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+        <!-- Main panel + device (center) -->
+        <g transform="translate(255,55)">
+          <rect x="0" y="0" width="200" height="150" rx="8" fill="#243D2C" stroke="#243D2C"/>
+          <text x="100" y="26" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" font-weight="600" fill="#E8C96A" letter-spacing="1">MAIN PANEL</text>
+          <!-- Device inside -->
+          <rect x="55" y="45" width="90" height="80" rx="4" fill="#B8892A" stroke="#B8892A"/>
+          <text x="100" y="80" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="700" fill="#FFFFFF">enPact</text>
+          <text x="100" y="98" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="700" fill="#FFFFFF">Device</text>
+          <text x="100" y="140" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">In-line, non-invasive</text>
+        </g>
+        <!-- Arrow 2 (splits) -->
+        <path d="M 460 130 L 520 130" stroke="#4A7C59" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+        <!-- Equipment loads (right, stacked) -->
+        <g transform="translate(540,20)">
+          <rect x="0" y="0" width="180" height="46" rx="5" fill="#E8F4EE" stroke="#C8DECE" stroke-width="1.5"/>
+          <text x="90" y="28" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="500" fill="#243D2C">Refrigeration</text>
+          <rect x="0" y="60" width="180" height="46" rx="5" fill="#E8F4EE" stroke="#C8DECE" stroke-width="1.5"/>
+          <text x="90" y="88" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="500" fill="#243D2C">Chillers</text>
+          <rect x="0" y="120" width="180" height="46" rx="5" fill="#E8F4EE" stroke="#C8DECE" stroke-width="1.5"/>
+          <text x="90" y="148" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="500" fill="#243D2C">Compressors</text>
+          <rect x="0" y="180" width="180" height="46" rx="5" fill="#E8F4EE" stroke="#C8DECE" stroke-width="1.5"/>
+          <text x="90" y="208" text-anchor="middle" font-family="Outfit, sans-serif" font-size="12" font-weight="500" fill="#243D2C">Motors &amp; Pumps</text>
+        </g>
+        <!-- Arrow marker definition -->
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#4A7C59"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">Your equipment sees cleaner power — but doesn't know anything changed.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARN 3: WHY IT WORKS -->
+<section class="learn forest">
+  <div class="container">
+    <div class="section-eyebrow">Why it works</div>
+    <h2 class="section-h2">Proprietary technology. <em>Real reductions.</em></h2>
+    <p class="learn-body">Standard electrical-efficiency devices waste some of the energy they're supposed to save. This one uses a <strong>proprietary electron-spin technology</strong> that reduces electrical waste at the device level itself.</p>
+    <p class="learn-body" style="margin-top:14px;">Result: more of the kWh reduction stays on your meter, not lost in the equipment doing the optimizing.</p>
+  </div>
+</section>
+
 <!-- WHY IT MATTERS -->
 <section class="matters">
   <div class="container">
-    <div class="section-eyebrow">Why this shows up on your P&amp;L</div>
-    <h2 class="section-h2">This is <em>capital equipment</em>. Not a control layer. Not a consulting engagement.</h2>
+    <div class="section-eyebrow">Why it matters</div>
+    <h2 class="section-h2">Capital equipment. <em>Not another operating line item.</em></h2>
     <div class="matters-body">
-      <p>Refrigeration is typically 40–60% of a food processing plant's electric bill — and California's industrial rates aren't coming down. Every percentage point off refrigeration compresses directly into gross margin.</p>
-      <p>But most "energy solutions" that reach your desk are one of three things: <strong>consulting, controls software, or a demand-response program</strong>. None of those are capital equipment. None depreciate. None keep saving once the vendor's monthly fee stops.</p>
-      <p>This is different. It's a patented physical device installed alongside your existing refrigeration system. Once installed, it works whether we're on the phone or not — and the savings show up whether utility rates go up or down.</p>
+      <p>Refrigeration is 40–60% of a food processing plant's electric bill. Every point off refrigeration compresses <strong>directly into gross margin</strong> — and the savings survive whether CAISO rates swing up or down.</p>
     </div>
     <div class="matters-grid">
       <div class="matters-card">
@@ -624,6 +767,10 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       document.querySelectorAll('.tab-btn').forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-selected','false');
+      });
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      b.setAttribute('aria-selected','false');
       });
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
