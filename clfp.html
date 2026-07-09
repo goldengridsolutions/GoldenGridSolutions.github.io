@@ -37,10 +37,10 @@ img{max-width:100%;display:block;}
 .ggs-logo{display:flex;align-items:center;gap:12px;}
 
 /* NAV — Emissis co-brand badge */
-.nav-left{display:flex;align-items:center;gap:20px;}
-.co-brand{display:flex;align-items:center;gap:8px;padding-left:20px;border-left:1px solid var(--border);}
-.co-brand-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:600;line-height:1.2;max-width:70px;}
-.co-brand img{height:44px;width:auto;display:block;}
+.nav-left{display:flex;align-items:center;gap:24px;}
+.co-brand{display:flex;align-items:center;gap:12px;padding-left:24px;border-left:1px solid var(--border);}
+.co-brand-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-weight:700;line-height:1.2;max-width:80px;}
+.co-brand img{height:68px;width:auto;display:block;}
 
 /* HERO — icon callout row */
 .hero-h1-sub{font-family:var(--sans);font-size:15px;color:rgba(255,255,255,.72);font-weight:400;letter-spacing:.02em;margin-top:14px;text-shadow:0 1px 6px rgba(0,0,0,.3);}
@@ -72,8 +72,21 @@ img{max-width:100%;display:block;}
 /* Integration diagram wrapper */
 .diagram-wrap{margin-top:44px;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 32px;max-width:1100px;}
 .learn.alt .diagram-wrap{background:var(--mint-bg);}
+.diagram-img{width:100%;height:auto;max-width:900px;margin:0 auto;display:block;}
 .diagram-svg{width:100%;height:auto;max-height:280px;display:block;}
 .diagram-caption{font-size:14px;color:var(--steel);font-weight:300;text-align:center;margin-top:20px;font-style:italic;}
+
+/* Scroll-reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(0.22,0.61,0.36,1),transform .8s cubic-bezier(0.22,0.61,0.36,1);}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+.reveal-stagger > *{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.22,0.61,0.36,1),transform .6s cubic-bezier(0.22,0.61,0.36,1);}
+.reveal-stagger.in-view > *:nth-child(1){transition-delay:.05s;opacity:1;transform:translateY(0);}
+.reveal-stagger.in-view > *:nth-child(2){transition-delay:.15s;opacity:1;transform:translateY(0);}
+.reveal-stagger.in-view > *:nth-child(3){transition-delay:.25s;opacity:1;transform:translateY(0);}
+.reveal-stagger.in-view > *:nth-child(4){transition-delay:.35s;opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal,.reveal-stagger > *{opacity:1;transform:none;transition:none;}
+}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(232,244,238,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6%;height:120px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s var(--ease);}
@@ -213,8 +226,11 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
   section, .learn{padding:72px 6%;}
   nav{padding:0 4%;height:88px;}
   .hero{margin-top:88px;}
-  .ggs-logo img{height:60px!important;}
-  .co-brand{display:none;}
+  .ggs-logo img{height:48px!important;}
+  .nav-left{gap:12px;}
+  .co-brand{padding-left:12px;gap:6px;}
+  .co-brand-label{display:none;}
+  .co-brand img{height:38px;}
   .nav-links{gap:12px;}
   .nav-links a:not(.nav-cta){display:none;}
   .nav-cta{padding:10px 18px;font-size:13px;}
@@ -324,12 +340,12 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 </div>
 
 <!-- LEARN 1: WHAT IT IS -->
-<section class="learn alt">
+<section class="learn alt reveal">
   <div class="container">
     <div class="section-eyebrow">What it is</div>
     <h2 class="section-h2">It's a device. <em>Installed in hours.</em></h2>
     <p class="learn-body">A physical piece of equipment. Not software. Not a service subscription. Not a consulting engagement. You buy it, install it, own it.</p>
-    <div class="learn-icons">
+    <div class="learn-icons reveal-stagger">
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
         <div><div class="learn-icon-label">Physical device</div><div class="learn-icon-sub">Capital purchase, on your balance sheet</div></div>
@@ -347,14 +363,15 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 </section>
 
 <!-- LEARN 2: WHERE IT SITS (with integration diagram) -->
-<section class="learn">
+<section class="learn reveal">
   <div class="container">
     <div class="section-eyebrow">Where it sits</div>
     <h2 class="section-h2">Between your power and your <em>equipment.</em></h2>
     <p class="learn-body">The device sits inline at the main panel. Your utility power flows through it <strong>before</strong> reaching your refrigeration, chillers, motors, and pumps. Nothing on your refrigerant or controls side is touched.</p>
     <div class="diagram-wrap">
-      <!-- INTEGRATION DIAGRAM — swap for filterpro-diagram.png when Albert uploads it -->
-      <svg class="diagram-svg" viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
+      <img src="filterpro-diagram.png" alt="enPact FilterPro integration diagram: utility power flows through main electrical panel with in-line FilterPro device, then out to HVAC, chiller, and compressor/motor loads" class="diagram-img">
+      <!-- SVG fallback below is unused (kept as backup, will not render because img above works) -->
+      <svg class="diagram-svg" style="display:none;" viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
         <!-- Utility power (left) -->
         <g transform="translate(60,90)">
           <rect x="0" y="0" width="130" height="80" rx="6" fill="#E8F4EE" stroke="#C8DECE" stroke-width="1.5"/>
@@ -400,7 +417,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 </section>
 
 <!-- LEARN 3: WHY IT WORKS -->
-<section class="learn forest">
+<section class="learn forest reveal">
   <div class="container">
     <div class="section-eyebrow">Why it works</div>
     <h2 class="section-h2">Proprietary technology. <em>Real reductions.</em></h2>
@@ -410,14 +427,14 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 </section>
 
 <!-- WHY IT MATTERS -->
-<section class="matters">
+<section class="matters reveal">
   <div class="container">
     <div class="section-eyebrow">Why it matters</div>
     <h2 class="section-h2">Capital equipment. <em>Not another operating line item.</em></h2>
     <div class="matters-body">
       <p>Refrigeration is 40–60% of a food processing plant's electric bill. Every point off refrigeration compresses <strong>directly into gross margin</strong> — and the savings survive whether CAISO rates swing up or down.</p>
     </div>
-    <div class="matters-grid">
+    <div class="matters-grid reveal-stagger">
       <div class="matters-card">
         <div class="matters-card-title">Capital, not operating expense</div>
         <div class="matters-card-body">You buy the device. You depreciate it. Your accounting team classifies it correctly the first time. No SaaS fee that eats into the savings. No ongoing consulting relationship required.</div>
@@ -435,16 +452,16 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 </section>
 
 <!-- APPLIES TO -->
-<section class="applies">
+<section class="applies reveal">
   <div class="container">
     <div class="section-eyebrow">Built for CLFP-member operations</div>
     <h2 class="section-h2">Whether you run <em>canneries, olive presses, dairy plants, dehydrators, or freezer lines</em> — the underlying problem is the same.</h2>
     <p class="section-lead">Compressors running longer than they need to. Heat exchange working harder than it has to. Electrical losses upstream of the compressor. The technology addresses all three regardless of refrigerant.</p>
-    <div class="applies-grid">
+    <div class="applies-grid reveal-stagger">
       <div class="applies-card">
         <div class="applies-tag">Ammonia (NH3)</div>
         <div class="applies-title">Large tomato, dairy, and freezer plants</div>
-        <div class="applies-body">Standard refrigerant for large-scale food processing in California. Verified on a live ammonia chiller at a global wholesale retailer (Phase 2, Canada). <strong>Same tech applies to CLFP's tomato paste, dairy, and freezer operators.</strong></div>
+        <div class="applies-body">Standard refrigerant for large-scale food processing in California. Verified on a live ammonia chiller at a global wholesale retailer (Canada). <strong>Same tech applies to CLFP's tomato paste, dairy, and freezer operators.</strong></div>
       </div>
       <div class="applies-card">
         <div class="applies-tag">DX · HFC · CO<sub>2</sub></div>
@@ -461,7 +478,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 </section>
 
 <!-- TABBED CASE STUDIES -->
-<section class="results-sec">
+<section class="results-sec reveal">
   <div class="container">
     <div class="section-eyebrow">Verified across the systems you run</div>
     <h2 class="section-h2">Same product family. <em>Different system types.</em></h2>
@@ -503,7 +520,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- AMMONIA TAB -->
       <div class="tab-panel" id="tab-ammonia" role="tabpanel">
-        <div class="tab-context">Verified · Global Wholesale Retailer · Phase 2 (Canada)</div>
+        <div class="tab-context">Verified · Global Wholesale Retailer (Canada)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>8.97%</em> on an ammonia chiller system.</h3>
         <p class="tab-lead">Weather-adjusted validation on a live ammonia-based chiller system. Savings held consistently across 12 operational days with zero impact to operations, food safety, or controls.</p>
         <div class="tab-stats">
@@ -537,7 +554,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <div class="gate-frame">
       <div class="gate-frame-eyebrow">Get the case studies</div>
       <div class="gate-frame-title">Three verified case studies. Delivered in under a minute.</div>
-      <div class="gate-frame-note">Ammonia Chiller (Phase 2) · Food Processing Site (41.5%) · Refrigerated Distribution Center (26.5%)</div>
+      <div class="gate-frame-note">Ammonia Chiller (8.97%) · Food Processing Site (41.5%) · Refrigerated Distribution Center (26.5%)</div>
 
       <!-- ZOHO Webform (clfp / Leads) — created 2026-07-07 -->
       <style>
@@ -650,7 +667,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         <div class="clfp-success-title">Thanks — the case studies are on their way to your inbox.</div>
         <div class="clfp-success-body">If they don't arrive in a few minutes, check your spam folder or download them directly here:</div>
         <div class="clfp-success-links">
-          <a href="goldengrid-phase2-ammonia-case-study.pdf" target="_blank" rel="noopener">Ammonia Chiller (Phase 2) — Global Wholesale Retailer, Canada</a>
+          <a href="goldengrid-phase2-ammonia-case-study.pdf" target="_blank" rel="noopener">Ammonia Chiller (8.97%) — Global Wholesale Retailer, Canada</a>
           <a href="goldengrid-food-processing-case-study.pdf" target="_blank" rel="noopener">Food Processing Site — 41.5% reduction (U.K.)</a>
           <a href="goldengrid-cold-storage-case-study.pdf" target="_blank" rel="noopener">Refrigerated Distribution Center — 26.5% reduction</a>
         </div>
@@ -732,6 +749,23 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <script>
   // Nav scroll shadow
   window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)});
+
+  // Scroll reveal — fade + slide sections into view as user scrolls
+  (function(){
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in-view'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+  })();
 
   // Tab switching
   document.querySelectorAll('.tab-btn').forEach(btn => {
