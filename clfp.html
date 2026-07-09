@@ -42,7 +42,7 @@ img{max-width:100%;display:block;}
 .co-brand-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-weight:700;line-height:1.2;max-width:80px;}
 .co-brand a{display:block;line-height:0;transition:opacity .18s;}
 .co-brand a:hover{opacity:.8;}
-.co-brand img{height:88px;width:auto;display:block;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;}
+.co-brand img{height:44px;width:auto;display:block;}
 
 /* HERO — icon callout row */
 .hero-h1-sub{font-family:var(--sans);font-size:15px;color:rgba(255,255,255,.72);font-weight:400;letter-spacing:.02em;margin-top:14px;text-shadow:0 1px 6px rgba(0,0,0,.3);}
@@ -189,7 +189,7 @@ section{padding:104px 8%;}
 .matters-card-body{font-size:14.5px;color:var(--steel);line-height:1.7;font-weight:300;}
 
 /* TABBED CASE STUDY SECTION */
-.results-sec{background:var(--mint-bg);}
+.results-sec{background:var(--white);}
 .tabs{margin-top:52px;}
 .tab-nav{display:flex;gap:6px;border-bottom:2px solid var(--border);}
 .tab-btn{background:transparent;border:none;padding:16px 28px;font-family:var(--sans);font-size:15px;font-weight:500;color:var(--steel);cursor:pointer;position:relative;letter-spacing:.01em;transition:color .2s;}
@@ -235,9 +235,9 @@ section{padding:104px 8%;}
 .how-body strong{color:var(--forest);font-weight:500;}
 
 /* APPLIES TO */
-.applies{background:var(--white);}
+.applies{background:var(--mint-bg);}
 .applies-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
-.applies-card{background:var(--mint-bg);border:1px solid var(--border);border-radius:10px;padding:32px 28px;transition:border-color .2s,box-shadow .2s;}
+.applies-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:32px 28px;transition:border-color .2s,box-shadow .2s;}
 .applies-card:hover{border-color:var(--leaf);box-shadow:0 6px 22px rgba(74,124,89,.08);}
 .applies-tag{display:inline-block;background:var(--mint);color:var(--leaf);font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
 .applies-title{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--forest);margin-bottom:10px;line-height:1.3;}
@@ -275,7 +275,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
   .nav-left{gap:12px;}
   .co-brand{padding-left:12px;gap:6px;}
   .co-brand-label{display:none;}
-  .co-brand img{height:38px;}
+  .co-brand img{height:28px;}
   .nav-links{gap:12px;}
   .nav-links a:not(.nav-cta){display:none;}
   .nav-cta{padding:10px 18px;font-size:13px;}
@@ -325,7 +325,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="84" style="display:block;"></a>
     <div class="co-brand">
       <div class="co-brand-label">Powered by</div>
-      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.png" alt="emissis enPact Solutions" width="105" height="88"></a>
+      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.svg" alt="emissis enPact Solutions" width="240" height="44"></a>
     </div>
   </div>
   <div class="nav-links">
@@ -339,7 +339,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=2670&auto=format&fit=crop" alt="California food producing facility">
+    <img src="hero-clfp.png" alt="enPact FilterPro device installed at a California food producer's facility">
     <div class="hero-bg-overlay"></div>
     <div class="hero-bg-grid"></div>
   </div>
@@ -521,11 +521,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     </div>
     </div>
     <div class="side-visual">
-      <div class="viz-placeholder">
-        <div class="viz-placeholder-icon">🏭</div>
-        <div class="viz-placeholder-title">Food processing facility photo</div>
-        <div class="viz-placeholder-body">Replace with: interior shot of a canning or processing floor (evaporators, condensers, or a shift-worker with product line). Swap this &lt;div&gt; block for &lt;img src="matters-facility.png"&gt; when ready.</div>
-      </div>
+      <img src="matters-facility.png" alt="Food processing facility — refrigeration equipment powering the plant">
     </div>
   </div><!-- /.side-by-side -->
     <div class="matters-grid reveal-stagger" style="margin-top:56px;">
@@ -555,11 +551,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <p class="section-lead">Compressors running longer than they need to. Heat exchange working harder than it has to. Electrical losses upstream of the compressor. The technology addresses all three regardless of refrigerant.</p>
     </div>
     <div class="side-visual">
-      <div class="viz-placeholder">
-        <div class="viz-placeholder-icon">🌡</div>
-        <div class="viz-placeholder-title">System-type imagery</div>
-        <div class="viz-placeholder-body">Replace with: a 3-image collage — ammonia plant + DX cold storage + industrial motor room. Or a single wide shot of a CLFP-member facility.</div>
-      </div>
+      <img src="applies-systems.png" alt="California food producer facilities — ammonia, DX, and motor-driven systems">
     </div>
   </div><!-- /.side-by-side -->
     <div class="applies-grid reveal-stagger">
