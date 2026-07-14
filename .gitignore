@@ -19,3 +19,7 @@ Thumbs.db
 ggs-github-token.txt
 *.pat
 .env
+
+# Internal handoff docs — local only
+_GIT_SYNC_WORKFLOW.md
+_*.md
