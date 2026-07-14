@@ -1,0 +1,21 @@
+# Drafts, backups, unused files staged outside the live repo
+_archive/
+
+# Windows / Google Drive metadata (auto-recreated, never commit)
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Backup naming patterns (Drive/Windows conventions)
+*~
+*.bak
+*.tmp
+
+# Draft markdown that shouldn't ship to the site
+*-draft.md
+*_draft_*.html
+
+# Belt-and-suspenders: never commit the PAT even if someone drops it here
+ggs-github-token.txt
+*.pat
+.env
