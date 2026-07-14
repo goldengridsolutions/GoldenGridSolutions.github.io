@@ -80,6 +80,7 @@ img{max-width:100%;display:block;}
 
 /* Side-by-side layout (text left, visual right) */
 .side-by-side{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:12px;}
+.side-by-side.works-wide{grid-template-columns:minmax(0,0.85fr) minmax(0,1.35fr);gap:48px;}
 .side-by-side.text-right{grid-template-columns:1fr 1fr;}
 .side-by-side.text-right .side-text{order:2;}
 .side-by-side.text-right .side-visual{order:1;}
@@ -198,12 +199,13 @@ section{padding:104px 8%;}
 .tab-btn.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:3px;background:var(--gold);}
 .tab-panel{display:none;padding:40px 0 0;}
 .tab-panel.active{display:block;}
-.tab-product{display:flex;align-items:center;gap:20px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:16px 22px;margin-bottom:26px;max-width:640px;}
-.tab-product-img{flex:0 0 auto;width:96px;height:96px;object-fit:contain;}
+.tab-product{display:flex;align-items:center;gap:26px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:22px 28px;margin-bottom:26px;max-width:720px;}
+.tab-product-img{flex:0 0 auto;width:160px;height:160px;object-fit:contain;}
 .tab-product-body{flex:1;min-width:0;}
-.tab-product-name{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--forest);line-height:1.25;margin-bottom:4px;}
-.tab-product-desc{font-size:14px;color:var(--steel);line-height:1.55;font-weight:300;}
-@media (max-width:640px){.tab-product{flex-direction:column;align-items:flex-start;text-align:left;} .tab-product-img{width:80px;height:80px;}}
+.tab-product-name{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--forest);line-height:1.25;margin-bottom:6px;}
+.tab-product-desc{font-size:14.5px;color:var(--steel);line-height:1.6;font-weight:300;}
+.tab-product-desc strong{color:var(--forest);font-weight:500;}
+@media (max-width:640px){.tab-product{flex-direction:column;align-items:flex-start;text-align:left;padding:18px 20px;} .tab-product-img{width:120px;height:120px;}}
 .tab-headline{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:600;color:var(--forest);line-height:1.15;letter-spacing:-.015em;margin-bottom:8px;}
 .tab-headline em{font-style:italic;color:var(--gold);font-weight:700;}
 .tab-context{font-size:14px;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:22px;}
@@ -481,35 +483,15 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <!-- LEARN 3: WHY IT WORKS -->
 <section class="learn forest reveal">
   <div class="container">
-  <div class="side-by-side">
+  <div class="side-by-side works-wide">
     <div class="side-text">
     <div class="section-eyebrow">Why it works</div>
     <h2 class="section-h2">Proprietary technology. <em>Real reductions.</em></h2>
     <p class="learn-body">Standard electrical-efficiency devices waste some of the energy they're supposed to save. This one uses a <strong>proprietary electron-spin technology</strong> that reduces electrical waste at the device level itself.</p>
     <p class="learn-body" style="margin-top:14px;">Result: more of the kWh reduction stays on your meter, not lost in the equipment doing the optimizing.</p>
     </div>
-    <div class="side-visual no-frame">
-      <!-- Efficiency comparison chart — illustrative concept, not measured values -->
-      <div class="eff-chart">
-        <div class="eff-chart-title">Where the kWh reduction goes</div>
-        <div class="eff-bars">
-          <div class="eff-bar" style="height:100%;">
-            <div class="eff-bar-loss" data-loss="~18%" style="height:36px;"></div>
-            <div class="eff-bar-delivered" style="height:164px;"></div>
-            <div class="eff-bar-label">Standard efficiency device<div class="eff-bar-sub">capacitor / passive filter</div></div>
-          </div>
-          <div class="eff-bar" style="height:100%;">
-            <div class="eff-bar-loss tiny" data-loss="&lt;3%" style="height:8px;"></div>
-            <div class="eff-bar-delivered" style="height:192px;"></div>
-            <div class="eff-bar-label">enPact FilterPro<div class="eff-bar-sub">electron-spin technology</div></div>
-          </div>
-        </div>
-        <div class="eff-legend">
-          <div class="eff-legend-item"><span class="eff-legend-swatch delivered"></span>Delivered to your meter</div>
-          <div class="eff-legend-item"><span class="eff-legend-swatch loss"></span>Lost inside the device</div>
-        </div>
-        <div class="eff-caption">Illustrative — actual efficiency varies by installation configuration</div>
-      </div>
+    <div class="side-visual">
+      <img src="works-facility.png" alt="Diagram: noisy wasteful power feeding motors on the left, enPact FilterPro installed in parallel at the electrical panel in the middle, and conditioned efficient power feeding the same motors on the right — showing electron alignment, smoother current flow, and reduced losses" style="width:100%;height:auto;border-radius:12px;background:var(--white);padding:12px;border:1px solid rgba(255,255,255,0.14);">
     </div>
   </div><!-- /.side-by-side -->
   </div>
@@ -527,7 +509,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     </div>
     </div>
     <div class="side-visual">
-      <img src="matters-facility.png" alt="Food processing facility — refrigeration equipment powering the plant">
+      <img src="matters-margin.png" alt="Diagram: refrigeration's share of a food processing plant's electric bill, and how kWh reduction flows directly into gross margin" style="width:100%;height:auto;">
     </div>
   </div><!-- /.side-by-side -->
     <div class="matters-grid reveal-stagger" style="margin-top:56px;">
@@ -599,7 +581,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
           <img class="tab-product-img" src="enpact-rc-device.png" alt="enPact Refrigeration & Cooling device">
           <div class="tab-product-body">
             <div class="tab-product-name">enPact Refrigeration &amp; Cooling</div>
-            <div class="tab-product-desc">Installed on individual refrigeration circuits to cut compressor runtime and lower kWh at the unit.</div>
+            <div class="tab-product-desc">Installed inline on the electrical circuit feeding each compressor. Cuts runtime and kWh at the unit &mdash; <strong>without changing set temperatures, refrigerant, or controls.</strong></div>
           </div>
         </div>
         <div class="tab-context">Verified · Food Processing Site (U.K.)</div>
@@ -634,7 +616,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
           <img class="tab-product-img" src="filterpro-device.png" alt="enPact FilterPro device">
           <div class="tab-product-body">
             <div class="tab-product-name">enPact FilterPro</div>
-            <div class="tab-product-desc">Installed at the main electrical panel to clean the power feeding your ammonia system — before it ever reaches your compressors.</div>
+            <div class="tab-product-desc">Installed at the main electrical panel to clean the power feeding your ammonia system &mdash; <strong>without changing set temperatures, refrigerant, or controls.</strong></div>
           </div>
         </div>
         <div class="tab-context">Verified · Global Wholesale Retailer (Canada)</div>
