@@ -198,6 +198,12 @@ section{padding:104px 8%;}
 .tab-btn.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:3px;background:var(--gold);}
 .tab-panel{display:none;padding:40px 0 0;}
 .tab-panel.active{display:block;}
+.tab-product{display:flex;align-items:center;gap:20px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:16px 22px;margin-bottom:26px;max-width:640px;}
+.tab-product-img{flex:0 0 auto;width:96px;height:96px;object-fit:contain;}
+.tab-product-body{flex:1;min-width:0;}
+.tab-product-name{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--forest);line-height:1.25;margin-bottom:4px;}
+.tab-product-desc{font-size:14px;color:var(--steel);line-height:1.55;font-weight:300;}
+@media (max-width:640px){.tab-product{flex-direction:column;align-items:flex-start;text-align:left;} .tab-product-img{width:80px;height:80px;}}
 .tab-headline{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:600;color:var(--forest);line-height:1.15;letter-spacing:-.015em;margin-bottom:8px;}
 .tab-headline em{font-style:italic;color:var(--gold);font-weight:700;}
 .tab-context{font-size:14px;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:22px;}
@@ -325,7 +331,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="84" style="display:block;"></a>
     <div class="co-brand">
       <div class="co-brand-label">Powered by</div>
-      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.svg" alt="emissis logo — technology partner" width="68" height="68"></a>
+      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.svg" alt="Emissis enPact logo — technology partner" width="68" height="68"></a>
     </div>
   </div>
   <div class="nav-links">
@@ -344,7 +350,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <div class="hero-bg-grid"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow">For California Food Producers · Powered by emissis enPact</div>
+    <div class="hero-eyebrow">For California Food Producers · Powered by Emissis enPact</div>
     <h1 class="hero-h1">Patented electrical-optimization capital equipment.<br><em>Up to 41.5% verified refrigeration reduction.</em></h1>
     <p class="hero-h1-sub">No refrigerant change. No controls change. No downtime.</p>
     <div class="hero-cta-row">
@@ -589,6 +595,13 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- DX TAB -->
       <div class="tab-panel active" id="tab-dx" role="tabpanel">
+        <div class="tab-product">
+          <img class="tab-product-img" src="enpact-rc-device.png" alt="enPact Refrigeration & Cooling device">
+          <div class="tab-product-body">
+            <div class="tab-product-name">enPact Refrigeration &amp; Cooling</div>
+            <div class="tab-product-desc">Installed on individual refrigeration circuits to cut compressor runtime and lower kWh at the unit.</div>
+          </div>
+        </div>
         <div class="tab-context">Verified · Food Processing Site (U.K.)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>41.5%</em> across 8 units at a food processing site.</h3>
         <p class="tab-lead">Site-wide reduction of 11.7% at the main incomer. Measured over live ON/OFF comparison periods on a facility with cold-store, processing, and packing areas. Zero operational disruption.</p>
@@ -617,6 +630,13 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- AMMONIA TAB -->
       <div class="tab-panel" id="tab-ammonia" role="tabpanel">
+        <div class="tab-product">
+          <img class="tab-product-img" src="filterpro-device.png" alt="enPact FilterPro device">
+          <div class="tab-product-body">
+            <div class="tab-product-name">enPact FilterPro</div>
+            <div class="tab-product-desc">Installed at the main electrical panel to clean the power feeding your ammonia system — before it ever reaches your compressors.</div>
+          </div>
+        </div>
         <div class="tab-context">Verified · Global Wholesale Retailer (Canada)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>8.97%</em> on an ammonia chiller system.</h3>
         <p class="tab-lead">Weather-adjusted validation on a live ammonia-based chiller system. Savings held consistently across 12 operational days with zero impact to operations, food safety, or controls.</p>
@@ -755,7 +775,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
               <span><strong>Motors, pumps, blowers</strong> — plant-wide inductive loads</span>
             </label>
             <label class="clfp-check">
-              <input type="checkbox" data-system="Not sure" data-products="FilterPro;Maxwell Chillers;Refrigeration &amp; Cooling;EnPact AI Monitoring">
+              <input type="checkbox" data-system="Not sure" data-products="FilterPro;Maxwell Chillers;Refrigeration &amp; Cooling;enPact AI Monitoring">
               <span>Not sure — <strong>recommend based on my facility</strong></span>
             </label>
           </div>
@@ -866,7 +886,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       <a href="mailto:info@GoldenGSolutions.com">Contact</a>
     </div>
   </div>
-  <div class="footer-bottom">All savings figures verified via ON/OFF or weather-adjusted M&amp;V protocols. Results shown are verified deployments. Actual savings vary by facility type, system configuration, and operating conditions.</div>
+  <div class="footer-bottom">All savings figures verified via ON/OFF or weather-adjusted M&amp;V protocols.</div>
 </footer>
 
 <script>
@@ -886,19 +906,19 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
   })();
+
+  // Tab switching for case-study section
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const tab = btn.dataset.tab;
-      document.querySelectorAll('.tab-btn').forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected','false');
-      });
+      const tab = btn.getAttribute('data-tab');
+      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       btn.setAttribute('aria-selected','true');
-      document.getElementById('tab-' + tab).classList.add('active');
-      if (typeof gtag === 'function') {
-        gtag('event', 'clfp_tab_view', { 'event_category':'engagement', 'event_label': tab });
+      const panel = document.getElementById('tab-' + tab);
+      if (panel) panel.classList.add('active');
+      if (typeof gtag === 'function'){
+        gtag('event', 'clfp_tab_view', { event_category:'engagement', event_label:'tab_' + tab });
       }
     });
   });
