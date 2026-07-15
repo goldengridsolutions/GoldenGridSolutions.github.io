@@ -87,16 +87,17 @@ img{max-width:100%;display:block;}
 .side-visual{position:relative;}
 .side-visual img,.side-visual svg{width:100%;height:auto;display:block;border-radius:12px;}
 .side-visual.no-frame img,.side-visual.no-frame svg{border-radius:0;}
-.family-devices{display:flex;gap:36px;align-items:center;justify-content:center;flex-wrap:wrap;}
-.family-device{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 200px;}
-.family-device img{width:100%;max-width:200px;height:auto;object-fit:contain;margin-bottom:14px;}
-.family-device-label{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--forest);line-height:1.2;}
+.family-devices{display:flex;gap:44px;align-items:center;justify-content:center;flex-wrap:wrap;}
+.family-device{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 280px;}
+.family-device img{width:100%;max-width:280px;height:auto;object-fit:contain;margin-bottom:16px;}
+.family-device-label{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--forest);line-height:1.2;}
 .family-device-sub{font-size:12px;color:var(--sage);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:4px;}
 .learn.forest .side-visual img{filter:brightness(1.02);}
 @media (max-width:900px){
-  .side-by-side{grid-template-columns:1fr;gap:36px;}
+  .side-by-side,.side-by-side.text-right,.side-by-side.works-wide{grid-template-columns:1fr;gap:36px;}
   .side-by-side.text-right .side-text{order:1;}
   .side-by-side.text-right .side-visual{order:2;}
+  .side-by-side .side-visual img{max-width:100%;}
 }
 
 /* Placeholder callout for visuals-to-come */
@@ -204,14 +205,14 @@ section{padding:104px 8%;}
 .tab-btn.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:3px;background:var(--gold);}
 .tab-panel{display:none;padding:40px 0 0;}
 .tab-panel.active{display:block;}
-.tab-product{display:flex;align-items:center;justify-content:flex-start;gap:36px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:26px 34px;margin:0 auto 28px;max-width:940px;}
-.tab-product-img-wrap{flex:0 0 200px;display:flex;align-items:center;justify-content:center;}
-.tab-product-img{width:200px;height:200px;object-fit:contain;display:block;margin:0 auto;}
+.tab-product{display:flex;align-items:center;justify-content:flex-start;gap:40px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:28px 36px;margin:0 auto 28px;max-width:860px;}
+.tab-product-img-wrap{flex:0 0 250px;display:flex;align-items:center;justify-content:center;}
+.tab-product-img{width:250px;height:250px;object-fit:contain;display:block;margin:0 auto;}
 .tab-product-body{flex:1;min-width:0;}
 .tab-product-name{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--forest);line-height:1.25;margin-bottom:8px;}
 .tab-product-desc{font-size:15.5px;color:var(--steel);line-height:1.65;font-weight:300;}
 .tab-product-desc strong{color:var(--forest);font-weight:500;}
-@media (max-width:640px){.tab-product{flex-direction:column;align-items:flex-start;text-align:left;padding:20px 22px;gap:18px;} .tab-product-img{width:140px;height:140px;}}
+@media (max-width:640px){.tab-product{flex-direction:column;align-items:center;text-align:left;padding:22px 24px;gap:22px;} .tab-product-img-wrap{flex:0 0 auto;} .tab-product-img{width:180px;height:180px;}}
 .tab-headline{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:600;color:var(--forest);line-height:1.15;letter-spacing:-.015em;margin-bottom:8px;}
 .tab-headline em{font-style:italic;color:var(--gold);font-weight:700;}
 .tab-context{font-size:14px;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:22px;}
@@ -431,7 +432,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         <div class="family-device">
           <img src="enpact-rc-device.png" alt="enPact Refrigeration & Cooling device — installed at individual refrigeration circuits">
           <div class="family-device-label">enPact R&amp;C</div>
-          <div class="family-device-sub">At the circuit</div>
+          <div class="family-device-sub">At the unit</div>
         </div>
       </div>
     </div>
