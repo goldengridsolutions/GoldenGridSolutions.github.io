@@ -80,24 +80,17 @@ img{max-width:100%;display:block;}
 
 /* Side-by-side layout (text left, visual right) */
 .side-by-side{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:12px;}
-.side-by-side.works-wide{grid-template-columns:minmax(0,0.85fr) minmax(0,1.35fr);gap:48px;}
 .side-by-side.text-right{grid-template-columns:1fr 1fr;}
 .side-by-side.text-right .side-text{order:2;}
 .side-by-side.text-right .side-visual{order:1;}
 .side-visual{position:relative;}
 .side-visual img,.side-visual svg{width:100%;height:auto;display:block;border-radius:12px;}
 .side-visual.no-frame img,.side-visual.no-frame svg{border-radius:0;}
-.family-devices{display:flex;gap:44px;align-items:center;justify-content:center;flex-wrap:wrap;}
-.family-device{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 280px;}
-.family-device img{width:100%;max-width:280px;height:auto;object-fit:contain;margin-bottom:16px;}
-.family-device-label{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--forest);line-height:1.2;}
-.family-device-sub{font-size:12px;color:var(--sage);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:4px;}
 .learn.forest .side-visual img{filter:brightness(1.02);}
 @media (max-width:900px){
-  .side-by-side,.side-by-side.text-right,.side-by-side.works-wide{grid-template-columns:1fr;gap:36px;}
+  .side-by-side{grid-template-columns:1fr;gap:36px;}
   .side-by-side.text-right .side-text{order:1;}
   .side-by-side.text-right .side-visual{order:2;}
-  .side-by-side .side-visual img{max-width:100%;}
 }
 
 /* Placeholder callout for visuals-to-come */
@@ -150,12 +143,12 @@ nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
 .nav-cta:hover{background:var(--leaf)!important;}
 
 /* HERO */
-.hero{margin-top:120px;min-height:56vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
+.hero{margin-top:120px;min-height:64vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:75% 50%;}
-.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,48,32,.98) 0%,rgba(26,48,32,.94) 35%,rgba(26,48,32,.78) 70%,rgba(26,48,32,.9) 100%);}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 50%;}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(26,48,32,.94) 0%,rgba(26,48,32,.78) 60%,rgba(26,48,32,.86) 100%);}
 .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;}
-.hero-content{position:relative;z-index:1;padding:60px 8% 56px;width:100%;max-width:1300px;margin:0 auto;}
+.hero-content{position:relative;z-index:1;padding:80px 8% 72px;width:100%;max-width:1300px;margin:0 auto;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:500;color:rgba(255,255,255,.88);letter-spacing:.09em;text-transform:uppercase;margin-bottom:22px;backdrop-filter:blur(8px);}
 .hero-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 .hero-h1{font-family:var(--serif);font-size:clamp(38px,5.3vw,64px);font-weight:700;line-height:1.06;color:var(--white);letter-spacing:-.022em;margin-bottom:22px;max-width:900px;text-shadow:0 2px 20px rgba(0,0,0,.3);}
@@ -170,7 +163,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
 
 /* STAT STRIP — big brand numbers, matches PDF style */
 .stat-strip{background:var(--forest);border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:center;flex-wrap:wrap;}
-.stat-item{padding:28px 40px;border-right:1px solid rgba(255,255,255,.1);text-align:center;flex:1 1 220px;}
+.stat-item{padding:38px 40px;border-right:1px solid rgba(255,255,255,.1);text-align:center;flex:1 1 220px;}
 .stat-item:last-child{border-right:none;}
 .stat-num{font-family:var(--serif);font-size:56px;font-weight:700;color:var(--white);line-height:1;letter-spacing:-.02em;}
 .stat-num .unit{color:#E8C96A;font-size:32px;margin-left:2px;letter-spacing:0;}
@@ -205,14 +198,6 @@ section{padding:104px 8%;}
 .tab-btn.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:3px;background:var(--gold);}
 .tab-panel{display:none;padding:40px 0 0;}
 .tab-panel.active{display:block;}
-.tab-product{display:flex;align-items:center;justify-content:flex-start;gap:40px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:28px 36px;margin:0 auto 28px;max-width:860px;}
-.tab-product-img-wrap{flex:0 0 250px;display:flex;align-items:center;justify-content:center;}
-.tab-product-img{width:250px;height:250px;object-fit:contain;display:block;margin:0 auto;}
-.tab-product-body{flex:1;min-width:0;}
-.tab-product-name{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--forest);line-height:1.25;margin-bottom:8px;}
-.tab-product-desc{font-size:15.5px;color:var(--steel);line-height:1.65;font-weight:300;}
-.tab-product-desc strong{color:var(--forest);font-weight:500;}
-@media (max-width:640px){.tab-product{flex-direction:column;align-items:center;text-align:left;padding:22px 24px;gap:22px;} .tab-product-img-wrap{flex:0 0 auto;} .tab-product-img{width:180px;height:180px;}}
 .tab-headline{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:600;color:var(--forest);line-height:1.15;letter-spacing:-.015em;margin-bottom:8px;}
 .tab-headline em{font-style:italic;color:var(--gold);font-weight:700;}
 .tab-context{font-size:14px;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:22px;}
@@ -340,7 +325,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="84" style="display:block;"></a>
     <div class="co-brand">
       <div class="co-brand-label">Powered by</div>
-      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.svg" alt="Emissis enPact logo — technology partner" width="68" height="68"></a>
+      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.svg" alt="emissis logo — technology partner" width="68" height="68"></a>
     </div>
   </div>
   <div class="nav-links">
@@ -361,7 +346,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
   <div class="hero-content">
     <div class="hero-eyebrow">For California Food Producers · Powered by Emissis enPact</div>
     <h1 class="hero-h1">Patented electrical-optimization capital equipment.<br><em>Up to 41.5% verified refrigeration reduction.</em></h1>
-    <p class="hero-h1-sub">No refrigerant change. No controls change. No downtime.</p>
+    <p class="hero-h1-sub">Your refrigerant, controls, and production schedule stay yours.</p>
     <div class="hero-cta-row">
       <a href="#gate" class="btn-gold">Read the Case Studies →</a>
       <a href="book.html" class="btn-ghost">Book a 30-min Call</a>
@@ -414,27 +399,16 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       </div>
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 L18 2 L20 8 L20 20 A2 2 0 0 1 18 22 L6 22 A2 2 0 0 1 4 20 L4 8 Z M4 8 L20 8 M12 14 A2 2 0 1 1 12 18 A2 2 0 1 1 12 14"/></svg>
-        <div><div class="learn-icon-label">enPact Refrigeration &amp; Cooling</div><div class="learn-icon-sub">At individual refrigeration, HVAC &amp; chiller circuits &mdash; deep load-specific reduction</div></div>
+        <div><div class="learn-icon-label">enPact Refrigeration &amp; Cooling</div><div class="learn-icon-sub">At individual refrigeration, freezer &amp; HVAC circuits &mdash; deep load-specific reduction</div></div>
       </div>
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        <div><div class="learn-icon-label">Both are capital purchases</div><div class="learn-icon-sub">On your balance sheet, installed in hours, no ongoing SaaS fee</div></div>
+        <div><div class="learn-icon-label">Both are capital purchases</div><div class="learn-icon-sub">On your balance sheet, installed in hours, one-time capital purchase</div></div>
       </div>
     </div>
     </div><!-- /.side-text -->
     <div class="side-visual no-frame">
-      <div class="family-devices">
-        <div class="family-device">
-          <img src="filterpro-device.png" alt="enPact FilterPro device — installed at the main electrical panel">
-          <div class="family-device-label">enPact FilterPro</div>
-          <div class="family-device-sub">At the panel</div>
-        </div>
-        <div class="family-device">
-          <img src="enpact-rc-device.png" alt="enPact Refrigeration & Cooling device — installed at individual refrigeration circuits">
-          <div class="family-device-label">enPact R&amp;C</div>
-          <div class="family-device-sub">At the unit</div>
-        </div>
-      </div>
+      <img src="filterpro-device.png" alt="enPact FilterPro device &mdash; one of two devices in the enPact family, installed at your main electrical panel">
     </div>
   </div><!-- /.side-by-side -->
   </div>
@@ -447,12 +421,11 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <div class="side-text">
     <div class="section-eyebrow">Where it sits</div>
     <h2 class="section-h2">Between your power and your <em>equipment.</em></h2>
-    <p class="learn-body"><strong>FilterPro</strong> sits inline at your main electrical panel. Utility power flows through it <strong>before</strong> reaching your refrigeration, chillers, motors, and pumps &mdash; delivering cleaner power to everything downstream.</p>
-    <p class="learn-body" style="margin-top:14px;"><strong>Refrigeration &amp; Cooling</strong> sits further downstream, inline on the electrical circuits feeding individual HVAC, chiller, and refrigeration units &mdash; delivering a deeper reduction on those specific loads.</p>
-    <p class="learn-body" style="margin-top:14px;font-style:italic;font-size:15px;">Your equipment sees cleaner power &mdash; but doesn't know anything changed. No refrigerant, controls, or setpoint modifications required.</p>
+    <p class="learn-body">The device sits inline at the main panel. Your utility power flows through it <strong>before</strong> reaching your refrigeration, chillers, motors, and pumps. Your refrigerant, setpoints, and controls stay exactly as they are.</p>
+    <p class="learn-body" style="margin-top:14px;font-style:italic;font-size:15px;">Your equipment sees cleaner power — but doesn't know anything changed.</p>
     </div>
     <div class="side-visual">
-      <img src="enpact-family-diagram.png" alt="enPact family integration diagram: utility power flows through the main electrical panel with FilterPro inline, then out to HVAC, chiller, and compressor/motor loads — with enPact Refrigeration &amp; Cooling installed inline on the HVAC/refrigeration circuit for deeper load-specific reduction" class="diagram-img" style="border-radius:12px;background:var(--white);padding:16px;border:1px solid var(--border);">
+      <img src="filterpro-diagram.png" alt="enPact FilterPro integration diagram: utility power flows through main electrical panel with in-line FilterPro device, then out to HVAC, chiller, and compressor/motor loads" class="diagram-img" style="border-radius:12px;background:var(--white);padding:16px;border:1px solid var(--border);">
       <!-- SVG fallback below is unused (kept as backup, will not render because img above works) -->
       <svg class="diagram-svg" style="display:none;" viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
         <!-- Utility power (left) -->
@@ -502,15 +475,35 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <!-- LEARN 3: WHY IT WORKS -->
 <section class="learn forest reveal">
   <div class="container">
-  <div class="side-by-side works-wide">
+  <div class="side-by-side">
     <div class="side-text">
     <div class="section-eyebrow">Why it works</div>
     <h2 class="section-h2">Proprietary technology. <em>Real reductions.</em></h2>
     <p class="learn-body">Standard electrical-efficiency devices waste some of the energy they're supposed to save. This one uses a <strong>proprietary electron-spin technology</strong> that reduces electrical waste at the device level itself.</p>
     <p class="learn-body" style="margin-top:14px;">Result: more of the kWh reduction stays on your meter, not lost in the equipment doing the optimizing.</p>
     </div>
-    <div class="side-visual">
-      <img src="works-facility.png" alt="Diagram: noisy wasteful power feeding motors on the left, enPact FilterPro installed in parallel at the electrical panel in the middle, and conditioned efficient power feeding the same motors on the right — showing electron alignment, smoother current flow, and reduced losses" style="width:100%;height:auto;border-radius:12px;background:var(--white);padding:12px;border:1px solid rgba(255,255,255,0.14);">
+    <div class="side-visual no-frame">
+      <!-- Efficiency comparison chart — illustrative concept, not measured values -->
+      <div class="eff-chart">
+        <div class="eff-chart-title">Where the kWh reduction goes</div>
+        <div class="eff-bars">
+          <div class="eff-bar" style="height:100%;">
+            <div class="eff-bar-loss" data-loss="~18%" style="height:36px;"></div>
+            <div class="eff-bar-delivered" style="height:164px;"></div>
+            <div class="eff-bar-label">Standard efficiency device<div class="eff-bar-sub">capacitor / passive filter</div></div>
+          </div>
+          <div class="eff-bar" style="height:100%;">
+            <div class="eff-bar-loss tiny" data-loss="&lt;3%" style="height:8px;"></div>
+            <div class="eff-bar-delivered" style="height:192px;"></div>
+            <div class="eff-bar-label">enPact FilterPro<div class="eff-bar-sub">electron-spin technology</div></div>
+          </div>
+        </div>
+        <div class="eff-legend">
+          <div class="eff-legend-item"><span class="eff-legend-swatch delivered"></span>Delivered to your meter</div>
+          <div class="eff-legend-item"><span class="eff-legend-swatch loss"></span>Lost inside the device</div>
+        </div>
+        <div class="eff-caption">Illustrative — actual efficiency varies by installation configuration</div>
+      </div>
     </div>
   </div><!-- /.side-by-side -->
   </div>
@@ -528,21 +521,21 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     </div>
     </div>
     <div class="side-visual">
-      <img src="matters-margin.png" alt="Diagram: refrigeration's share of a food processing plant's electric bill, and how kWh reduction flows directly into gross margin" style="width:100%;height:auto;">
+      <img src="matters-facility.png" alt="Food processing facility — refrigeration equipment powering the plant">
     </div>
   </div><!-- /.side-by-side -->
     <div class="matters-grid reveal-stagger" style="margin-top:56px;">
       <div class="matters-card">
         <div class="matters-card-title">Capital, not operating expense</div>
-        <div class="matters-card-body">You buy the device. You depreciate it. Your accounting team classifies it correctly the first time. No SaaS fee that eats into the savings. No ongoing consulting relationship required.</div>
+        <div class="matters-card-body">You buy the device. You depreciate it. Your accounting team classifies it correctly the first time. One-time capital purchase &mdash; the savings flow entirely to your P&amp;L. Ownership stays with you.</div>
       </div>
       <div class="matters-card">
         <div class="matters-card-title">The savings survive rate volatility</div>
         <div class="matters-card-body">Utility rates are the least controllable line item on your P&amp;L. Cutting the underlying kWh means the savings are locked in whether CAISO markets swing up or down.</div>
       </div>
       <div class="matters-card">
-        <div class="matters-card-title">Zero production risk</div>
-        <div class="matters-card-body">No refrigerant change. No setpoint change. No controls modification. Product quality, food safety compliance, and cold-chain integrity are unaffected.</div>
+        <div class="matters-card-title">Production runs unchanged</div>
+        <div class="matters-card-body">Refrigerant, setpoints, and controls stay yours. Product quality, food safety compliance, and cold-chain integrity are preserved.</div>
       </div>
     </div>
   </div>
@@ -596,18 +589,9 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- DX TAB -->
       <div class="tab-panel active" id="tab-dx" role="tabpanel">
-        <div class="tab-product">
-          <div class="tab-product-img-wrap">
-            <img class="tab-product-img" src="enpact-rc-device.png" alt="enPact Refrigeration & Cooling device">
-          </div>
-          <div class="tab-product-body">
-            <div class="tab-product-name">enPact Refrigeration &amp; Cooling</div>
-            <div class="tab-product-desc">Installed inline on the electrical circuit feeding each compressor. Cuts runtime and kWh at the unit &mdash; <strong>without changing set temperatures, refrigerant, or controls.</strong></div>
-          </div>
-        </div>
         <div class="tab-context">Verified · Food Processing Site (U.K.)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>41.5%</em> across 8 units at a food processing site.</h3>
-        <p class="tab-lead">Site-wide reduction of 11.7% at the main incomer. Measured over live ON/OFF comparison periods on a facility with cold-store, processing, and packing areas. Zero operational disruption.</p>
+        <p class="tab-lead">Site-wide reduction of 11.7% at the main incomer. Measured over live ON/OFF comparison periods on a facility with cold-store, processing, and packing areas.</p>
         <div class="tab-stats">
           <div class="tab-stat"><div class="tab-stat-num">41.5<span class="unit">%</span></div><div class="tab-stat-label">Refrigeration reduction</div></div>
           <div class="tab-stat"><div class="tab-stat-num">11.7<span class="unit">%</span></div><div class="tab-stat-label">Site-wide reduction</div></div>
@@ -633,18 +617,9 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- AMMONIA TAB -->
       <div class="tab-panel" id="tab-ammonia" role="tabpanel">
-        <div class="tab-product">
-          <div class="tab-product-img-wrap">
-            <img class="tab-product-img" src="filterpro-device.png" alt="enPact FilterPro device">
-          </div>
-          <div class="tab-product-body">
-            <div class="tab-product-name">enPact FilterPro</div>
-            <div class="tab-product-desc">Installed at the main electrical panel to clean the power feeding your ammonia system &mdash; <strong>without changing set temperatures, refrigerant, or controls.</strong></div>
-          </div>
-        </div>
         <div class="tab-context">Verified · Global Wholesale Retailer (Canada)</div>
-        <h3 class="tab-headline">Refrigeration energy cut <em>8.97%</em> on an ammonia chiller system.</h3>
-        <p class="tab-lead">Weather-adjusted validation on a live ammonia-based chiller system. Savings held consistently across 12 operational days with zero impact to operations, food safety, or controls.</p>
+        <h3 class="tab-headline">Refrigeration energy cut <em>8.97%</em> on an ammonia chiller with a VFD-driven compressor.</h3>
+        <p class="tab-lead">Weather-adjusted validation on an ammonia-based chiller system with a VFD-driven compressor &mdash; a configuration often assumed to already be optimized. Savings held consistently across 12 operational days &mdash; operations, food safety, and controls remained fully intact.</p>
         <div class="tab-stats">
           <div class="tab-stat"><div class="tab-stat-num">8.97<span class="unit">%</span></div><div class="tab-stat-label">Validated reduction</div></div>
           <div class="tab-stat"><div class="tab-stat-num">9,942</div><div class="tab-stat-label">kWh · 12 days</div></div>
@@ -710,16 +685,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         .clfp-success-links a{display:inline-flex;align-items:center;gap:8px;color:var(--forest);font-size:14px;font-weight:500;padding:10px 14px;background:var(--white);border:1px solid var(--border);border-radius:5px;transition:border-color .18s,background .18s;}
         .clfp-success-links a:hover{border-color:var(--leaf);background:var(--mint);}
         .clfp-success-links a::before{content:'📄';font-size:14px;}
-        .clfp-consent{margin-top:6px;padding:14px 0 4px;border-top:1px solid var(--border);}
-        .clfp-consent label{display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13px;color:var(--steel);font-weight:400;line-height:1.5;}
-        .clfp-consent input[type=checkbox]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--sage);border-radius:4px;background:var(--white);cursor:pointer;transition:background .15s,border-color .15s;flex-shrink:0;position:relative;margin-top:1px;}
-        .clfp-consent input[type=checkbox]:checked{background:var(--forest);border-color:var(--forest);}
-        .clfp-consent input[type=checkbox]:checked::after{content:'¹3';color:var(--white);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:13px;font-weight:700;line-height:1;}
-        .clfp-consent a{color:var(--forest);text-decoration:underline;}
-        .clfp-consent.has-error input[type=checkbox]{border-color:#C0392B;}
-        .clfp-consent.has-error .clfp-field-error{display:block;color:#C0392B;font-size:12px;margin-top:6px;margin-left:29px;}
-        .clfp-consent .clfp-field-error{display:none;}
-
       </style>
 
       <form id="clfpLeadForm" class="clfp-form" method="POST" action="https://crm.zoho.com/crm/WebToLeadForm" accept-charset="UTF-8" onsubmit="return clfpFormValidate(this);">
@@ -765,7 +730,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         </div>
 
         <div class="clfp-field">
-          <label>Which systems are you most interested in learning about? <span class="req">*</span> <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--steel);font-size:12px;margin-left:4px;">(select all that apply)</span></label>
+          <label>Which case studies would you like? <span class="req">*</span> <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--steel);font-size:12px;margin-left:4px;">(select all that apply)</span></label>
           <div class="clfp-checkgroup" id="clfpCaseStudies">
             <label class="clfp-check">
               <input type="checkbox" data-system="Ammonia (NH3)" data-products="FilterPro;Maxwell Chillers;Refrigeration &amp; Cooling">
@@ -780,22 +745,13 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
               <span><strong>Motors, pumps, blowers</strong> — plant-wide inductive loads</span>
             </label>
             <label class="clfp-check">
-              <input type="checkbox" data-system="Not sure" data-products="FilterPro;Maxwell Chillers;Refrigeration &amp; Cooling;enPact AI Monitoring">
+              <input type="checkbox" data-system="Not sure" data-products="FilterPro;Maxwell Chillers;Refrigeration &amp; Cooling;EnPact AI Monitoring">
               <span>Not sure — <strong>recommend based on my facility</strong></span>
             </label>
           </div>
           <div class="clfp-field-error">Please select at least one option.</div>
           <input type="hidden" name="Systems Type" id="clfpSystemsType" value="">
           <input type="hidden" name="Product Interest" id="clfpProductInterest" value="">
-        </div>
-
-        <div class="clfp-consent" id="clfpConsentWrap">
-          <label>
-            <input type="checkbox" id="clfpConsent" required>
-            <span>I agree to receive occasional marketing communications from <strong>Golden Grid Solutions</strong> about enPact products, verified case studies, and related updates. I can unsubscribe at any time.</span>
-          </label>
-          <div class="clfp-field-error">Please confirm consent to receive communications.</div>
-          <input type="hidden" name="Email Opt Out" id="clfpEmailOptOut" value="true">
         </div>
 
         <div class="clfp-submit-row">
@@ -831,7 +787,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         window.clfpFormValidate = function(form){
           let ok = true;
           form.querySelectorAll('.clfp-field').forEach(f => f.classList.remove('has-error'));
-          document.getElementById('clfpConsentWrap').classList.remove('has-error');
           ['clfpFirstName','clfpLastName','clfpEmail','clfpCompany','clfpTitle'].forEach(id => {
             const el = document.getElementById(id);
             if (!el.value.trim()){ el.closest('.clfp-field').classList.add('has-error'); ok = false; }
@@ -843,12 +798,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
           const anyChecked = document.querySelectorAll('#clfpCaseStudies input[type=checkbox]:checked').length > 0;
           if (!anyChecked){
             document.getElementById('clfpCaseStudies').closest('.clfp-field').classList.add('has-error'); ok = false;
-          }
-          const consent = document.getElementById('clfpConsent');
-          if (!consent.checked){
-            document.getElementById('clfpConsentWrap').classList.add('has-error'); ok = false;
-          } else {
-            document.getElementById('clfpEmailOptOut').value = 'false';
           }
           updateHidden();
           if (ok){
@@ -891,7 +840,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       <a href="mailto:info@GoldenGSolutions.com">Contact</a>
     </div>
   </div>
-  <div class="footer-bottom">All savings figures verified via ON/OFF or weather-adjusted M&amp;V protocols.</div>
+  <div class="footer-bottom">All savings figures verified via ON/OFF or weather-adjusted M&amp;V protocols. Results shown are verified deployments. Actual savings vary by facility type, system configuration, and operating conditions.</div>
 </footer>
 
 <script>
@@ -911,19 +860,19 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
   })();
-
-  // Tab switching for case-study section
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const tab = btn.getAttribute('data-tab');
-      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected','false');
+      });
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       btn.setAttribute('aria-selected','true');
-      const panel = document.getElementById('tab-' + tab);
-      if (panel) panel.classList.add('active');
-      if (typeof gtag === 'function'){
-        gtag('event', 'clfp_tab_view', { event_category:'engagement', event_label:'tab_' + tab });
+      document.getElementById('tab-' + tab).classList.add('active');
+      if (typeof gtag === 'function') {
+        gtag('event', 'clfp_tab_view', { 'event_category':'engagement', 'event_label': tab });
       }
     });
   });
