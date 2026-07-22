@@ -81,6 +81,7 @@ img{max-width:100%;display:block;}
 /* Side-by-side layout (text left, visual right) */
 .side-by-side{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:12px;}
 .side-by-side.works-wide{grid-template-columns:minmax(0,0.85fr) minmax(0,1.35fr);gap:48px;}
+.side-by-side.text-right.works-wide{grid-template-columns:minmax(0,1.35fr) minmax(0,0.85fr);gap:48px;}
 .side-by-side.text-right{grid-template-columns:1fr 1fr;}
 .side-by-side.text-right .side-text{order:2;}
 .side-by-side.text-right .side-visual{order:1;}
@@ -449,7 +450,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <!-- LEARN 2: WHERE IT SITS (with integration diagram) -->
 <section class="learn reveal">
   <div class="container">
-  <div class="side-by-side text-right">
+  <div class="side-by-side text-right works-wide">
     <div class="side-text">
     <div class="section-eyebrow">Where it sits</div>
     <h2 class="section-h2">Between your power and your <em>equipment.</em></h2>
@@ -525,7 +526,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 <!-- WHY IT MATTERS -->
 <section class="matters reveal">
   <div class="container">
-  <div class="side-by-side text-right">
+  <div class="side-by-side text-right works-wide">
     <div class="side-text">
     <div class="section-eyebrow">Why it matters</div>
     <h2 class="section-h2">Capital equipment. <em>Not another operating line item.</em></h2>
