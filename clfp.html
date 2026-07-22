@@ -51,7 +51,7 @@ img{max-width:100%;display:block;}
 .hero-icon-svg{width:28px;height:28px;flex-shrink:0;color:#E8C96A;}
 
 /* Simple learning sections — one-thing-per-scroll */
-.learn{padding:88px 8%;}
+.learn{padding:60px 8%;}
 .learn.alt{background:var(--white);}
 .learn.forest{background:var(--forest);color:var(--white);}
 .learn.forest .section-h2{color:var(--white);}
@@ -198,7 +198,8 @@ section{padding:104px 8%;}
 /* TABBED CASE STUDY SECTION */
 .results-sec{background:var(--white);}
 .tabs{margin-top:52px;}
-.tab-nav{display:flex;gap:6px;border-bottom:2px solid var(--border);}
+.tab-nav{display:flex;gap:6px;border-bottom:2px solid var(--border);position:sticky;top:120px;z-index:50;background:var(--white);padding-top:8px;}
+@media (max-width:900px){.tab-nav{top:88px;}}
 .tab-btn{background:transparent;border:none;padding:16px 28px;font-family:var(--sans);font-size:15px;font-weight:500;color:var(--steel);cursor:pointer;position:relative;letter-spacing:.01em;transition:color .2s;}
 .tab-btn:hover{color:var(--forest);}
 .tab-btn.active{color:var(--forest);font-weight:600;}
@@ -362,7 +363,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <div class="hero-eyebrow">For California Food Producers · Powered by Emissis enPact</div>
     <h1 class="hero-h1">Cut refrigeration energy consumption up to <em>41.5%.</em> Verified.</h1>
     <p class="hero-h1-sub" style="font-style:italic;color:#E8C96A;margin-top:14px;">Payback period guaranteed by Emissis and confirmed by formal M&amp;V.</p>
-    <p class="hero-h1-sub">Your refrigerant, controls, and production schedule remain yours.</p>
     <div class="hero-cta-row">
       <a href="#gate" class="btn-gold">Read the Case Studies →</a>
       <a href="book.html" class="btn-ghost">Book a 30-min Call</a>
@@ -407,7 +407,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
     <div class="side-text">
     <div class="section-eyebrow">What it is</div>
     <h2 class="section-h2">The enPact family. <em>Two devices, one approach.</em></h2>
-    <p class="learn-body">Patented capital equipment &mdash; not software, not a service subscription, not a consulting engagement. You buy it, install it, own it. Two devices in the family, deployed based on where the reduction opportunity lives at your site:</p>
+    <p class="learn-body">Patented capital equipment &mdash; hardware you own outright, sitting on your balance sheet as a capital asset. Bought once, installed once, yours forever. Two devices in the family, deployed based on where the reduction opportunity lives at your site:</p>
     <div class="learn-icons reveal-stagger" style="margin-top:32px;">
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -598,15 +598,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- DX TAB -->
       <div class="tab-panel active" id="tab-dx" role="tabpanel">
-        <div class="tab-product">
-          <div class="tab-product-img-wrap">
-            <img class="tab-product-img" src="enpact-rc-device.png" alt="enPact Refrigeration & Cooling device">
-          </div>
-          <div class="tab-product-body">
-            <div class="tab-product-name">enPact Refrigeration &amp; Cooling</div>
-            <div class="tab-product-desc">Installed inline on the electrical circuit feeding each compressor. Cuts runtime and kWh at the unit &mdash; <strong>without changing set temperatures, refrigerant, or controls.</strong></div>
-          </div>
-        </div>
         <div class="tab-context">Verified · Food Processing Site (U.K.)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>41.5%</em> across 8 units at a food processing site.</h3>
         <p class="tab-lead">Site-wide reduction of 11.7% at the main incomer. Measured over live ON/OFF comparison periods on a facility with cold-store, processing, and packing areas.</p>
@@ -635,15 +626,6 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- AMMONIA TAB -->
       <div class="tab-panel" id="tab-ammonia" role="tabpanel">
-        <div class="tab-product">
-          <div class="tab-product-img-wrap">
-            <img class="tab-product-img" src="filterpro-device.png" alt="enPact FilterPro device">
-          </div>
-          <div class="tab-product-body">
-            <div class="tab-product-name">enPact FilterPro</div>
-            <div class="tab-product-desc">Installed at the main electrical panel to clean the power feeding your ammonia system &mdash; <strong>without changing set temperatures, refrigerant, or controls.</strong></div>
-          </div>
-        </div>
         <div class="tab-context">Verified · Global Wholesale Retailer (Canada)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>8.97%</em> on an ammonia chiller with a VFD-driven compressor.</h3>
         <p class="tab-lead">Weather-adjusted validation on an ammonia-based chiller system with a VFD-driven compressor &mdash; a configuration often assumed to already be optimized. Savings held consistently across 12 operational days &mdash; operations, food safety, and controls remained fully intact.</p>
@@ -872,7 +854,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       })();
       </script>
     </div>
-    <p class="gate-fine">Your data goes to Golden Grid Solutions only. Not sold. Not shared with third parties. If you'd like, we'll follow up once by email to discuss your specific facility.</p>
+    <p class="gate-fine">Your data goes to Golden Grid Solutions only. Not sold. Not shared with third parties.</p>
   </div>
 </section>
 
