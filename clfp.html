@@ -51,7 +51,7 @@ img{max-width:100%;display:block;}
 .hero-icon-svg{width:28px;height:28px;flex-shrink:0;color:#E8C96A;}
 
 /* Simple learning sections — one-thing-per-scroll */
-.learn{padding:60px 8%;}
+.learn{padding:40px 8% 60px;}
 .learn.alt{background:var(--white);}
 .learn.forest{background:var(--forest);color:var(--white);}
 .learn.forest .section-h2{color:var(--white);}
@@ -177,7 +177,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(36,61,44,.1);}
 .stat-label{font-size:12px;color:rgba(255,255,255,.62);margin-top:10px;text-transform:uppercase;letter-spacing:.07em;font-weight:500;}
 .stat-sub{font-size:11px;color:rgba(255,255,255,.42);margin-top:4px;}
 
-section{padding:104px 8%;}
+section{padding:60px 8%;}
 .container{max-width:1200px;margin:0 auto;}
 .section-eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px;}
 .section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--leaf);flex-shrink:0;}
@@ -206,6 +206,11 @@ section{padding:104px 8%;}
 .tab-btn.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:3px;background:var(--gold);}
 .tab-panel{display:none;padding:40px 0 0;}
 .tab-panel.active{display:block;}
+.tab-product-side{float:right;width:180px;margin:0 0 20px 32px;text-align:center;shape-outside:margin-box;}
+.tab-product-side img{width:100%;height:auto;max-width:180px;display:block;margin:0 auto;}
+.tab-product-side-name{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--forest);margin-top:10px;line-height:1.25;}
+.tab-product-side-sub{font-size:11px;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:2px;}
+@media (max-width:640px){.tab-product-side{float:none;width:auto;max-width:220px;margin:0 auto 24px;}}
 .tab-product{display:flex;align-items:center;justify-content:flex-start;gap:40px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:28px 36px;margin:0 auto 28px;max-width:860px;}
 .tab-product-img-wrap{flex:0 0 250px;display:flex;align-items:center;justify-content:center;}
 .tab-product-img{width:250px;height:250px;object-fit:contain;display:block;margin:0 auto;}
@@ -598,6 +603,11 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- DX TAB -->
       <div class="tab-panel active" id="tab-dx" role="tabpanel">
+        <div class="tab-product-side">
+          <img src="enpact-rc-device.png" alt="enPact Refrigeration &amp; Cooling device">
+          <div class="tab-product-side-name">enPact Refrigeration &amp; Cooling</div>
+          <div class="tab-product-side-sub">At the unit</div>
+        </div>
         <div class="tab-context">Verified · Food Processing Site (U.K.)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>41.5%</em> across 8 units at a food processing site.</h3>
         <p class="tab-lead">Site-wide reduction of 11.7% at the main incomer. Measured over live ON/OFF comparison periods on a facility with cold-store, processing, and packing areas.</p>
@@ -626,6 +636,11 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <!-- AMMONIA TAB -->
       <div class="tab-panel" id="tab-ammonia" role="tabpanel">
+        <div class="tab-product-side">
+          <img src="filterpro-device.png" alt="enPact FilterPro device">
+          <div class="tab-product-side-name">enPact FilterPro</div>
+          <div class="tab-product-side-sub">At the panel</div>
+        </div>
         <div class="tab-context">Verified · Global Wholesale Retailer (Canada)</div>
         <h3 class="tab-headline">Refrigeration energy cut <em>8.97%</em> on an ammonia chiller with a VFD-driven compressor.</h3>
         <p class="tab-lead">Weather-adjusted validation on an ammonia-based chiller system with a VFD-driven compressor &mdash; a configuration often assumed to already be optimized. Savings held consistently across 12 operational days &mdash; operations, food safety, and controls remained fully intact.</p>
