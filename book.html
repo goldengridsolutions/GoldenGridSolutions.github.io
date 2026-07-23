@@ -145,7 +145,35 @@ footer{background:var(--forest);color:var(--white);padding:36px 8%;display:flex;
   <div class="right">
     <!-- Calendly inline widget -->
     <div class="calendly-inline-widget" data-url="https://calendly.com/albert-goldengsolutions/30min?hide_gdpr_banner=1&primary_color=243d2c" style="min-width:320px;"></div>
+    <script>
+      // Pass any UTM parameters on this page's URL through to Calendly so the
+      // booking record shows which campaign the visitor came from.
+      // (Runs before the async widget.js initializes the embed.)
+      (function(){
+        try {
+          const q = new URLSearchParams(location.search);
+          const utms = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content']
+            .filter(k => q.get(k))
+            .map(k => k + '=' + encodeURIComponent(q.get(k)));
+          if (utms.length){
+            const w = document.querySelector('.calendly-inline-widget');
+            if (w) w.setAttribute('data-url', w.getAttribute('data-url') + '&' + utms.join('&'));
+          }
+        } catch(e){}
+      })();
+    </script>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script>
+      // Track completed Calendly bookings as a GA4 event.
+      window.addEventListener('message', function(e){
+        if (/^https:\/\/([a-z0-9-]+\.)?calendly\.com$/.test(e.origin) &&
+            e.data && e.data.event === 'calendly.event_scheduled'){
+          if (typeof gtag === 'function'){
+            gtag('event', 'calendly_booking', { event_category:'lead', event_label:'book_30min_call' });
+          }
+        }
+      });
+    </script>
   </div>
 </div>
 
@@ -176,3 +204,9 @@ if (toggle && navLinks) {
       navLinks.classList.remove('mobile-open');
       toggle.classList.remove('active');
     });
+  });
+}
+</script>
+
+</body>
+</html>

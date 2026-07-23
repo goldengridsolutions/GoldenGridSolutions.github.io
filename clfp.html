@@ -346,7 +346,13 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-LF6WSV18TE', { 'page_path': '/clfp.html' });
+  // On the post-submit return from Zoho (?submitted=1), tell GA4 to ignore the
+  // crm.zoho.com referrer so the conversion session keeps its eblast/UTM attribution.
+  if (/[?&]submitted=1/.test(location.search)) {
+    gtag('config', 'G-LF6WSV18TE', { 'page_path': '/clfp.html', 'ignore_referrer': true });
+  } else {
+    gtag('config', 'G-LF6WSV18TE', { 'page_path': '/clfp.html' });
+  }
 </script>
 </head>
 <body>
@@ -750,9 +756,10 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         <input type="hidden" name="actionType" value="TGVhZHM=">
         <input type="hidden" name="returnURL" value="https://goldengsolutions.com/clfp.html?submitted=1">
 
-        <input type="hidden" name="Lead Source" value="Advertisement">
+        <input type="hidden" name="Lead Source" value="Association">
         <input type="hidden" name="Lead Status" value="Engaged">
         <input type="hidden" name="Facility Type" value="Food Processing">
+        <input type="hidden" name="Description" id="clfpDescription" value="CLFP landing page lead">
 
         <div class="clfp-row">
           <div class="clfp-field">
@@ -849,6 +856,18 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
         }
         document.querySelectorAll('#clfpCaseStudies input[type=checkbox]').forEach(cb => cb.addEventListener('change', updateHidden));
 
+        // Carry campaign attribution into the Zoho lead record (Description field).
+        (function(){
+          const q = new URLSearchParams(location.search);
+          const src = q.get('utm_source'), med = q.get('utm_medium'), cmp = q.get('utm_campaign');
+          if (src || med || cmp){
+            const d = document.getElementById('clfpDescription');
+            if (d) d.value = 'CLFP landing page lead — utm_source: ' + (src || 'n/a') +
+                             '; utm_medium: ' + (med || 'n/a') +
+                             '; utm_campaign: ' + (cmp || 'n/a');
+          }
+        })();
+
         window.clfpFormValidate = function(form){
           let ok = true;
           form.querySelectorAll('.clfp-field').forEach(f => f.classList.remove('has-error'));
@@ -887,6 +906,10 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
           const success = document.getElementById('clfpSuccess');
           if (form) form.style.display = 'none';
           if (success){ success.classList.add('active'); success.scrollIntoView({behavior:'smooth', block:'center'}); }
+          // Definitive conversion signal: Zoho accepted the lead and returned the visitor here.
+          if (typeof gtag === 'function'){
+            gtag('event', 'clfp_lead_confirmed', { event_category:'lead', event_label:'clfp_case_studies_all', ignore_referrer: true });
+          }
         }
       })();
       </script>
