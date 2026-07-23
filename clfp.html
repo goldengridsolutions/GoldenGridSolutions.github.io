@@ -95,8 +95,11 @@ img{max-width:100%;display:block;}
 .family-device-sub{font-size:13.5px;color:var(--sage);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:4px;}
 .learn.forest .side-visual img{filter:brightness(1.02);}
 @media (max-width:900px){
-  .side-by-side,.side-by-side.text-right,.side-by-side.works-wide,.side-by-side.text-right.works-wide{grid-template-columns:1fr;gap:36px;}
-  .family-devices{gap:20px;}
+  .side-by-side,.side-by-side.text-right,.side-by-side.works-wide,.side-by-side.text-right.works-wide{grid-template-columns:1fr;gap:16px;}
+  .family-devices{gap:16px;margin-top:0!important;}
+  .learn-icons{margin-top:20px!important;}
+  .learn.alt{padding:20px 6% 8px;}
+  .learn.alt .side-visual{margin-top:-8px;}
   .side-by-side.text-right .side-text{order:1;}
   .side-by-side.text-right .side-visual{order:2;}
   .side-by-side .side-visual img{max-width:100%;}
@@ -935,6 +938,9 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
       btn.setAttribute('aria-selected','true');
       const panel = document.getElementById('tab-' + tab);
       if (panel) panel.classList.add('active');
+      // Reset scroll to top of the tabbed section so user sees the newly activated case study from the top
+      const section = document.querySelector('.results-sec');
+      if (section) section.scrollIntoView({behavior:'smooth', block:'start'});
       if (typeof gtag === 'function'){
         gtag('event', 'clfp_tab_view', { event_category:'engagement', event_label:'tab_' + tab });
       }
