@@ -92,10 +92,11 @@ img{max-width:100%;display:block;}
 .family-device{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 280px;}
 .family-device img{width:100%;max-width:280px;height:auto;object-fit:contain;margin-bottom:16px;}
 .family-device-label{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--forest);line-height:1.2;}
-.family-device-sub{font-size:12px;color:var(--sage);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:4px;}
+.family-device-sub{font-size:13.5px;color:var(--sage);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:4px;}
 .learn.forest .side-visual img{filter:brightness(1.02);}
 @media (max-width:900px){
-  .side-by-side,.side-by-side.text-right,.side-by-side.works-wide{grid-template-columns:1fr;gap:36px;}
+  .side-by-side,.side-by-side.text-right,.side-by-side.works-wide,.side-by-side.text-right.works-wide{grid-template-columns:1fr;gap:36px;}
+  .family-devices{gap:20px;}
   .side-by-side.text-right .side-text{order:1;}
   .side-by-side.text-right .side-visual{order:2;}
   .side-by-side .side-visual img{max-width:100%;}
@@ -806,7 +807,7 @@ footer{background:#1A2E22;color:rgba(255,255,255,.72);padding:64px 8% 40px;font-
 
       <div class="clfp-success" id="clfpSuccess">
         <div class="clfp-success-title">Thanks &mdash; your case studies are ready.</div>
-        <div class="clfp-success-body">Click any link below to download. You'll also see them in the email confirmation.</div>
+        <div class="clfp-success-body">Click any link below to download.</div>
         <div class="clfp-success-links">
           <a href="goldengrid-phase2-ammonia-case-study.pdf" target="_blank" rel="noopener">Ammonia Chiller (8.97%) — Global Wholesale Retailer, Canada</a>
           <a href="goldengrid-food-processing-case-study.pdf" target="_blank" rel="noopener">Food Processing Site — 41.5% reduction (U.K.)</a>
