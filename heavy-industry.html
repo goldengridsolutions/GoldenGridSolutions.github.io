@@ -128,10 +128,32 @@ footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
   gtag('js', new Date());
   gtag('config', 'G-LF6WSV18TE');
 </script>
+<style>
+/* Emissis co-brand badge + footer disclaimer (site-wide rollout, matches clfp.html) */
+.nav-left{display:flex;align-items:center;gap:24px;}
+.co-brand{display:flex;align-items:center;gap:12px;padding-left:24px;border-left:1px solid var(--border,#C8DECE);}
+.co-brand-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage,#6B9E7A);font-weight:700;line-height:1.2;max-width:80px;}
+.co-brand a{display:block;line-height:0;transition:opacity .18s;}
+.co-brand a:hover{opacity:.8;}
+.co-brand img{height:68px;width:auto;display:block;}
+.footer-disclaimer{font-size:11.5px;color:rgba(255,255,255,.55);margin-top:24px;line-height:1.65;max-width:820px;}
+@media (max-width:700px){
+  .nav-left{gap:12px;}
+  .co-brand{padding-left:12px;gap:6px;}
+  .co-brand-label{display:none;}
+  .co-brand img{height:44px;}
+}
+</style>
 </head>
 <body>
 <nav id="mainNav">
-  <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="108" style="display:block;"></a>
+  <div class="nav-left">
+    <a href="index.html" class="ggs-logo"><img src="ggs_logo.png" alt="Golden Grid Solutions" height="108" style="display:block;"></a>
+    <div class="co-brand">
+      <div class="co-brand-label">Powered by</div>
+      <a href="https://emissis.com" target="_blank" rel="noopener" aria-label="Visit emissis.com — technology partner"><img src="emissis-enpact-logo.svg" alt="Emissis enPact logo — technology partner" width="68" height="68"></a>
+    </div>
+  </div>
   <div class="nav-links">
     <a href="../index.html#sectors">Sectors</a>
     <a href="../index.html#about">About</a>
@@ -358,6 +380,7 @@ footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
     <div class="footer-copy">All savings figures verified via IPMVP protocol.</div>
     <div class="footer-copy">Results shown are verified deployments. Actual savings vary by facility type, system configuration, and operating conditions.</div>
   </div>
+  <div class="footer-disclaimer">All savings figures shown are verified results from specific customer deployments, measured via ON/OFF or weather-adjusted M&amp;V protocols. They reflect actual performance at those sites and are not a prediction or guarantee of results at yours &mdash; savings vary with load profile, equipment, operating hours, and utility rates. Any guarantee applicable to your site is the payback period set out in your Emissis proposal, issued after engineering review of your utility data and subject to the terms of the Emissis Savings Guarantee.</div>
 </footer>
 <script>window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20)});
 // Mobile nav toggle
