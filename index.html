@@ -315,6 +315,10 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
     z-index: 199;
     box-shadow: 0 8px 24px rgba(36,61,44,0.1);
   }
+  .cs-numbers{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .csn{min-width:0;}
+  .cs-table,.qa-table{display:block;overflow-x:auto;}
+  html,body{overflow-x:hidden;}
   .nav-mobile-toggle.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav-mobile-toggle.active span:nth-child(2) { opacity: 0; }
   .nav-mobile-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
@@ -343,6 +347,20 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   .co-brand{padding-left:12px;gap:6px;}
   .co-brand-label{display:none;}
   .co-brand img{height:44px;}
+}
+</style>
+<style id="ggs-mobile-nav-css">
+/* Unified mobile nav (site-wide fix) */
+.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.nav-mobile-toggle span{display:block;width:22px;height:2px;background:var(--forest,#243D2C);margin:4px 0;border-radius:2px;transition:all .2s;}
+@media (max-width:700px){
+  .nav-links{display:none;}
+  .nav-mobile-toggle{display:block !important;}
+  .nav-links.mobile-open{display:flex !important;flex-direction:column;position:fixed;left:0;right:0;background:rgba(232,244,238,0.98);backdrop-filter:blur(14px);padding:20px 6%;gap:20px;border-bottom:1px solid var(--border,#C8DECE);z-index:199;box-shadow:0 8px 24px rgba(36,61,44,0.1);}
+  .nav-links.mobile-open a{display:block !important;font-size:16px;color:var(--forest,#243D2C);}
+  .nav-mobile-toggle.active span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .nav-mobile-toggle.active span:nth-child(2){opacity:0;}
+  .nav-mobile-toggle.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 }
 </style>
 </head>
@@ -634,6 +652,36 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
       event_label: location.pathname
     });
   });
+</script>
+
+<script>
+  // Unified mobile nav toggle (site-wide fix). Creates the hamburger if the page lacks it.
+  (function(){
+    if (window.__ggsMobileNav) return; window.__ggsMobileNav = true;
+    var nav = document.getElementById('mainNav') || document.querySelector('nav');
+    var links = nav ? nav.querySelector('.nav-links') : null;
+    if (!nav || !links) return;
+    var toggle = nav.querySelector('.nav-mobile-toggle');
+    if (!toggle){
+      toggle = document.createElement('button');
+      toggle.className = 'nav-mobile-toggle';
+      toggle.setAttribute('aria-label','Menu');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.innerHTML = '<span></span><span></span><span></span>';
+      nav.appendChild(toggle);
+    }
+    function setOpen(open){
+      links.classList.toggle('mobile-open', open);
+      toggle.classList.toggle('active', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) links.style.top = nav.offsetHeight + 'px';
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(!links.classList.contains('mobile-open'));
+    });
+    links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+  })();
 </script>
 </body>
 </html>
