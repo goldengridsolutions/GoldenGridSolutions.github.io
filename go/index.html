@@ -11,22 +11,39 @@
 </head>
 <body>
 <p>Taking you to Golden Grid Solutions&hellip;</p>
-<p><a id="fallback" href="/cold-storage.html">Continue</a></p>
+<p><a id="fallback" href="/index.html">Continue</a></p>
+<noscript><p>Please continue to <a href="/index.html">goldengsolutions.com</a>.</p></noscript>
 <script>
 (function () {
+  // Short code -> page. Full page names below still work, so links already sent keep working.
+  var CODES = {
+    ab:"about",       bk:"book",              cl:"clfp",          cs:"cold-storage",
+    cm:"commercial",  dc:"data-centers",      fq:"faq",           fp:"food-production",
+    fr:"food-retail", fs:"food-service",      gu:"guarantee",     hc:"healthcare",
+    hi:"heavy-industry", ht:"hotels",         ix:"index",         pb:"pubs-bars-restaurants"
+  };
+
   var PAGES = ["about","book","clfp","cold-storage","commercial","data-centers","faq",
     "food-production","food-retail","food-service","guarantee","healthcare",
     "heavy-industry","hotels","index","pubs-bars-restaurants"];
-  var DEFAULT_PAGE = "cold-storage";
-  var DEFAULT_CAMPAIGN = "cold_storage_aug2026";
 
-  var q = new URLSearchParams(window.location.search);
+  // Default campaign per page, so ?k= is only needed to override.
+  var CAMPAIGNS = {
+    "cold-storage":  "cold_storage_aug2026",
+    "food-service":  "qsr_corporate_aug2026",
+    "clfp":          "clfp_2026"
+  };
+  var DEFAULT_PAGE     = "cold-storage";
+  var DEFAULT_CAMPAIGN = "outreach_2026";
+
+  var q    = new URLSearchParams(window.location.search);
   var code = (q.get("c") || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 32);
   var page = (q.get("p") || "").replace(/[^a-z0-9-]/g, "").slice(0, 48);
   var camp = (q.get("k") || "").replace(/[^a-z0-9_]/g, "").slice(0, 64);
 
+  if (CODES[page]) page = CODES[page];
   if (PAGES.indexOf(page) === -1) page = DEFAULT_PAGE;
-  if (!camp) camp = DEFAULT_CAMPAIGN;
+  if (!camp) camp = CAMPAIGNS[page] || DEFAULT_CAMPAIGN;
 
   var url = "/" + page + ".html"
           + "?utm_source=email&utm_medium=email"
