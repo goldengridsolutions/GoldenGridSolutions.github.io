@@ -361,6 +361,24 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   .nav-mobile-toggle.active span:nth-child(2){opacity:0;}
   .nav-mobile-toggle.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 }
+
+/* --- product thumbnails in the solutions list --- */
+.sol-item { grid-template-columns: 132px 1fr auto; align-items: center; }
+.sol-thumb { width: 132px; height: 112px; display: flex; align-items: center; justify-content: center;
+  background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 8px; }
+.sol-thumb img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+/* --- sector cards: make the click obvious --- */
+.sc-more { margin-top: 14px; font-size: 13px; font-weight: 500; color: var(--leaf); }
+.sector-card:hover { border-color: var(--leaf); transform: translateY(-2px); box-shadow: 0 10px 26px -14px rgba(36,61,44,0.30); }
+.sector-card:hover .sc-more { color: var(--forest); }
+.sector-card:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; }
+@media (max-width: 700px) {
+  .sol-item { grid-template-columns: 92px 1fr; }
+  .sol-thumb { width: 92px; height: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sector-card, .sector-card:hover { transition: none; transform: none; }
+}
 </style>
 </head>
 <body>
@@ -375,10 +393,12 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
     </div>
   </div>
   <div class="nav-links">
-    <a href="#sectors">Sectors</a>
-    <a href="#about">About</a>
-    <a href="#solutions">Solutions</a>
-    <a href="#results">Results</a>
+    <a href="index.html#sectors" style="color:var(--forest);font-weight:500;">Sectors</a>
+    <a href="index.html#solutions" style="color:var(--forest);font-weight:500;">Solutions</a>
+    <a href="index.html#results" style="color:var(--forest);font-weight:500;">Results</a>
+    <a href="guarantee.html">Guarantee</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
     <a href="book.html" class="nav-cta">Book a Call</a>
   </div>
   <button class="nav-mobile-toggle" aria-label="Menu">
@@ -399,10 +419,10 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   <div class="hero-content">
     <div class="hero-eyebrow">Premier Emissis enPact Distributor</div>
     <h1 class="hero-h1">
-      Lower energy costs.<br>Reduce carbon.<br><em>Guaranteed.</em>
+      Lower energy costs.<br>Reduce carbon.<br><em>Payback guaranteed.</em>
     </h1>
     <p class="hero-lead">
-      Golden Grid Solutions brings globally patented Emissis enPact technology to U.S. businesses — delivering verified energy savings of 10–40%, typical payback of 12&ndash;36 months, with minimal disruption to your operations.
+      Golden Grid Solutions brings globally patented Emissis enPact technology to U.S. businesses — delivering verified energy savings of 10&ndash;35%, typical payback of 12&ndash;36 months, with minimal disruption to your operations.
     </p>
     <div class="hero-actions">
       <a href="book.html" class="btn-primary">Schedule a Discovery Call →</a>
@@ -426,16 +446,16 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   <h2 class="section-h2">Built for <em>energy-intensive</em><br>commercial environments</h2>
   <p class="section-lead">From single-site businesses to national chains with thousands of locations — enPact technology scales to any environment.</p>
   <div class="sectors-grid">
-    <a href="food-service.html" class="sector-card"><div class="sc-icon">🍔</div><div class="sc-name">Food Service &amp; QSR</div><div class="sc-text">Restaurants, fast food chains, and cafeterias with continuous refrigeration and kitchen loads.</div></a>
-    <a href="food-retail.html" class="sector-card"><div class="sc-icon">🛒</div><div class="sc-name">Food Retail &amp; Supermarkets</div><div class="sc-text">Grocery stores, convenience retail, and food distribution centers with high refrigeration demand.</div></a>
-    <a href="food-production.html" class="sector-card"><div class="sc-icon">🏭</div><div class="sc-name">Food Production &amp; Manufacturing</div><div class="sc-text">Factories and processing plants with intensive HVAC, chiller, and motor loads.</div></a>
-    <a href="pubs-bars-restaurants.html" class="sector-card"><div class="sc-icon">🍺</div><div class="sc-name">Pubs, Bars &amp; Restaurants</div><div class="sc-text">High-load venues with continuous bar refrigeration, kitchen equipment, and HVAC demands.</div></a>
-    <a href="hotels.html" class="sector-card"><div class="sc-icon">🏨</div><div class="sc-name">Hotels &amp; Built Environment</div><div class="sc-text">Hotels and resorts with complex multi-zone HVAC, chilled water plants, and 24/7 operations.</div></a>
-    <a href="cold-storage.html" class="sector-card"><div class="sc-icon">🧊</div><div class="sc-name">Cold Storage &amp; Logistics</div><div class="sc-text">Cold chain warehouses and refrigerated logistics requiring precise temperature control at scale.</div></a>
-    <a href="commercial.html" class="sector-card"><div class="sc-icon">🏢</div><div class="sc-name">Commercial Buildings</div><div class="sc-text">Mixed-use and office buildings with centralized chilled water HVAC plants across multiple tenants.</div></a>
-    <a href="data-centers.html" class="sector-card"><div class="sc-icon">🖥️</div><div class="sc-name">Data Centers</div><div class="sc-text">Mission-critical facilities where cooling dominates energy consumption and uptime is non-negotiable.</div></a>
-    <a href="healthcare.html" class="sector-card"><div class="sc-icon">🏥</div><div class="sc-name">Healthcare &amp; Pharma</div><div class="sc-text">Compliance-driven environments requiring precision HVAC, cold storage, and continuous operation.</div></a>
-    <a href="heavy-industry.html" class="sector-card"><div class="sc-icon">⚙️</div><div class="sc-name">Heavy Industry</div><div class="sc-text">Industrial facilities and manufacturing plants with high inductive motor loads and process cooling.</div></a>
+    <a href="food-service.html" class="sector-card"><div class="sc-icon">🍔</div><div class="sc-name">Food Service &amp; QSR</div><div class="sc-text">Restaurants, fast food chains, and cafeterias with continuous refrigeration and kitchen loads.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="food-retail.html" class="sector-card"><div class="sc-icon">🛒</div><div class="sc-name">Food Retail &amp; Supermarkets</div><div class="sc-text">Grocery stores, convenience retail, and food distribution centers with high refrigeration demand.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="food-production.html" class="sector-card"><div class="sc-icon">🏭</div><div class="sc-name">Food Production &amp; Manufacturing</div><div class="sc-text">Factories and processing plants with intensive HVAC, chiller, and motor loads.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="pubs-bars-restaurants.html" class="sector-card"><div class="sc-icon">🍺</div><div class="sc-name">Pubs, Bars &amp; Restaurants</div><div class="sc-text">High-load venues with continuous bar refrigeration, kitchen equipment, and HVAC demands.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="hotels.html" class="sector-card"><div class="sc-icon">🏨</div><div class="sc-name">Hotels &amp; Built Environment</div><div class="sc-text">Hotels and resorts with complex multi-zone HVAC, chilled water plants, and 24/7 operations.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="cold-storage.html" class="sector-card"><div class="sc-icon">🧊</div><div class="sc-name">Cold Storage &amp; Logistics</div><div class="sc-text">Cold chain warehouses and refrigerated logistics requiring precise temperature control at scale.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="commercial.html" class="sector-card"><div class="sc-icon">🏢</div><div class="sc-name">Commercial Buildings</div><div class="sc-text">Mixed-use and office buildings with centralized chilled water HVAC plants across multiple tenants.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="data-centers.html" class="sector-card"><div class="sc-icon">🖥️</div><div class="sc-name">Data Centers</div><div class="sc-text">Mission-critical facilities where cooling dominates energy consumption and uptime is non-negotiable.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="healthcare.html" class="sector-card"><div class="sc-icon">🏥</div><div class="sc-name">Healthcare &amp; Pharma</div><div class="sc-text">Compliance-driven environments requiring precision HVAC, cold storage, and continuous operation.</div><div class="sc-more">Learn more &rarr;</div></a>
+    <a href="heavy-industry.html" class="sector-card"><div class="sc-icon">⚙️</div><div class="sc-name">Heavy Industry</div><div class="sc-text">Industrial facilities and manufacturing plants with high inductive motor loads and process cooling.</div><div class="sc-more">Learn more &rarr;</div></a>
   </div>
 </section>
 
@@ -473,22 +493,22 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   </div>
   <div class="sol-list">
     <a href="book.html" class="sol-item">
-      <div class="sol-num">01</div>
-      <div><div class="sol-name">enPact Refrigeration &amp; Cooling</div><div class="sol-desc">Intelligent optimization of commercial refrigeration and DX cooling systems. Reduces compressor run-time and energy draw without compromising temperature control, food safety, or compliance.</div><div class="sol-tags"><span class="sol-tag">Up to 40% savings</span><span class="sol-tag">Food Retail</span><span class="sol-tag">Cold Storage</span><span class="sol-tag">Hospitality</span></div></div>
+      <div class="sol-thumb"><img src="enpact-rc-device.png" alt="enPact Refrigeration &amp; Cooling device"></div>
+      <div><div class="sol-name">enPact Refrigeration &amp; Cooling</div><div class="sol-desc">Intelligent optimization of commercial refrigeration and DX cooling systems. Reduces compressor run-time and energy draw without compromising temperature control, food safety, or compliance.</div><div class="sol-tags"><span class="sol-tag">20&ndash;40% per unit fitted</span><span class="sol-tag">Food Retail</span><span class="sol-tag">Cold Storage</span><span class="sol-tag">Hospitality</span></div></div>
       <div class="sol-arrow">→</div>
     </a>
     <a href="book.html" class="sol-item">
-      <div class="sol-num">02</div>
+      <div class="sol-thumb"><img src="filterpro-device.png" alt="enPact FilterPro device"></div>
       <div><div class="sol-name">enPact FilterPro — Electrical Optimization</div><div class="sol-desc">Advanced power conditioning using spintronics and Carbon Nanotube (CNT) technology. Reduces electrical waste across motors, compressors, HVAC, and lighting — site-wide, with no hardware changes required.</div><div class="sol-tags"><span class="sol-tag">6–18% savings</span><span class="sol-tag">All sectors</span><span class="sol-tag">Scheduled install</span><span class="sol-tag">20-year lifespan</span></div></div>
       <div class="sol-arrow">→</div>
     </a>
     <a href="book.html" class="sol-item">
-      <div class="sol-num">03</div>
+      <div class="sol-thumb"><img src="enpact-chillers-device.png" alt="enPact Chillers unit with nanofluid additive"></div>
       <div><div class="sol-name">enPact Chillers</div><div class="sol-desc">Nano fluid technology for closed-loop HVAC and process cooling systems. Enhances heat transfer efficiency, reducing compressor load and energy consumption with no hardware changes or liquid additive dosing.</div><div class="sol-tags"><span class="sol-tag">10–15% savings</span><span class="sol-tag">Manufacturing</span><span class="sol-tag">Data Centers</span><span class="sol-tag">Healthcare</span></div></div>
       <div class="sol-arrow">→</div>
     </a>
     <a href="book.html" class="sol-item">
-      <div class="sol-num">04</div>
+      <div class="sol-thumb"><img src="enos-platform.png" alt="enPact energy and carbon monitoring dashboard"></div>
       <div><div class="sol-name">enPact Energy &amp; Carbon Management</div><div class="sol-desc">Real-time energy and carbon monitoring platform with automated ESG reporting aligned to GHG Protocol, SECR, and ESOS frameworks. Multi-site dashboards, anomaly detection, and investor-ready carbon reporting.</div><div class="sol-tags"><span class="sol-tag">ESG reporting</span><span class="sol-tag">Multi-site</span><span class="sol-tag">GHG Protocol</span><span class="sol-tag">Live dashboards</span></div></div>
       <div class="sol-arrow">→</div>
     </a>
@@ -608,12 +628,12 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
     <div>
       <div class="footer-col-title">Sectors</div>
       <div class="footer-links">
-        <a href="#sectors">Food Service &amp; QSR</a>
-        <a href="#sectors">Food Retail</a>
-        <a href="#sectors">Hospitality</a>
-        <a href="#sectors">Cold Storage</a>
-        <a href="#sectors">Multi-Use Buildings</a>
-        <a href="#sectors">Healthcare</a>
+        <a href="food-service.html">Food Service &amp; QSR</a>
+        <a href="food-retail.html">Food Retail</a>
+        <a href="hotels.html">Hospitality</a>
+        <a href="cold-storage.html">Cold Storage</a>
+        <a href="commercial.html">Multi-Use Buildings</a>
+        <a href="healthcare.html">Healthcare</a>
       </div>
     </div>
     <div>
