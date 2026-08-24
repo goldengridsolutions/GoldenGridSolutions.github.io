@@ -385,14 +385,47 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 .layer-shot{width:100%;height:150px;display:flex;align-items:center;justify-content:center;background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:20px;padding:12px;}
 .layer-shot img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;}
 
-/* ── how-it-works explainer ── */
-.howitworks{background:var(--mint-bg);}
-.hiw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:38px;}
-@media(max-width:760px){.hiw-grid{grid-template-columns:1fr;}}
-.hiw-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:26px 24px;}
-.hiw-step{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);margin-bottom:12px;}
-.hiw-title{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--forest);line-height:1.25;margin-bottom:12px;}
-.hiw-text{font-size:14px;color:var(--steel);line-height:1.75;font-weight:300;}
+/* ── learn sections: CLFP side-by-side pattern ── */
+.lrn-container{max-width:1280px;margin:0 auto;}
+.learn{padding:74px 8%;}
+.learn.alt{background:var(--white);}
+.learn.forest{background:var(--forest);color:var(--white);}
+.learn.forest .section-h2{color:var(--white);}
+.learn.forest .section-h2 em{color:#E8C96A;}
+.learn.forest .section-eyebrow{color:#E8C96A;}
+.learn.forest .section-eyebrow::before{background:#E8C96A;}
+.learn.forest .learn-body{color:rgba(255,255,255,.82);}
+.learn.forest .learn-body strong{color:var(--white);font-weight:500;}
+.learn-body{font-size:18px;color:var(--steel);font-weight:300;line-height:1.68;max-width:780px;margin-top:22px;}
+.learn-body strong{color:var(--forest);font-weight:500;}
+.learn-icons{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap;}
+.learn-icon-item{display:flex;align-items:flex-start;gap:14px;flex:1 1 240px;max-width:340px;}
+.learn-icon-svg{width:36px;height:36px;flex-shrink:0;color:var(--gold);}
+.learn.forest .learn-icon-svg{color:#E8C96A;}
+.learn-icon-label{font-size:16px;color:var(--forest);font-weight:600;line-height:1.4;}
+.learn.forest .learn-icon-label{color:var(--white);}
+.learn-icon-sub{font-size:14.5px;color:var(--steel);font-weight:400;line-height:1.5;margin-top:4px;}
+.learn.forest .learn-icon-sub{color:rgba(255,255,255,.68);}
+.side-by-side{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.35fr);gap:48px;align-items:center;margin-top:12px;}
+.side-by-side.text-right{grid-template-columns:minmax(0,1.35fr) minmax(0,0.85fr);}
+.side-by-side.text-right .side-text{order:2;}
+.side-by-side.text-right .side-visual{order:1;}
+.side-visual{position:relative;}
+.side-visual img{width:100%;height:auto;display:block;border-radius:12px;}
+.side-visual.no-frame img{border-radius:0;}
+.diagram-img{width:100%;height:auto;display:block;border-radius:12px;background:var(--white);padding:16px;border:1px solid var(--border);}
+.family-devices{display:flex;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap;}
+.family-device{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 260px;}
+.family-device img{width:100%;max-width:260px;height:auto;object-fit:contain;margin-bottom:14px;border-radius:0;}
+.family-device-label{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--forest);line-height:1.2;}
+.family-device-sub{font-size:13px;color:var(--sage);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:4px;}
+@media(max-width:900px){
+  .side-by-side,.side-by-side.text-right{grid-template-columns:1fr;gap:30px;}
+  .side-by-side.text-right .side-text,.side-by-side.text-right .side-visual{order:initial;}
+  .family-devices{gap:16px;flex-wrap:nowrap;}
+  .family-device{flex:1 1 0;min-width:0;}
+  .learn{padding:52px 6%;}
+}
 
 /* ── request-info form ── */
 .reqform{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 34px;max-width:760px;margin:38px auto 0;text-align:left;}
@@ -530,31 +563,112 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   </div>
 </section>
 
-<!-- HOW IT WORKS — the solution, explained -->
-<section class="howitworks" id="how-it-works">
-  <div class="section-eyebrow">The Solution &middot; How it works</div>
-  <h2 class="section-h2">Two devices.<br><em>Four things worth knowing.</em></h2>
-  <p class="section-lead">Before the numbers, the mechanism. This is what gets installed, where it goes, why it reduces consumption, and what that means on your P&amp;L.</p>
-  <div class="hiw-grid">
-    <div class="hiw-card">
-      <div class="hiw-step">What it is</div>
-      <div class="hiw-title">Capital equipment you own</div>
-      <div class="hiw-text">Two patented devices from the Emissis enPact suite. <strong>FilterPro</strong> optimizes the electrical supply; <strong>Refrigeration &amp; Cooling</strong> optimizes individual cooling units. You buy them outright and they sit on your balance sheet as an asset &mdash; there is no subscription and no shared-savings split.</div>
+<!-- WHAT IT IS -->
+<section class="learn alt" id="how-it-works">
+  <div class="lrn-container">
+  <div class="side-by-side">
+    <div class="side-text">
+      <div class="section-eyebrow">What it is</div>
+      <h2 class="section-h2">The enPact family. <em>Two devices, one approach.</em></h2>
+      <p class="learn-body">Patented capital equipment &mdash; hardware you own outright, sitting on your balance sheet as an asset. Bought once, installed once, yours for as long as it runs. Two devices, deployed based on where the waste actually lives in your restaurant:</p>
+      <div class="learn-icons" style="margin-top:32px;">
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div><div class="learn-icon-label">enPact FilterPro</div><div class="learn-icon-sub">At the main electrical panel &mdash; whole-site power quality across every circuit</div></div>
+      </div>
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 L18 2 L20 8 L20 20 A2 2 0 0 1 18 22 L6 22 A2 2 0 0 1 4 20 L4 8 Z M4 8 L20 8 M12 14 A2 2 0 1 1 12 18 A2 2 0 1 1 12 14"/></svg>
+        <div><div class="learn-icon-label">enPact Refrigeration &amp; Cooling</div><div class="learn-icon-sub">At each walk-in, freezer, prep unit and display case &mdash; deeper unit-level reduction</div></div>
+      </div>
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <div><div class="learn-icon-label">Both are capital purchases</div><div class="learn-icon-sub">On your balance sheet and depreciable &mdash; no subscription, no shared-savings split</div></div>
+      </div>
+      </div>
     </div>
-    <div class="hiw-card">
-      <div class="hiw-step">Where it sits</div>
-      <div class="hiw-title">Alongside what you already run</div>
-      <div class="hiw-text">FilterPro connects in parallel at your main incoming panel. Refrigeration &amp; Cooling fits at the evaporator on each walk-in, freezer, prep unit or display case. Neither sits in the path of your refrigerant, and neither replaces existing equipment.</div>
+    <div class="side-visual no-frame">
+      <div class="family-devices">
+        <div class="family-device">
+          <img src="filterpro-device.png" alt="enPact FilterPro device — installed at the main electrical panel">
+          <div class="family-device-label">enPact FilterPro</div>
+          <div class="family-device-sub">At the panel</div>
+        </div>
+        <div class="family-device">
+          <img src="enpact-rc-device.png" alt="enPact Refrigeration &amp; Cooling device — installed at individual refrigeration units">
+          <div class="family-device-label">enPact R&amp;C</div>
+          <div class="family-device-sub">At the unit</div>
+        </div>
+      </div>
     </div>
-    <div class="hiw-card">
-      <div class="hiw-step">Why it works</div>
-      <div class="hiw-title">Two different kinds of waste</div>
-      <div class="hiw-text">Motors and compressors draw more power than the work they do requires. FilterPro improves the quality of the supply reaching them. Refrigeration &amp; Cooling detects when a unit has reached its setpoint and pauses the compressor at peak efficiency rather than letting it run on.</div>
+  </div>
+  </div>
+</section>
+
+<!-- WHERE IT SITS -->
+<section class="learn">
+  <div class="lrn-container">
+  <div class="side-by-side text-right">
+    <div class="side-text">
+      <div class="section-eyebrow">Where it sits</div>
+      <h2 class="section-h2">Connected at your panel. <em>Felt across the restaurant.</em></h2>
+      <p class="learn-body"><strong>FilterPro</strong> connects in parallel at your main electrical panel. It carries no load and conditions power quality at the source, so your refrigeration, HVAC, exhaust fans and kitchen equipment all draw cleaner power.</p>
+      <p class="learn-body" style="margin-top:14px;"><strong>Refrigeration &amp; Cooling</strong> installs at the individual unit &mdash; sensor-driven control at the evaporator trims compressor runtime on specific walk-in, freezer and cooling loads for a deeper reduction.</p>
+      <p class="learn-body" style="margin-top:14px;font-style:italic;font-size:15px;">Your equipment sees cleaner power &mdash; and your refrigerant, setpoints, and controls stay exactly as they are.</p>
     </div>
-    <div class="hiw-card">
-      <div class="hiw-step">Why it matters</div>
-      <div class="hiw-title">The savings land on your P&amp;L</div>
-      <div class="hiw-text">Refrigeration and HVAC are among the largest controllable costs in a restaurant. Every kWh removed flows straight to your P&amp;L for as long as the equipment runs, and Emissis guarantees the payback period set out in your proposal.</div>
+    <div class="side-visual">
+      <img src="enpact-family-diagram.png" alt="enPact integration diagram: utility power arrives at the main electrical panel where FilterPro connects in parallel, and power flows out to HVAC, cooling and compressor loads — with enPact Refrigeration &amp; Cooling installed at the unit for deeper load-specific reduction" class="diagram-img">
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS -->
+<section class="learn forest">
+  <div class="lrn-container">
+  <div class="side-by-side">
+    <div class="side-text">
+      <div class="section-eyebrow">Why it works</div>
+      <h2 class="section-h2">Proprietary technology. <em>Real reductions.</em></h2>
+      <p class="learn-body">Motors and compressors draw more power than the work they do actually requires. The difference is lost to electrical noise and reactive losses before it ever reaches the equipment &mdash; it never shows as a fault, and it appears only on the bill.</p>
+      <p class="learn-body" style="margin-top:14px;">FilterPro improves the quality of the supply reaching those loads. Refrigeration &amp; Cooling works on a different mechanism entirely &mdash; it detects when a unit has hit its setpoint and pauses the compressor at peak efficiency rather than letting it run on.</p>
+      <div class="learn-icons" style="margin-top:32px;">
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        <div><div class="learn-icon-label">Installed around your hours</div><div class="learn-icon-sub">A brief power isolation to make the connection at the panel; equipment returns to service straight after</div></div>
+      </div>
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><div class="learn-icon-label">Nothing changes in the kitchen</div><div class="learn-icon-sub">Setpoints, refrigerant and OEM safety logic stay exactly as they are</div></div>
+      </div>
+      </div>
+    </div>
+    <div class="side-visual">
+      <img src="works-facility.png" alt="Diagram: noisy, wasteful power feeding motors on the left; enPact FilterPro installed in parallel at the electrical panel in the middle; improved power quality reaching the same equipment on the right">
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="learn alt">
+  <div class="lrn-container">
+    <div class="section-eyebrow">Why it matters</div>
+    <h2 class="section-h2">Capital equipment. <em>Not another operating line item.</em></h2>
+    <p class="learn-body">Refrigeration and HVAC are among the largest controllable costs in a restaurant, and unlike rent or food cost they respond to engineering. Every kWh you stop drawing flows straight to your P&amp;L, at every location, for as long as the equipment runs.</p>
+    <p class="learn-body" style="margin-top:14px;">Because it is a one-time capital purchase rather than a service contract, the savings are not shared with anyone. And the payback period is not a projection you are asked to trust &mdash; Emissis puts it in writing.</p>
+    <div class="learn-icons" style="margin-top:36px;">
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <div><div class="learn-icon-label">Capital, not operating expense</div><div class="learn-icon-sub">You buy it, own it, and depreciate it &mdash; it sits on your balance sheet as an asset</div></div>
+      </div>
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+        <div><div class="learn-icon-label">Verified, not modelled</div><div class="learn-icon-sub">Savings measured and verified under an IPMVP-aligned methodology</div></div>
+      </div>
+      <div class="learn-icon-item">
+        <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><div class="learn-icon-label">Payback guaranteed in writing</div><div class="learn-icon-sub">If verified savings fall short of forecast, Emissis credits back capital to restore the quoted payback</div></div>
+      </div>
     </div>
   </div>
 </section>
