@@ -489,6 +489,20 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 .rf-other input[type=text]:focus{outline:none;border-color:var(--leaf);background:var(--white);box-shadow:0 0 0 3px rgba(74,124,89,.15);}
 .rf-other.has-error input{border-color:#C0392B;background:#FCF3F1;}
 .rf-other.has-error .rf-err{display:block;}
+
+/* ── R&C compressor cycle (a real sequence, so it is numbered) ── */
+.cycle{margin-top:52px;padding-top:40px;border-top:1px solid rgba(255,255,255,.16);}
+.cycle-h{font-family:var(--serif);font-size:25px;font-weight:600;color:var(--white);line-height:1.3;margin-bottom:10px;}
+.cycle-lead{font-size:16px;color:rgba(255,255,255,.78);font-weight:300;line-height:1.65;max-width:760px;}
+.cycle-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px;}
+.cycle-step{position:relative;padding-top:20px;border-top:2px solid #E8C96A;}
+.cycle-n{position:absolute;top:-11px;left:0;width:22px;height:22px;border-radius:50%;background:#E8C96A;color:var(--forest);font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--sans);}
+.cycle-t{font-size:15px;font-weight:600;color:var(--white);margin-bottom:7px;}
+.cycle-d{font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.62;font-weight:300;}
+.cycle-foot{margin-top:30px;font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;font-style:italic;}
+.cycle-foot strong{color:#E8C96A;font-weight:600;font-style:normal;}
+@media(max-width:900px){.cycle-steps{grid-template-columns:1fr 1fr;gap:26px 20px;}}
+@media(max-width:560px){.cycle-steps{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -682,7 +696,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
       <div class="section-eyebrow">Why it works</div>
       <h2 class="section-h2">Proprietary technology. <em>Real reductions.</em></h2>
       <p class="learn-body">Motors and compressors draw more power than the work they do actually requires. The difference is lost to electrical noise and reactive losses before it ever reaches the equipment &mdash; it never shows as a fault, and it appears only on the bill.</p>
-      <p class="learn-body" style="margin-top:14px;">FilterPro improves the quality of the supply reaching those loads. Refrigeration &amp; Cooling works on a different mechanism entirely &mdash; it detects when a unit has hit its setpoint and pauses the compressor at peak efficiency rather than letting it run on.</p>
+      <p class="learn-body" style="margin-top:14px;">That is what FilterPro addresses &mdash; it improves the quality of the supply reaching those loads. Refrigeration &amp; Cooling works on a completely different mechanism, on the cooling side rather than the electrical one.</p>
       <div class="learn-icons" style="margin-top:32px;">
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
@@ -698,6 +712,34 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
       <img src="works-facility.png" alt="Diagram: noisy, wasteful power feeding motors on the left; enPact FilterPro installed in parallel at the electrical panel in the middle; improved power quality reaching the same equipment on the right">
     </div>
   </div>
+    <div class="cycle">
+      <div class="cycle-h">How Refrigeration &amp; Cooling actually works</div>
+      <p class="cycle-lead">The condensing unit is where 80&ndash;90% of a refrigeration system&rsquo;s energy goes. Rather than throttling it, enPact watches for the moment the evaporator has done its job &mdash; then stops the compressor and lets the cold that is already in the coil do the rest.</p>
+      <div class="cycle-steps">
+        <div class="cycle-step">
+          <div class="cycle-n">1</div>
+          <div class="cycle-t">Read the superheat</div>
+          <div class="cycle-d">Two sensors track refrigerant temperature across the evaporator. Together they show the moment the evaporator reaches maximum cooling capacity.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="cycle-n">2</div>
+          <div class="cycle-t">Close the valve</div>
+          <div class="cycle-d">At that point enPact interrupts the supply to the solenoid or expansion valve. The compressor stops &mdash; at peak efficiency, not at random.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="cycle-n">3</div>
+          <div class="cycle-t">Use what is already there</div>
+          <div class="cycle-d">With the valve shut, the refrigerant still in the evaporator keeps cooling the space. You get the cooling without the compressor running for it.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="cycle-n">4</div>
+          <div class="cycle-t">Restart on demand</div>
+          <div class="cycle-d">Once that refrigerant is spent and superheat drops to its lower threshold, the valve reopens and the compressor cycle resumes.</div>
+        </div>
+      </div>
+      <p class="cycle-foot">Note what is <strong>not</strong> in that sequence: your thermostat. Setpoints are never touched &mdash; enPact works off superheat and product temperature, so the box holds the temperature you set it to and stays HACCP-compliant. It is the compressor&rsquo;s runtime that changes, not your cooling. Works with thermostatic and electronic expansion valves, alongside all major OEM equipment.</p>
+    </div>
+
   </div>
 </section>
 
