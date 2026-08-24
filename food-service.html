@@ -363,6 +363,63 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   .nav-mobile-toggle.active span:nth-child(2){opacity:0;}
   .nav-mobile-toggle.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 }
+
+/* ── hero CTA + assurance icons (ported from clfp) ── */
+.hero-h1-sub{font-family:var(--sans);font-size:15px;color:#E8C96A;font-style:italic;font-weight:400;letter-spacing:.02em;margin-top:14px;text-shadow:0 1px 6px rgba(0,0,0,.3);max-width:640px;}
+.hero-cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--white);padding:14px 28px;border-radius:5px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;}
+.btn-gold:hover{background:#A87A24;transform:translateY(-2px);}
+.btn-ghost{background:rgba(255,255,255,.08);color:var(--white);padding:14px 28px;border-radius:5px;font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.22);display:inline-flex;align-items:center;gap:8px;transition:background .2s,border-color .2s;}
+.btn-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4);}
+.hero-icons{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap;}
+.hero-icon{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:13px;font-weight:400;letter-spacing:.02em;}
+.hero-icon-svg{width:26px;height:26px;flex-shrink:0;color:#E8C96A;}
+
+/* ── metric readout: serif digits were clipping at line-height 1 ── */
+.layer-saving{padding-top:18px;border-top:1px solid var(--border);display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;}
+.ls-num{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--forest);line-height:1.18;padding-bottom:2px;}
+.ls-label{font-size:13px;color:var(--steel);line-height:1.5;}
+.stat-num{line-height:1.15;padding-bottom:2px;}
+
+/* ── product shot on each layer card ── */
+.layer-shot{width:100%;height:150px;display:flex;align-items:center;justify-content:center;background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:20px;padding:12px;}
+.layer-shot img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;}
+
+/* ── how-it-works explainer ── */
+.howitworks{background:var(--mint-bg);}
+.hiw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:38px;}
+@media(max-width:760px){.hiw-grid{grid-template-columns:1fr;}}
+.hiw-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:26px 24px;}
+.hiw-step{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);margin-bottom:12px;}
+.hiw-title{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--forest);line-height:1.25;margin-bottom:12px;}
+.hiw-text{font-size:14px;color:var(--steel);line-height:1.75;font-weight:300;}
+
+/* ── request-info form ── */
+.reqform{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 34px;max-width:760px;margin:38px auto 0;text-align:left;}
+.reqform-h{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--forest);margin-bottom:8px;line-height:1.25;}
+.reqform-p{font-size:14px;color:var(--steel);line-height:1.7;margin-bottom:6px;}
+.rf{display:flex;flex-direction:column;gap:20px;margin-top:22px;}
+.rf-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.rf-field label{display:block;font-size:12px;font-weight:600;color:var(--forest);letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px;}
+.rf-field label .req{color:var(--gold);margin-left:2px;}
+.rf-field input[type=text],.rf-field input[type=email]{width:100%;font-family:var(--sans);font-size:15px;color:var(--slate);background:var(--mint-bg);border:1px solid var(--border);border-radius:6px;padding:12px 14px;transition:border-color .18s,background .18s,box-shadow .18s;}
+.rf-field input[type=text]:focus,.rf-field input[type=email]:focus{outline:none;border-color:var(--leaf);background:var(--white);box-shadow:0 0 0 3px rgba(74,124,89,.15);}
+.rf-err{color:#C0392B;font-size:12px;margin-top:5px;display:none;}
+.rf-field.has-error .rf-err{display:block;}
+.rf-field.has-error input{border-color:#C0392B;background:#FCF3F1;}
+.rf-checkgroup{display:flex;flex-direction:column;gap:10px;padding:4px 0 2px;}
+.rf-check{display:flex;align-items:center;gap:11px;cursor:pointer;font-size:14px;color:var(--steel);padding:4px 0;}
+.rf-check input[type=checkbox],.rf-consent input[type=checkbox]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--sage);border-radius:4px;background:var(--white);cursor:pointer;flex-shrink:0;position:relative;transition:background .15s,border-color .15s;}
+.rf-check input[type=checkbox]:checked,.rf-consent input[type=checkbox]:checked{background:var(--forest);border-color:var(--forest);}
+.rf-check input[type=checkbox]:checked::after,.rf-consent input[type=checkbox]:checked::after{content:'\2713';color:var(--white);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:13px;font-weight:700;line-height:1;}
+.rf-consent{margin-top:2px;padding:14px 0 2px;border-top:1px solid var(--border);}
+.rf-consent label{display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13px;color:var(--steel);line-height:1.55;}
+.rf-consent.has-error .rf-err{display:block;margin-left:29px;}
+.rf-submit{background:var(--gold);color:var(--white);border:none;padding:14px 32px;border-radius:5px;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:background .2s,transform .15s;align-self:flex-start;}
+.rf-submit:hover{background:#A87A24;transform:translateY(-1px);}
+.rf-note{font-size:12px;color:var(--steel);opacity:.85;margin-top:2px;}
+.rf-thanks{display:none;background:var(--mint);border:1px solid var(--sage);border-radius:10px;padding:20px 22px;color:var(--forest);font-size:15px;line-height:1.6;}
+@media(max-width:640px){.rf-grid{grid-template-columns:1fr;}.reqform{padding:26px 20px;}}
 </style>
 </head>
 <body>
@@ -413,8 +470,18 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   <div class="hero-content">
     <div class="hero-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#sectors">Sectors</a> &nbsp;/&nbsp; Food Service & QSR</div>
     <div class="hero-eyebrow">Food Service & Quick-Service Restaurants</div>
-    <h1 class="hero-h1">Your kitchen never stops.<br>Neither does your<br><em>energy bill.</em></h1>
-    <p class="hero-lead">Refrigeration, HVAC, and kitchen equipment run continuously in food service. We reduce that load by 13–22% — without compromising safety, comfort, or disrupting a single shift.</p>
+    <h1 class="hero-h1">Cut restaurant energy use up to <em>18.3%.</em> Verified.</h1>
+    <p class="hero-h1-sub">Emissis guarantees the payback period set out in your proposal &mdash; supported by formal M&amp;V.</p>
+    <div class="hero-cta-row">
+      <a href="book.html" class="btn-gold">Book a 30-min Call &rarr;</a>
+      <a href="#request" class="btn-ghost">Request more info</a>
+    </div>
+    <div class="hero-icons">
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>Installed around your service hours</div>
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Setpoints and food safety unchanged</div>
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Maintenance-free</div>
+      <div class="hero-icon"><svg class="hero-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>kWh reduction validated by M&amp;V</div>
+    </div>
   </div>
 </div>
 
@@ -463,6 +530,35 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   </div>
 </section>
 
+<!-- HOW IT WORKS — the solution, explained -->
+<section class="howitworks" id="how-it-works">
+  <div class="section-eyebrow">The Solution &middot; How it works</div>
+  <h2 class="section-h2">Two devices.<br><em>Four things worth knowing.</em></h2>
+  <p class="section-lead">Before the numbers, the mechanism. This is what gets installed, where it goes, why it reduces consumption, and what that means on your P&amp;L.</p>
+  <div class="hiw-grid">
+    <div class="hiw-card">
+      <div class="hiw-step">What it is</div>
+      <div class="hiw-title">Capital equipment you own</div>
+      <div class="hiw-text">Two patented devices from the Emissis enPact suite. <strong>FilterPro</strong> optimizes the electrical supply; <strong>Refrigeration &amp; Cooling</strong> optimizes individual cooling units. You buy them outright and they sit on your balance sheet as an asset &mdash; there is no subscription and no shared-savings split.</div>
+    </div>
+    <div class="hiw-card">
+      <div class="hiw-step">Where it sits</div>
+      <div class="hiw-title">Alongside what you already run</div>
+      <div class="hiw-text">FilterPro connects in parallel at your main incoming panel. Refrigeration &amp; Cooling fits at the evaporator on each walk-in, freezer, prep unit or display case. Neither sits in the path of your refrigerant, and neither replaces existing equipment.</div>
+    </div>
+    <div class="hiw-card">
+      <div class="hiw-step">Why it works</div>
+      <div class="hiw-title">Two different kinds of waste</div>
+      <div class="hiw-text">Motors and compressors draw more power than the work they do requires. FilterPro improves the quality of the supply reaching them. Refrigeration &amp; Cooling detects when a unit has reached its setpoint and pauses the compressor at peak efficiency rather than letting it run on.</div>
+    </div>
+    <div class="hiw-card">
+      <div class="hiw-step">Why it matters</div>
+      <div class="hiw-title">The savings land on your P&amp;L</div>
+      <div class="hiw-text">Refrigeration and HVAC are among the largest controllable costs in a restaurant. Every kWh removed flows straight to your P&amp;L for as long as the equipment runs, and Emissis guarantees the payback period set out in your proposal.</div>
+    </div>
+  </div>
+</section>
+
 <!-- SOLUTION -->
 <section class="solution">
   <div class="solution-intro">
@@ -473,12 +569,14 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   <div class="layer-cards">
     <div class="layer-card primary">
       <div class="layer-badge lb-primary">Layer 1 — Electrical · Always first</div>
+      <div class="layer-shot"><img src="filterpro-device.png" alt="enPact FilterPro device"></div>
       <div class="layer-name">enPact FilterPro<br>Electrical Optimization</div>
       <div class="layer-desc">Reduces invisible electrical waste across every circuit in your restaurant simultaneously — motors, compressors, HVAC, kitchen equipment, and lighting. Connects to your incoming power supply in parallel. Nothing changes inside the kitchen. Retrofit installation — no changes to your existing equipment or systems.</div>
       <div class="layer-saving"><div class="ls-num">6–18%</div><div class="ls-label">whole-site electrical reduction</div></div>
     </div>
     <div class="layer-card">
       <div class="layer-badge lb-secondary">Layer 2 — Thermal</div>
+      <div class="layer-shot"><img src="enpact-rc-device.png" alt="enPact Refrigeration &amp; Cooling device"></div>
       <div class="layer-name">enPact Refrigeration<br>& Cooling</div>
       <div class="layer-desc">Optimizes your refrigeration systems — walk-ins, prep units, display cases — to run more efficiently. Smart sensors detect when optimal cooling is achieved and pause the compressor at peak efficiency, maintaining exact temperatures while cutting runtime and energy draw.</div>
       <div class="layer-saving"><div class="ls-num">20–40%</div><div class="ls-label">refrigeration energy reduction</div></div>
@@ -492,7 +590,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 <!-- CASE STUDY -->
 <section class="case-study-section">
   <div class="section-eyebrow">Verified Results</div>
-  <h2 class="section-h2">Global fast-food chain.<br><em>Three locations. Consistent results.</em></h2>
+  <h2 class="section-h2">Global fast-food chain.<br><em>Three locations. Verified results.</em></h2>
   <div class="cs-grid">
 
     <!-- Numbers side -->
@@ -553,50 +651,128 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   </div>
 </section>
 
-<!-- ALSO PROVEN AT -->
-<section class="also-proven">
-  <div class="section-eyebrow">Also Verified At</div>
-  <h2 class="section-h2">Consistent results across<br><em>multiple locations.</em></h2>
-  <p class="section-lead">The same technology, independently verified at different fast-food brands across the U.S. and internationally.</p>
-  <div class="ap-grid">
-    <div class="ap-card">
-      <div class="ap-sector">Global Fast-Food Chain · International Location</div>
-      <div class="ap-num">45.6%</div>
-      <div class="ap-unit">Chiller energy reduction</div>
-      <hr class="ap-divider">
-      <div class="ap-detail">Chiller: 45.57% reduction · 1,825 kWh saved annually. Freezer: 30.6% reduction · 5,157 kWh saved annually. Strong asset-level results across refrigeration systems in an international market deployment.</div>
-    </div>
-    <div class="ap-card">
-      <div class="ap-sector">Global QSR Chain · FilterPro + R&C</div>
-      <div class="ap-num">13.2%</div>
-      <div class="ap-unit">Total site energy reduction</div>
-      <hr class="ap-divider">
-      <div class="ap-detail">FilterPro alone delivered 10.0% — adding Refrigeration & Cooling produced a 32% uplift in total savings. 28,689 kWh saved annually across kitchen, HVAC, and refrigeration loads combined.</div>
-    </div>
-    <div class="ap-card">
-      <div class="ap-sector">Global Fast-Food Chain · U.S. Location 1 — HVAC Detail</div>
-      <div class="ap-num">32.5%</div>
-      <div class="ap-unit">HVAC energy reduction</div>
-      <hr class="ap-divider">
-      <div class="ap-detail">HVAC system: 32.5% reduction · 60,928 kWh saved annually. Demonstrates the technology's reach beyond refrigeration — motor and HVAC loads account for a significant share of total restaurant energy, and both respond to the combined approach.</div>
-    </div>
+<!-- CTA + REQUEST INFO -->
+<section class="cta-band" id="request">
+  <h2 class="section-h2">See what your locations<br><em>could save this year.</em></h2>
+  <p class="section-lead" style="margin-left:auto;margin-right:auto;">Send us twelve months of utility data and we will come back with a site-specific review. No estimate goes out before the numbers are in.</p>
+  <div style="margin-top:26px;"><a href="book.html" class="btn-dark">Book a 30-min Call &rarr;</a></div>
+
+  <div class="reqform">
+    <div class="reqform-h">Or have us reach out</div>
+    <p class="reqform-p">Tell us a little about your operation and we will follow up with material relevant to your equipment &mdash; not a generic brochure.</p>
+
+    <div class="rf-thanks" id="rfThanks"><strong>Thanks &mdash; that came through.</strong> We will be in touch shortly with material matched to the systems you run.</div>
+
+    <form id="rfForm" class="rf" method="POST" action="https://crm.zoho.com/crm/WebToLeadForm" accept-charset="UTF-8" onsubmit="return rfValidate(this);">
+      <input type="hidden" name="xnQsjsdp" value="9cda5060198bba7f56549a0f6149da191b24d691542a2807a921260ea6e7345c">
+      <input type="hidden" name="zc_gad" value="">
+      <input type="hidden" name="xmIwtLD" value="1f9dab2605795fa6934ef06dc0fc2502659ec8a13365f082cda38e33e58764dd189ca72877e0eca717d5069f3e0998f2">
+      <input type="hidden" name="actionType" value="TGVhZHM=">
+      <input type="hidden" name="returnURL" value="https://goldengsolutions.com/food-service.html?submitted=1">
+      <input type="hidden" name="Lead Source" value="Website - Food Service">
+      <input type="hidden" name="Lead Status" value="Engaged">
+      <input type="hidden" name="Facility Type" value="Food Service / QSR">
+      <input type="hidden" name="Description" id="rfDescription" value="Food service page - request more info">
+      <input type="hidden" name="Email Opt Out" value="true">
+
+      <div class="rf-grid">
+        <div class="rf-field" id="wrapFirst">
+          <label for="rfFirst">First name<span class="req">*</span></label>
+          <input type="text" id="rfFirst" name="First Name" required maxlength="40" autocomplete="given-name">
+          <div class="rf-err">Please enter your first name.</div>
+        </div>
+        <div class="rf-field" id="wrapLast">
+          <label for="rfLast">Last name<span class="req">*</span></label>
+          <input type="text" id="rfLast" name="Last Name" required maxlength="80" autocomplete="family-name">
+          <div class="rf-err">Please enter your last name.</div>
+        </div>
+        <div class="rf-field" id="wrapEmail">
+          <label for="rfEmail">Work email<span class="req">*</span></label>
+          <input type="email" id="rfEmail" name="Email" required maxlength="100" autocomplete="email">
+          <div class="rf-err">Please enter a valid email address.</div>
+        </div>
+        <div class="rf-field" id="wrapCompany">
+          <label for="rfCompany">Company<span class="req">*</span></label>
+          <input type="text" id="rfCompany" name="Company" required maxlength="100" autocomplete="organization">
+          <div class="rf-err">Please enter your company.</div>
+        </div>
+      </div>
+
+      <div class="rf-field" id="wrapTitle">
+        <label for="rfTitle">Your role<span class="req">*</span></label>
+        <input type="text" id="rfTitle" name="Designation" required maxlength="100" autocomplete="organization-title" placeholder="e.g., Director of Operations, Facilities Manager, Owner">
+        <div class="rf-err">Please enter your role.</div>
+      </div>
+
+      <div>
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--forest);letter-spacing:.04em;text-transform:uppercase;margin-bottom:9px;">What are you running?</label>
+        <div class="rf-checkgroup">
+          <label class="rf-check"><input type="checkbox" data-system="Walk-in coolers &amp; freezers" data-products="Refrigeration &amp; Cooling"><span>Walk-in coolers and freezers</span></label>
+          <label class="rf-check"><input type="checkbox" data-system="Kitchen HVAC / rooftop units" data-products="FilterPro;Refrigeration &amp; Cooling"><span>Kitchen HVAC or rooftop units</span></label>
+          <label class="rf-check"><input type="checkbox" data-system="Prep units &amp; display cases" data-products="Refrigeration &amp; Cooling"><span>Prep units and display cases</span></label>
+          <label class="rf-check"><input type="checkbox" data-system="Not sure" data-products="FilterPro;Refrigeration &amp; Cooling;enPact AI Monitoring"><span>Not sure yet</span></label>
+        </div>
+        <input type="hidden" name="Systems Type" id="rfSystems" value="">
+        <input type="hidden" name="Product Interest" id="rfProducts" value="">
+      </div>
+
+      <div class="rf-consent" id="wrapConsent">
+        <label><input type="checkbox" id="rfConsent" required><span>I agree that Golden Grid Solutions may contact me about this enquiry.</span></label>
+        <div class="rf-err">Please confirm before submitting.</div>
+      </div>
+
+      <button type="submit" class="rf-submit" id="rfSubmit">Send my request</button>
+      <div class="rf-note">We use this only to respond to your enquiry. No list, no newsletter.</div>
+    </form>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-band">
-  <div class="section-eyebrow">Get Started</div>
-  <h2 class="section-h2">See what your locations<br><em>could save this year.</em></h2>
-  <p class="cta-lead">Book a free 30-minute discovery call. We'll review your site energy profile, identify the right enPact solution, and provide a projected savings figure — at no cost and no obligation.</p>
-  <div class="cta-buttons">
-    <a href="book.html" class="btn-dark">Book a Free Assessment →</a>
-    <a href="index.html#results" class="btn-outline">View All Results</a>
-  </div>
-  <p class="cta-contact">
-    📞 <a href="tel:+19517445092">951-744-5092</a> &nbsp;·&nbsp;
-    ✉️ <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a>
-  </p>
-</section>
+<script>
+function rfValidate(form){
+  var ok = true;
+  function mark(wrapId, good){
+    var w = document.getElementById(wrapId);
+    if(!w) return;
+    if(good){ w.classList.remove('has-error'); } else { w.classList.add('has-error'); ok = false; }
+  }
+  var email = document.getElementById('rfEmail').value.trim();
+  mark('wrapFirst',   document.getElementById('rfFirst').value.trim().length   > 0);
+  mark('wrapLast',    document.getElementById('rfLast').value.trim().length    > 0);
+  mark('wrapEmail',   /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email));
+  mark('wrapCompany', document.getElementById('rfCompany').value.trim().length > 0);
+  mark('wrapTitle',   document.getElementById('rfTitle').value.trim().length   > 0);
+  mark('wrapConsent', document.getElementById('rfConsent').checked);
+
+  var systems = [], products = [];
+  document.querySelectorAll('.rf-check input[type=checkbox]').forEach(function(cb){
+    if(!cb.checked) return;
+    systems.push(cb.getAttribute('data-system'));
+    cb.getAttribute('data-products').split(';').forEach(function(p){
+      if(products.indexOf(p) === -1) products.push(p);
+    });
+  });
+  document.getElementById('rfSystems').value  = systems.join('; ');
+  document.getElementById('rfProducts').value = products.join('; ');
+  document.getElementById('rfDescription').value =
+    'Food service page - request more info. Systems: ' + (systems.join('; ') || 'not specified');
+
+  if(!ok){
+    var first = document.querySelector('.has-error');
+    if(first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    return false;
+  }
+  var btn = document.getElementById('rfSubmit');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  return true;
+}
+(function(){
+  if(window.location.search.indexOf('submitted=1') === -1) return;
+  var t = document.getElementById('rfThanks'), f = document.getElementById('rfForm');
+  if(t) t.style.display = 'block';
+  if(f) f.style.display = 'none';
+  if(t) t.scrollIntoView({behavior:'smooth', block:'center'});
+})();
+</script>
 
 <!-- FOOTER -->
 <footer>
