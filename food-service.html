@@ -481,6 +481,14 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 .mv-note{margin-top:34px;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:20px 24px;font-size:14.5px;color:var(--steel);line-height:1.7;}
 .mv-note strong{color:var(--forest);font-weight:600;}
 @media(max-width:900px){.mv-split{grid-template-columns:1fr;gap:32px;}.mv{padding:52px 6%;}}
+
+.rf-other{display:none;margin:2px 0 4px 29px;}
+.rf-other.is-open{display:block;}
+.rf-other label{display:block;font-size:11.5px;font-weight:600;color:var(--forest);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;}
+.rf-other input[type=text]{width:100%;font-family:var(--sans);font-size:14.5px;color:var(--slate);background:var(--mint-bg);border:1px solid var(--border);border-radius:6px;padding:10px 13px;}
+.rf-other input[type=text]:focus{outline:none;border-color:var(--leaf);background:var(--white);box-shadow:0 0 0 3px rgba(74,124,89,.15);}
+.rf-other.has-error input{border-color:#C0392B;background:#FCF3F1;}
+.rf-other.has-error .rf-err{display:block;}
 </style>
 </head>
 <body>
@@ -723,7 +731,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
     <div class="mv-head">
       <div class="section-eyebrow">How it is measured</div>
       <h2 class="section-h2">Every site metered. <em>Every claim verified.</em></h2>
-      <p class="learn-body">A savings figure nobody checks is a marketing number. Every enPact deployment is commissioned onto the Emissis monitoring platform, and the savings are measured against an internationally accepted methodology &mdash; <strong>IPMVP</strong> &mdash; with the workings open to inspection.</p>
+      <p class="learn-body">A savings figure nobody checks is a marketing number. Every enPact deployment is commissioned onto the Emissis monitoring platform, and the savings are measured against an internationally accepted methodology &mdash; <strong>IPMVP</strong> &mdash; validated for accuracy and bias. If you want to see how a savings figure was arrived at, the calculations behind it are open for you to inspect.</p>
     </div>
 
     <div class="mv-split">
@@ -757,9 +765,6 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
           <img src="enos-platform.png" alt="Emissis monitoring platform dashboard showing metered consumption with the devices on and off, kWh saved, and percentage saving across a site">
         </div>
         <div class="mv-shot-cap">The monitoring platform, showing measured consumption with the devices on and off across one site. Sample data &mdash; site identity withheld.</div>
-        <div class="mv-note">
-          <strong>The monitoring is not optional, and that is deliberate.</strong> Each unit has to be commissioned onto the platform and stay actively monitored &mdash; it is a condition of both the Product Warranty and the Savings Guarantee. It is also what makes the guarantee enforceable: if the platform were switched off, there would be no way to prove a shortfall either way.
-        </div>
       </div>
     </div>
   </div>
@@ -888,7 +893,12 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
           <label class="rf-check"><input type="checkbox" data-system="Walk-in coolers &amp; freezers" data-products="Refrigeration &amp; Cooling"><span>Walk-in coolers and freezers</span></label>
           <label class="rf-check"><input type="checkbox" data-system="Kitchen HVAC / rooftop units" data-products="FilterPro;Refrigeration &amp; Cooling"><span>Kitchen HVAC or rooftop units</span></label>
           <label class="rf-check"><input type="checkbox" data-system="Prep units &amp; display cases" data-products="Refrigeration &amp; Cooling"><span>Prep units and display cases</span></label>
-          <label class="rf-check"><input type="checkbox" data-system="Not sure" data-products="FilterPro;Refrigeration &amp; Cooling;enPact AI Monitoring"><span>Not sure yet</span></label>
+          <label class="rf-check"><input type="checkbox" id="rfOther" data-system="Other" data-products="FilterPro;Refrigeration &amp; Cooling;enPact AI Monitoring"><span>Something else</span></label>
+          <div class="rf-other" id="rfOtherWrap">
+            <label for="rfOtherText">Tell us what you run</label>
+            <input type="text" id="rfOtherText" maxlength="140" placeholder="e.g., ice machines, a chilled-water plant, drive-thru heaters">
+            <div class="rf-err">Please add a short description, or untick the box.</div>
+          </div>
         </div>
         <input type="hidden" name="Systems Type" id="rfSystems" value="">
         <input type="hidden" name="Product Interest" id="rfProducts" value="">
@@ -924,7 +934,13 @@ function rfValidate(form){
   var systems = [], products = [];
   document.querySelectorAll('.rf-check input[type=checkbox]').forEach(function(cb){
     if(!cb.checked) return;
-    systems.push(cb.getAttribute('data-system'));
+    var sys = cb.getAttribute('data-system');
+    if(cb.id === 'rfOther'){
+      var detail = document.getElementById('rfOtherText').value.trim();
+      mark('rfOtherWrap', detail.length > 0);
+      sys = detail ? 'Other: ' + detail : 'Other';
+    }
+    systems.push(sys);
     cb.getAttribute('data-products').split(';').forEach(function(p){
       if(products.indexOf(p) === -1) products.push(p);
     });
@@ -943,6 +959,16 @@ function rfValidate(form){
   btn.disabled = true; btn.textContent = 'Sending...';
   return true;
 }
+
+(function(){
+  var box = document.getElementById('rfOther'), wrap = document.getElementById('rfOtherWrap');
+  if(!box || !wrap) return;
+  function sync(){
+    wrap.classList.toggle('is-open', box.checked);
+    if(!box.checked){ wrap.classList.remove('has-error'); document.getElementById('rfOtherText').value = ''; }
+  }
+  box.addEventListener('change', sync); sync();
+})();
 (function(){
   if(window.location.search.indexOf('submitted=1') === -1) return;
   var t = document.getElementById('rfThanks'), f = document.getElementById('rfForm');
