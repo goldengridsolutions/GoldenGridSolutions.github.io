@@ -161,6 +161,40 @@ footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
   .nav-mobile-toggle.active span:nth-child(2){opacity:0;}
   .nav-mobile-toggle.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 }
+
+/* ── request-info form ── */
+.reqform{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 34px;max-width:760px;margin:38px auto 0;text-align:left;}
+.reqform-h{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--forest);margin-bottom:8px;line-height:1.25;}
+.reqform-p{font-size:14px;color:var(--steel);line-height:1.7;margin-bottom:6px;}
+.rf{display:flex;flex-direction:column;gap:20px;margin-top:22px;}
+.rf-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.rf-field label{display:block;font-size:12px;font-weight:600;color:var(--forest);letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px;}
+.rf-field label .req{color:var(--gold);margin-left:2px;}
+.rf-field input[type=text],.rf-field input[type=email]{width:100%;font-family:var(--sans);font-size:15px;color:var(--slate);background:var(--mint-bg);border:1px solid var(--border);border-radius:6px;padding:12px 14px;transition:border-color .18s,background .18s,box-shadow .18s;}
+.rf-field input[type=text]:focus,.rf-field input[type=email]:focus{outline:none;border-color:var(--leaf);background:var(--white);box-shadow:0 0 0 3px rgba(74,124,89,.15);}
+.rf-err{color:#C0392B;font-size:12px;margin-top:5px;display:none;}
+.rf-field.has-error .rf-err{display:block;}
+.rf-field.has-error input{border-color:#C0392B;background:#FCF3F1;}
+.rf-checkgroup{display:flex;flex-direction:column;gap:10px;padding:4px 0 2px;}
+.rf-check{display:flex;align-items:center;gap:11px;cursor:pointer;font-size:14px;color:var(--steel);padding:4px 0;}
+.rf-check input[type=checkbox],.rf-consent input[type=checkbox]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--sage);border-radius:4px;background:var(--white);cursor:pointer;flex-shrink:0;position:relative;transition:background .15s,border-color .15s;}
+.rf-check input[type=checkbox]:checked,.rf-consent input[type=checkbox]:checked{background:var(--forest);border-color:var(--forest);}
+.rf-check input[type=checkbox]:checked::after,.rf-consent input[type=checkbox]:checked::after{content:'\2713';color:var(--white);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:13px;font-weight:700;line-height:1;}
+.rf-consent{margin-top:2px;padding:14px 0 2px;border-top:1px solid var(--border);}
+.rf-consent label{display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13px;color:var(--steel);line-height:1.55;}
+.rf-consent.has-error .rf-err{display:block;margin-left:29px;}
+.rf-submit{background:var(--gold);color:var(--white);border:none;padding:14px 32px;border-radius:5px;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:background .2s,transform .15s;align-self:flex-start;}
+.rf-submit:hover{background:#A87A24;transform:translateY(-1px);}
+.rf-note{font-size:12px;color:var(--steel);opacity:.85;margin-top:2px;}
+.rf-thanks{display:none;background:var(--mint);border:1px solid var(--sage);border-radius:10px;padding:20px 22px;color:var(--forest);font-size:15px;line-height:1.6;}
+@media(max-width:640px){.rf-grid{grid-template-columns:1fr;}.reqform{padding:26px 20px;}}
+.rf-other{display:none;margin:2px 0 4px 29px;}
+.rf-other.is-open{display:block;}
+.rf-other label{display:block;font-size:11.5px;font-weight:600;color:var(--forest);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;}
+.rf-other input[type=text]{width:100%;font-family:var(--sans);font-size:14.5px;color:var(--slate);background:var(--mint-bg);border:1px solid var(--border);border-radius:6px;padding:10px 13px;}
+.rf-other input[type=text]:focus{outline:none;border-color:var(--leaf);background:var(--white);box-shadow:0 0 0 3px rgba(74,124,89,.15);}
+.rf-other.has-error input{border-color:#C0392B;background:#FCF3F1;}
+.rf-other.has-error .rf-err{display:block;}
 </style>
 </head>
 <body>
@@ -366,16 +400,88 @@ footer{background:var(--forest);color:var(--white);padding:64px 8% 36px;}
   </div>
 </section>
 
-<section class="cta-band">
+<section class="cta-band" id="request">
   <div class="section-eyebrow">Get Started</div>
   <h2 class="section-h2">See what your facility<br><em>could save this year.</em></h2>
   <p class="cta-lead">Book a free 30-minute discovery call. We'll review your facility energy profile and identify where the technology applies within your compliance requirements — at no cost and no obligation.</p>
-  <div class="cta-buttons">
-    <a href="book.html" class="btn-dark">Book a Free Assessment →</a>
-    <a href="index.html#results" class="btn-outline">View All Results</a>
+  <div style="margin-top:26px;"><a href="book.html" class="btn-dark">Book a 30-min Call &rarr;</a></div>
+
+  <div class="reqform">
+    <div class="reqform-h">Or have us reach out</div>
+    <p class="reqform-p">Tell us a little about your operation and we will follow up with material relevant to your equipment &mdash; not a generic brochure.</p>
+
+    <div class="rf-thanks" id="rfThanks"><strong>Thanks &mdash; that&rsquo;s with me.</strong> I&rsquo;ll send verified results from comparable healthcare deployments over within two business days, along with anything specific to the systems you listed.</div>
+
+    <form id="rfForm" class="rf" method="POST" action="https://crm.zoho.com/crm/WebToLeadForm" accept-charset="UTF-8" onsubmit="return rfValidate(this);">
+      <input type="hidden" name="xnQsjsdp" value="9cda5060198bba7f56549a0f6149da191b24d691542a2807a921260ea6e7345c">
+      <input type="hidden" name="zc_gad" value="">
+      <input type="hidden" name="xmIwtLD" value="1f9dab2605795fa6934ef06dc0fc2502659ec8a13365f082cda38e33e58764dd189ca72877e0eca717d5069f3e0998f2">
+      <input type="hidden" name="actionType" value="TGVhZHM=">
+      <input type="hidden" name="returnURL" value="https://goldengsolutions.com/healthcare.html?submitted=1">
+      <input type="hidden" name="Lead Source" value="Website - Healthcare">
+      <input type="hidden" name="Lead Status" value="Engaged">
+      <input type="hidden" name="Facility Type" value="Healthcare &amp; Pharma">
+      <input type="hidden" name="Description" id="rfDescription" value="healthcare page - request more info">
+      <input type="hidden" name="Email Opt Out" value="true">
+
+      <div class="rf-grid">
+        <div class="rf-field" id="wrapFirst">
+          <label for="rfFirst">First name<span class="req">*</span></label>
+          <input type="text" id="rfFirst" name="First Name" required maxlength="40" autocomplete="given-name">
+          <div class="rf-err">Please enter your first name.</div>
+        </div>
+        <div class="rf-field" id="wrapLast">
+          <label for="rfLast">Last name<span class="req">*</span></label>
+          <input type="text" id="rfLast" name="Last Name" required maxlength="80" autocomplete="family-name">
+          <div class="rf-err">Please enter your last name.</div>
+        </div>
+        <div class="rf-field" id="wrapEmail">
+          <label for="rfEmail">Work email<span class="req">*</span></label>
+          <input type="email" id="rfEmail" name="Email" required maxlength="100" autocomplete="email">
+          <div class="rf-err">Please enter a valid email address.</div>
+        </div>
+        <div class="rf-field" id="wrapCompany">
+          <label for="rfCompany">Company<span class="req">*</span></label>
+          <input type="text" id="rfCompany" name="Company" required maxlength="100" autocomplete="organization">
+          <div class="rf-err">Please enter your company.</div>
+        </div>
+      </div>
+
+      <div class="rf-field" id="wrapTitle">
+        <label for="rfTitle">Your role<span class="req">*</span></label>
+        <input type="text" id="rfTitle" name="Designation" required maxlength="100" autocomplete="organization-title" placeholder="e.g., Director of Operations, Facilities Manager, Owner">
+        <div class="rf-err">Please enter your role.</div>
+      </div>
+
+      <div>
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--forest);letter-spacing:.04em;text-transform:uppercase;margin-bottom:9px;">What are you running?</label>
+        <div class="rf-checkgroup">
+          <label class="rf-check"><input type="checkbox" data-system="Chilled-water plant" data-products="enPact Chillers;FilterPro"><span>Chilled-water plant</span></label>
+          <label class="rf-check"><input type="checkbox" data-system="Precision &amp; process cooling" data-products="Refrigeration &amp; Cooling;enPact Chillers"><span>Precision and process cooling</span></label>
+          <label class="rf-check"><input type="checkbox" data-system="Cold storage &amp; lab refrigeration" data-products="Refrigeration &amp; Cooling"><span>Cold storage and lab refrigeration</span></label>
+          <label class="rf-check"><input type="checkbox" data-system="Ventilation &amp; air handling" data-products="Refrigeration &amp; Cooling;FilterPro"><span>Ventilation and air handling</span></label>
+          <label class="rf-check"><input type="checkbox" id="rfOther" data-system="Other" data-products="FilterPro;Refrigeration &amp; Cooling;enPact AI Monitoring"><span>Something else</span></label>
+          <div class="rf-other" id="rfOtherWrap">
+            <label for="rfOtherText">Tell us what you run</label>
+            <input type="text" id="rfOtherText" maxlength="140" placeholder="Briefly — the systems you would want looked at">
+            <div class="rf-err">Please add a short description, or untick the box.</div>
+          </div>
+        </div>
+        <input type="hidden" name="Systems Type" id="rfSystems" value="">
+        <input type="hidden" name="Product Interest" id="rfProducts" value="">
+      </div>
+
+      <div class="rf-consent" id="wrapConsent">
+        <label><input type="checkbox" id="rfConsent" required><span>I agree that Golden Grid Solutions may contact me about this enquiry.</span></label>
+        <div class="rf-err">Please confirm before submitting.</div>
+      </div>
+
+      <button type="submit" class="rf-submit" id="rfSubmit">Send my request</button>
+      <div class="rf-note">We use this only to respond to your enquiry. No list, no newsletter.</div>
+    </form>
   </div>
-  <p class="cta-contact">📞 <a href="tel:+19517445092">951-744-5092</a> &nbsp;·&nbsp; ✉️ <a href="mailto:info@GoldenGSolutions.com">info@GoldenGSolutions.com</a></p>
 </section>
+
 
 <footer>
   <div class="footer-top">
@@ -470,6 +576,69 @@ if (toggle && navLinks) {
     });
     links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
   })();
+</script>
+
+<script>
+function rfValidate(form){
+  var ok = true;
+  function mark(wrapId, good){
+    var w = document.getElementById(wrapId);
+    if(!w) return;
+    if(good){ w.classList.remove('has-error'); } else { w.classList.add('has-error'); ok = false; }
+  }
+  var email = document.getElementById('rfEmail').value.trim();
+  mark('wrapFirst',   document.getElementById('rfFirst').value.trim().length   > 0);
+  mark('wrapLast',    document.getElementById('rfLast').value.trim().length    > 0);
+  mark('wrapEmail',   /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email));
+  mark('wrapCompany', document.getElementById('rfCompany').value.trim().length > 0);
+  mark('wrapTitle',   document.getElementById('rfTitle').value.trim().length   > 0);
+  mark('wrapConsent', document.getElementById('rfConsent').checked);
+
+  var systems = [], products = [];
+  document.querySelectorAll('.rf-check input[type=checkbox]').forEach(function(cb){
+    if(!cb.checked) return;
+    var sys = cb.getAttribute('data-system');
+    if(cb.id === 'rfOther'){
+      var detail = document.getElementById('rfOtherText').value.trim();
+      mark('rfOtherWrap', detail.length > 0);
+      sys = detail ? 'Other: ' + detail : 'Other';
+    }
+    systems.push(sys);
+    cb.getAttribute('data-products').split(';').forEach(function(p){
+      if(products.indexOf(p) === -1) products.push(p);
+    });
+  });
+  document.getElementById('rfSystems').value  = systems.join('; ');
+  document.getElementById('rfProducts').value = products.join('; ');
+  document.getElementById('rfDescription').value =
+    'Food service page - request more info. Systems: ' + (systems.join('; ') || 'not specified');
+
+  if(!ok){
+    var first = document.querySelector('.has-error');
+    if(first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    return false;
+  }
+  var btn = document.getElementById('rfSubmit');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  return true;
+}
+
+(function(){
+  var box = document.getElementById('rfOther'), wrap = document.getElementById('rfOtherWrap');
+  if(!box || !wrap) return;
+  function sync(){
+    wrap.classList.toggle('is-open', box.checked);
+    if(!box.checked){ wrap.classList.remove('has-error'); document.getElementById('rfOtherText').value = ''; }
+  }
+  box.addEventListener('change', sync); sync();
+})();
+(function(){
+  if(window.location.search.indexOf('submitted=1') === -1) return;
+  var t = document.getElementById('rfThanks'), f = document.getElementById('rfForm');
+  if(t) t.style.display = 'block';
+  if(f) f.style.display = 'none';
+  if(t) t.scrollIntoView({behavior:'smooth', block:'center'});
+})();
 </script>
 </body>
 </html>
