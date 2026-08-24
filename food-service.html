@@ -147,7 +147,7 @@ section { padding: 96px 8%; }
 .section-lead { font-size: 17px; color: var(--steel); font-weight: 300; line-height: 1.75; max-width: 520px; margin-top: 18px; }
 
 /* ─── PROBLEM (white bg, 2-col) ─── */
-.problem { background: var(--white); }
+.problem { background: var(--mint-bg); }
 .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 56px; }
 .problem-img { border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; background: var(--mint); }
 .problem-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -387,7 +387,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 
 /* ── learn sections: CLFP side-by-side pattern ── */
 .lrn-container{max-width:1280px;margin:0 auto;}
-.learn{padding:74px 8%;}
+.learn{padding:74px 8%;background:var(--mint-bg);}
 .learn.alt{background:var(--white);}
 .learn.forest{background:var(--forest);color:var(--white);}
 .learn.forest .section-h2{color:var(--white);}
@@ -453,6 +453,34 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 .rf-note{font-size:12px;color:var(--steel);opacity:.85;margin-top:2px;}
 .rf-thanks{display:none;background:var(--mint);border:1px solid var(--sage);border-radius:10px;padding:20px 22px;color:var(--forest);font-size:15px;line-height:1.6;}
 @media(max-width:640px){.rf-grid{grid-template-columns:1fr;}.reqform{padding:26px 20px;}}
+
+/* ── problem infographic (sequential ramp: magnitude, not identity) ── */
+.problem-figure{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:26px 24px 20px;}
+.problem-figure svg{width:100%;height:auto;display:block;}
+.ig-title{font-family:var(--serif);font-size:19px;font-weight:600;fill:var(--forest);}
+.ig-sub{font-size:12.5px;fill:var(--steel);font-weight:400;}
+.ig-rule{stroke:var(--border);stroke-width:1;}
+.ig-lab{font-size:12.5px;fill:var(--steel);font-weight:500;letter-spacing:.01em;}
+.ig-val{font-family:var(--serif);font-size:19px;font-weight:700;fill:var(--forest);}
+.ig-source{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:11.5px;color:var(--steel);line-height:1.5;}
+.ig-source a{color:var(--leaf);text-decoration:underline;}
+
+/* ── platform + M&V ── */
+.mv{padding:74px 8%;background:var(--mint-bg);}
+.mv-head{max-width:820px;}
+.mv-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:52px;align-items:start;margin-top:42px;}
+.mv-shot{background:var(--forest);border:1px solid var(--border);border-radius:14px;padding:14px;}
+.mv-shot img{width:100%;height:auto;display:block;border-radius:8px;}
+.mv-shot-cap{font-size:11.5px;color:var(--steel);margin-top:12px;line-height:1.55;}
+.mv-steps{display:flex;flex-direction:column;}
+.mv-step{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--border);}
+.mv-step:first-child{border-top:none;padding-top:0;}
+.mv-num{width:30px;height:30px;border-radius:50%;background:var(--forest);color:var(--white);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;font-family:var(--sans);}
+.mv-t{font-size:15.5px;font-weight:600;color:var(--forest);margin-bottom:5px;}
+.mv-d{font-size:14px;color:var(--steel);line-height:1.65;font-weight:300;}
+.mv-note{margin-top:34px;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:20px 24px;font-size:14.5px;color:var(--steel);line-height:1.7;}
+.mv-note strong{color:var(--forest);font-weight:600;}
+@media(max-width:900px){.mv-split{grid-template-columns:1fr;gap:32px;}.mv{padding:52px 6%;}}
 </style>
 </head>
 <body>
@@ -532,7 +560,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
     <div>
       <div class="section-eyebrow">The Problem</div>
       <h2 class="section-h2">Energy is one of your largest<br><em>controllable costs.</em></h2>
-      <p class="section-lead">In food service, refrigeration, HVAC, and kitchen loads run from open to close — and often through the night. Most operators treat this as fixed overhead. It isn't.</p>
+      <p class="section-lead">Restaurants use roughly <strong>five to seven times more energy per square foot</strong> than other commercial buildings, and a high-volume quick-service restaurant can reach ten times &mdash; according to ENERGY STAR. Refrigeration, HVAC and kitchen loads run from open to close, and often through the night. Most operators treat that as fixed overhead. It isn't.</p>
       <div class="problem-points">
         <div class="pp">
           <div class="pp-icon">❄️</div>
@@ -557,9 +585,25 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
         </div>
       </div>
     </div>
-    <div class="problem-img">
-      <img src="https://images.unsplash.com/photo-1589109807644-924edf14ee09?q=80&w=2620&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Commercial kitchen with stainless steel appliances" loading="lazy">
-    </div>
+    <div class="problem-figure">
+  <svg viewBox="0 0 460 264" role="img" aria-label="Energy use per square foot: a typical commercial building is the baseline at one times; a restaurant uses five to seven times more; a high-volume quick-service restaurant uses up to ten times more."
+       xmlns="http://www.w3.org/2000/svg">
+    <title>Energy use per square foot, relative to a typical commercial building</title>
+    <text x="16" y="24" class="ig-title">Energy use per square foot</text>
+    <text x="16" y="44" class="ig-sub">Relative to a typical commercial building</text>
+    <line x1="16" y1="58" x2="444" y2="58" class="ig-rule"/>
+    <text x="16" y="87" class="ig-lab">Typical commercial building</text>
+    <rect x="16" y="96" width="30" height="34" rx="4" fill="#5E8F6C"/>
+    <text x="58" y="118" class="ig-val">1&#215;</text>
+    <text x="16" y="147" class="ig-lab">Restaurant</text>
+    <rect x="16" y="156" width="180" height="34" rx="4" fill="#4A7C59"/>
+    <text x="208" y="178" class="ig-val">5&#8211;7&#215;</text>
+    <text x="16" y="207" class="ig-lab">High-volume QSR</text>
+    <rect x="16" y="216" width="300" height="34" rx="4" fill="#243D2C"/>
+    <text x="328" y="238" class="ig-val">up to 10&#215;</text>
+  </svg>
+  <div class="ig-source">Source: <a href="https://www.energystar.gov/sites/default/files/tools/Small_Business_Restaurants_0.pdf" target="_blank" rel="noopener">ENERGY STAR, U.S. EPA</a> &mdash; <em>Energy Savings Tips for Small Businesses: Restaurants</em></div>
+</div>
   </div>
 </section>
 
@@ -570,7 +614,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
     <div class="side-text">
       <div class="section-eyebrow">What it is</div>
       <h2 class="section-h2">The enPact family. <em>Two devices, one approach.</em></h2>
-      <p class="learn-body">Patented capital equipment &mdash; hardware you own outright, sitting on your balance sheet as an asset. Bought once, installed once, yours for as long as it runs. Two devices, deployed based on where the waste actually lives in your restaurant:</p>
+      <p class="learn-body">You buy it once and you own it. Two patented devices &mdash; not a service, not a subscription, and not a share of your savings. They install onto the equipment you already have and keep working for as long as it runs. Which of the two you need depends on where the waste actually sits in your restaurant:</p>
       <div class="learn-icons" style="margin-top:32px;">
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -582,7 +626,7 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
       </div>
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        <div><div class="learn-icon-label">Both are capital purchases</div><div class="learn-icon-sub">On your balance sheet and depreciable &mdash; no subscription, no shared-savings split</div></div>
+        <div><div class="learn-icon-label">Both are capital purchases</div><div class="learn-icon-sub">A one-time purchase you own outright &mdash; no monthly fee, no share of the savings</div></div>
       </div>
       </div>
     </div>
@@ -653,13 +697,13 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
 <section class="learn alt">
   <div class="lrn-container">
     <div class="section-eyebrow">Why it matters</div>
-    <h2 class="section-h2">Capital equipment. <em>Not another operating line item.</em></h2>
+    <h2 class="section-h2">You buy it once. <em>The savings keep coming.</em></h2>
     <p class="learn-body">Refrigeration and HVAC are among the largest controllable costs in a restaurant, and unlike rent or food cost they respond to engineering. Every kWh you stop drawing flows straight to your P&amp;L, at every location, for as long as the equipment runs.</p>
-    <p class="learn-body" style="margin-top:14px;">Because it is a one-time capital purchase rather than a service contract, the savings are not shared with anyone. And the payback period is not a projection you are asked to trust &mdash; Emissis puts it in writing.</p>
+    <p class="learn-body" style="margin-top:14px;">Most energy offers are a monthly fee or a cut of what you save, for years. This is a purchase. Your accountant will treat it as a capital asset rather than an operating expense &mdash; it goes on the balance sheet and depreciates, instead of hitting your P&amp;L every month. In practice that means the savings are yours, all of them, from the first month onward. And the payback period is not a projection you are asked to trust &mdash; Emissis puts it in writing.</p>
     <div class="learn-icons" style="margin-top:36px;">
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        <div><div class="learn-icon-label">Capital, not operating expense</div><div class="learn-icon-sub">You buy it, own it, and depreciate it &mdash; it sits on your balance sheet as an asset</div></div>
+        <div><div class="learn-icon-label">Yours, not rented</div><div class="learn-icon-sub">A purchase, not a monthly fee &mdash; your accountant books it as an asset, not an expense</div></div>
       </div>
       <div class="learn-icon-item">
         <svg class="learn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
@@ -673,31 +717,51 @@ footer { background: var(--forest); color: var(--white); padding: 64px 8% 36px; 
   </div>
 </section>
 
-<!-- SOLUTION -->
-<section class="solution">
-  <div class="solution-intro">
-    <div class="section-eyebrow">The Solution</div>
-    <h2 class="section-h2">Two layers. One install.<br><em>Additive savings.</em></h2>
-    <p class="section-lead">Each enPact technology targets a different energy loss mechanism — so their savings don't overlap, they stack. Both deploy in hours with no impact on kitchen operations or food safety.</p>
-  </div>
-  <div class="layer-cards">
-    <div class="layer-card primary">
-      <div class="layer-badge lb-primary">Layer 1 — Electrical · Always first</div>
-      <div class="layer-shot"><img src="filterpro-device.png" alt="enPact FilterPro device"></div>
-      <div class="layer-name">enPact FilterPro<br>Electrical Optimization</div>
-      <div class="layer-desc">Reduces invisible electrical waste across every circuit in your restaurant simultaneously — motors, compressors, HVAC, kitchen equipment, and lighting. Connects to your incoming power supply in parallel. Nothing changes inside the kitchen. Retrofit installation — no changes to your existing equipment or systems.</div>
-      <div class="layer-saving"><div class="ls-num">6–18%</div><div class="ls-label">whole-site electrical reduction</div></div>
+<!-- PLATFORM + M&V -->
+<section class="mv" id="verification">
+  <div class="lrn-container">
+    <div class="mv-head">
+      <div class="section-eyebrow">How it is measured</div>
+      <h2 class="section-h2">Every site metered. <em>Every claim verified.</em></h2>
+      <p class="learn-body">A savings figure nobody checks is a marketing number. Every enPact deployment is commissioned onto the Emissis monitoring platform, and the savings are measured against an internationally accepted methodology &mdash; <strong>IPMVP</strong> &mdash; with the workings open to inspection.</p>
     </div>
-    <div class="layer-card">
-      <div class="layer-badge lb-secondary">Layer 2 — Thermal</div>
-      <div class="layer-shot"><img src="enpact-rc-device.png" alt="enPact Refrigeration &amp; Cooling device"></div>
-      <div class="layer-name">enPact Refrigeration<br>& Cooling</div>
-      <div class="layer-desc">Optimizes your refrigeration systems — walk-ins, prep units, display cases — to run more efficiently. Smart sensors detect when optimal cooling is achieved and pause the compressor at peak efficiency, maintaining exact temperatures while cutting runtime and energy draw.</div>
-      <div class="layer-saving"><div class="ls-num">20–40%</div><div class="ls-label">refrigeration energy reduction</div></div>
+
+    <div class="mv-split">
+      <div>
+        <div class="mv-steps">
+      <div class="mv-step">
+        <div class="mv-num">1</div>
+        <div><div class="mv-t">Baseline</div><div class="mv-d">A pre-installation survey establishes your baseline kWh and how the equipment actually performs under normal operating conditions &mdash; not nameplate ratings.</div></div>
+      </div>
+      <div class="mv-step">
+        <div class="mv-num">2</div>
+        <div><div class="mv-t">Forecast</div><div class="mv-d">Savings are modelled from your validated historical consumption, run-time analysis and equipment efficiency profiles. This is the figure the payback period is built on.</div></div>
+      </div>
+      <div class="mv-step">
+        <div class="mv-num">3</div>
+        <div><div class="mv-t">Monitoring</div><div class="mv-d">After install, consumption is collected through site meters, sub-metering or your energy management system &mdash; a like-for-like operational comparison, not a sample.</div></div>
+      </div>
+      <div class="mv-step">
+        <div class="mv-num">4</div>
+        <div><div class="mv-t">Verification</div><div class="mv-d">Actual performance is compared against baseline and normalised for outside factors such as weather and occupancy. Results are set out in a formal savings verification report.</div></div>
+      </div>
+      <div class="mv-step">
+        <div class="mv-num">5</div>
+        <div><div class="mv-t">Rebate</div><div class="mv-d">If verified savings come in below the forecast kWh, Emissis credits back the difference in capital cost needed to restore the payback period you were quoted.</div></div>
+      </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="mv-shot">
+          <img src="enos-platform.png" alt="Emissis monitoring platform dashboard showing metered consumption with the devices on and off, kWh saved, and percentage saving across a site">
+        </div>
+        <div class="mv-shot-cap">The monitoring platform, showing measured consumption with the devices on and off across one site. Sample data &mdash; site identity withheld.</div>
+        <div class="mv-note">
+          <strong>The monitoring is not optional, and that is deliberate.</strong> Each unit has to be commissioned onto the platform and stay actively monitored &mdash; it is a condition of both the Product Warranty and the Savings Guarantee. It is also what makes the guarantee enforceable: if the platform were switched off, there would be no way to prove a shortfall either way.
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="synergy-note">
-    <strong>Why both layers together outperform either alone:</strong> FilterPro targets electrical losses before energy reaches equipment. Refrigeration & Cooling targets thermal inefficiency inside the refrigeration loop. These are different energy loss mechanisms — so when combined, the savings are additive, not overlapping. At a U.S. fast-food location: <strong>freezer savings of 38.3%</strong>, kitchen HVAC at <strong>31.4%</strong>, lobby HVAC at <strong>37.6%</strong> — all running simultaneously with a <strong>17.8% whole-site reduction</strong>. Neither technology cannibalises the other's result because they act on different parts of the system.
   </div>
 </section>
 
